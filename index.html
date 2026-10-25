@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Royal Mobile &amp; Printing Store - Faisalabad</title>
+<style>
+body{margin:0;background:#fffdf8;color:#3b2a0c;font:16px/1.6 Georgia,serif}
+.w{max-width:960px;margin:0 auto;padding:0 18px}
+header{text-align:center;padding:28px 0 8px}
+header img{max-width:100%;width:420px;height:auto}
+h1{font-size:1.5rem;margin:10px 0 4px;color:#b8860b}
+.s{color:#7a6a4f;margin:0 0 16px}
+.btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:14px 0}
+.b{padding:11px 20px;border-radius:999px;background:#3b2a0c;color:#fff;text-decoration:none;font:bold .95rem system-ui,sans-serif}
+.b.o{background:none;color:#3b2a0c;border:1.5px solid #b8860b}
+h2{font-size:1.3rem;border-bottom:2px solid #b8860b;padding-bottom:6px;margin:32px 0 14px}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.c{display:block;background:#fff;border:1px solid #eadfc6;border-radius:10px;padding:14px 16px;color:inherit;text-decoration:none}
+.c h3{margin:0 0 4px;font-size:1.02rem}
+.c p{margin:0 0 8px;color:#7a6a4f;font:.9rem system-ui,sans-serif}
+.c a{color:#b8860b;font:bold .9rem system-ui,sans-serif}
+footer{margin:36px 0 24px;padding-top:18px;border-top:1px solid #eadfc6;text-align:center;color:#7a6a4f;font:.9rem system-ui,sans-serif}
+</style>
+</head>
+<body>
+<header class="w">
+<img src="logo.jpg" alt="Royal Mobile &amp; Printing Store" onerror="this.style.display='none';document.getElementById('t').style.display='block'">
+<h1 id="t" style="display:none;font-size:2rem">Royal Mobile &amp; Printing Store</h1>
+<p class="s">Faisalabad, Punjab, Pakistan</p>
+<div class="btns">
+<a class="b" href="https://wa.me/923040011041?text=Assalam%20o%20Alaikum%2C%20mujhe%20rate%20chahiye">WhatsApp par order karein</a>
+<a class="b o" href="tel:03040011041">Call: 0304 0011041</a>
+</div>
+</header>
+<main class="w">
+<h2>Hamari categories</h2>
+<div class="g" id="cats"></div>
+<h2>Online khareedein</h2>
+<div class="g">
+<a class="c" href="https://www.daraz.pk"><h3>Daraz</h3><p>Hamari Daraz store ka link jald yahan lagega.</p></a>
+<a class="c" href="https://www.amazon.com"><h3>Amazon</h3><p>Hamari Amazon store ka link jald yahan lagega.</p></a>
+<a class="c" href="https://www.aliexpress.com"><h3>AliExpress</h3><p>Hamari AliExpress store ka link jald yahan lagega.</p></a>
+</div>
+<h2>Rabta</h2>
+<div class="c"><h3>Royal Mobile &amp; Printing Store</h3><p>Faisalabad, Punjab, Pakistan<br>Mobile / WhatsApp: 0304 0011041</p></div>
+</main>
+<footer class="w">&copy; Royal Mobile &amp; Printing Store, Faisalabad</footer>
+<script>
+var items=[
+["Red Sail Plotter & Vinyl Cutting","Vinyl, stickers aur plotter cutting"],
+["Rhinestone Printing","Kapron aur gifts par rhinestone design"],
+["Stationery & Office Supplies","Daftar aur school ka saman"],
+["Acrylic & Laser Cutting","Acrylic sheets, nameplates, laser cut designs"],
+["Customized Gifts","Mugs, frames aur apni pasand ke gifts"],
+["Banners & Signage","Flex banners, boards aur signs"],
+["Packaging & Bags","Boxes, bags aur branded packaging"],
+["PVC Cards & ID Cards","ID cards, PVC cards aur holders"],
+["Offset Printing","Bari miqdar mein cards, brochures, letterheads"],
+["Computer & Digital Services","Composing, design aur digital kaam"],
+["Wedding & Event Printing","Shadi cards aur event printing"],
+["Stamps & Embossing","Rubber stamps aur embossing"],
+["Photo Printing & Frames","Photo prints aur frames"]];
+var h="";
+items.forEach(function(it){
+var u="https://wa.me/923040011041?text="+encodeURIComponent("Mujhe "+it[0]+" ka rate chahiye");
+h+='<div class="c"><h3>'+it[0].replace("&","&amp;")+'</h3><p>'+it[1]+'</p><a href="'+u+'">Rate poochein</a></div>';
+});
+document.getElementById("cats").innerHTML=h;
+</script>
+</body>
+</html>
