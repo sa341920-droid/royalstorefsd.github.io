@@ -1,22 +1,21 @@
-ROYAL MOBILE & PRINTING STORE — NO-CODE CATALOGUE MANAGER
+ROYAL MOBILE & PRINTING STORE — LUXURY 3D UPDATE V2
 
-WHAT YOU CAN CHANGE WITHOUT CODING:
-- Add, edit and delete products
-- Set retail price and wholesale price
-- Upload a product picture from your phone/computer
-- Add/delete categories
-- Edit product name, description, badge and emoji
-- Search, category filters, cart and WhatsApp checkout continue working
-- Export a JSON catalogue backup and import it later
+This version upgrades the storefront visuals:
+- Rich black/gold luxury palette, deeper shadows, glossy panels and 3D hover effects
+- Real photo thumbnails for category cards and products (photos load from Unsplash when internet is available)
+- Better spacing, typography and larger cards for mobile and desktop
+- Keeps the no-code Manage tool: add/edit/delete products, prices, wholesale prices and upload product photos; add/delete categories; export/import catalogue backup
+- Keeps cart and WhatsApp checkout/order enquiry
 
-HOW TO INSTALL:
-1. Download and extract the ZIP.
-2. Open your GitHub repository and replace the current index.html with this one.
-3. Commit changes, then open your website and refresh.
-4. Tap the "Manage" button to edit products/categories.
+INSTALL:
+1. Download and extract this ZIP.
+2. In your GitHub repository, replace the existing index.html with this version.
+3. Commit changes and wait for deployment.
+4. Refresh the site.
 
-VERY IMPORTANT LIMITATION:
-This is still a static GitHub Pages site. Product/category changes made from Manage are stored in the browser on that device only. Other customers and other devices do not automatically see those changes. Exporting the catalogue backup is useful for backup, but it does not publish the changed catalogue to GitHub by itself. To have one secure admin panel that publishes products/prices/images live for every visitor, the site needs a database/backend (for example Supabase/Firebase/Cloudflare Worker) and an admin login. Do not enter payment card details into this demo.
-
-PICTURES:
-The owner manager accepts image files up to 700 KB each. Smaller compressed images are recommended because browser storage is limited. Actual image data stays in that browser's local storage until exported in a catalogue backup.
+IMPORTANT:
+- This package has not been published to your GitHub account; it is a file for you to upload.
+- Category/product sample photos are online images and need internet access. Product photos can be replaced with your own through Manage.
+- Manage changes are saved in the current browser only; to publish changes live for every customer, a shared database/backend and secure admin login are still required.
+- The official original logo is not embedded because the exact logo image file was not provided with this turn. The current crown is only a placeholder; upload your unchanged official logo as needed.
+- Price fields are optional; no real rates are invented.
