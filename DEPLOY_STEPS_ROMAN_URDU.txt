@@ -1,0 +1,41 @@
+ROYAL MOBILE & PRINTING STORE — DEPLOY PACK
+============================================
+
+Is pack mein:
+1) worker.js — aapki latest single-file Cloudflare Worker website/API file
+2) wrangler.toml.template — deployment configuration template
+3) catalog_starter.csv — product planning/import ke liye starter catalog
+4) CHECKLIST.txt — required settings aur important limitations
+
+IMPORTANT:
+- Ye pack tayyar kiya gaya hai, lekin aapke Cloudflare account par khud se deploy nahi hua.
+- GitHub par JS file upload karne se Worker automatic update nahi hota jab tak build/deploy workflow theek configure na ho.
+- wrangler.toml.template mein YOUR_KV_NAMESPACE_ID ko Cloudflare ke actual KV namespace ID se replace karna hoga.
+- Cloudflare Worker secrets mein ADMIN_PASSWORD set karein.
+- Cloudflare Worker Settings → Bindings mein KV namespace royal-store-data ko STORE naam se bind karein.
+- AI agent ke liye Workers AI binding ka variable name AI hona chahiye. Agar /health mein aiBinding false aaye to binding missing hai.
+- Worker deploy ke baad /health khol kar storeBinding=true, adminConfigured=true aur AI set karne par aiBinding=true verify karein.
+- Admin panel mein login karke starter catalog add karne ka option ho to usay use karein; products KV value ko manually overwrite na karein.
+- Existing sess:* keys ko delete na karein.
+- Payments, courier booking, auto social publishing, email recovery aur native Android APK ke liye provider credentials, extra implementation/build aur testing chahiye.
+- Is version ko production-ready kehne se pehle real end-to-end tests aur data backup plan zaroor karein.
+
+SHOP DETAILS:
+Royal Mobile & Printing Store
+Faisalabad, Punjab, Pakistan
+Phone / WhatsApp: +92 304 0011041
+Promise: Fast Delivery All over Pakistan
+
+DEPLOY VIA DASHBOARD (simple route):
+1. Cloudflare Dashboard → Workers & Pages → royal-mobile-store-api → Edit Code.
+2. worker.js ka complete content code editor mein upload/paste karein (agar editor file upload support na kare, current editor ke replace option se).
+3. Save and Deploy.
+4. Settings → Bindings mein STORE KV binding check karein.
+5. Settings → Variables and Secrets mein ADMIN_PASSWORD secret check karein.
+6. Agar AI chahiye to Settings → Bindings → Workers AI binding AI add karein.
+7. Visit https://royal-mobile-store-api.sa341920.workers.dev/health and check JSON output.
+8. Open the Worker homepage/admin page and test a product add, storefront listing and an order before public launch.
+
+SECURITY:
+- Admin password ya API secrets kisi ko public chat/GitHub mein share na karein.
+- Do not publish credentials in source files.
