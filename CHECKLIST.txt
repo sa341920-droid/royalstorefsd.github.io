@@ -1,0 +1,13 @@
+READY / NOT YET VERIFIED CHECKLIST
+==================================
+[Prepared] Latest single-file Worker JS included
+[Prepared] 20-theme storefront code included in source file
+[Prepared] Admin product form and catalog seed endpoint included in source file
+[Prepared] Shop logo is embedded in current JS source
+[Prepared] Starter category CSV created
+[Needs account action] Verify STORE KV binding points to royal-store-data
+[Needs account action] Verify ADMIN_PASSWORD secret exists
+[Needs account action] Bind Workers AI as AI if AI features are wanted
+[Needs deployment] Deploy this worker.js to Cloudflare Worker
+[Needs live test] /health, product save/list, customer order, AI response
+[Not fully implemented/activated] Payment gateway integrations, courier API integration, automatic publishing to all social platforms, native Android APK, full accounting-grade reports, complete password recovery workflow
