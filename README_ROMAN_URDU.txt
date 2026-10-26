@@ -1,23 +1,22 @@
-ROYAL MOBILE & PRINTING STORE — AI + SOCIAL PROMOTION SUITE
+ROYAL MOBILE & PRINTING STORE — 100 ITEMS + 20 LUXURY THEMES
 
-WEBSITE UPLOAD:
-1. ZIP extract karein.
-2. GitHub repo https://github.com/sa341920-droid/sa341920-droid.github.io kholein.
-3. Add file > Upload files > index.html upload > Commit changes.
-4. Settings > Pages > Deploy from a branch > main > /(root) > Save.
-5. https://sa341920-droid.github.io/ par test karein.
+Is package mein index.html website frontend hai. GitHub Pages ke liye repository ke root mein index.html upload karein.
 
-INCLUDED:
-- 20 luxury themes, logo/cover upload, product catalog manager, cart and WhatsApp order inquiry.
-- Custom product preview, business-suite module interface, social platform links, campaign draft generator and local SEO checklist.
-- worker.js: optional Cloudflare Worker starter API for product data and Workers AI promotion draft.
+PRODUCT PICTURE UPLOAD (UPDATED):
+- Admin / Branding & Store Customization > Manage Products kholein.
+- Naya product add karte waqt Product image > Choose File se phone gallery, laptop ya PC se picture select karein.
+- Pehle se mojood product ke liye us row mein Choose File par tap/click karein; picture preview aur upload automatically ho jayega.
+- Image URL paste karna zaroori nahi.
+- Picture browser mein save karne se pehle resize/compress hoti hai.
+- Browser storage limited hoti hai. Bohat zyada/bari pictures par storage full ho sakti hai; aisi surat mein smaller pictures use karein. Cloud image storage is package mein connected nahi.
 
-LOGO:
-Logo & Cover tab mein exact original black-and-gold logo upload karein. Logo file package mein included nahi, aur naya logo generate nahi hota.
-
-AI AND CLOUD:
-worker.js ko Cloudflare Worker mein deploy karne ke liye KV binding STORE, secret ADMIN_PASSWORD, aur optional Workers AI binding AI configure karni hogi. This starter API is not yet connected to index.html. The current website's product changes are stored in that browser only.
+FEATURES:
+- 100 starter catalog items across mobiles, accessories, printing, vinyl, sublimation, gifts and stationery.
+- Product add/delete/edit: name, category, price, stock quantity, description, direct device image upload.
+- 20 selectable luxury themes, 3D-style cards, search, cart, WhatsApp order inquiry, CSV catalog export.
+- Exact original logo upload option; original logo file package mein bundled nahi hai. Logo & Cover section mein apni original file select karein. Naya logo generate nahi hota.
 
 IMPORTANT LIMITATIONS:
-This is a prototype, not a fully working business platform. Secure user authentication, cloud sync, accounting, customer/supplier ledgers, real stock syncing, payment gateways, courier integrations, automated posting, ad campaigns and live AI integration require further backend integration, account authorization and testing.
-Social links open platform sites; this does not grant account access or publish posts. Never share social passwords. Google #1 ranking cannot be guaranteed; use genuine local SEO and customer reviews. Do not enter real passwords, customer data or financial records into the prototype.
+Yeh abhi browser-side frontend prototype hai. Data sirf current browser/device mein localStorage par save hota hai; mobile, laptop aur PC ke darmiyan cloud sync nahi. Demo login secure account system nahi hai. Real payments, order database, courier tracking, secure staff roles, live accounting/ledger, social auto-publishing aur AI integration ke liye backend, database, credentials/configuration aur testing zaroori hai. Isay abhi production financial/customer system ke taur par use na karein.
+
+100 items reset karne se current browser catalog replace hota hai. Pehle CSV export karein agar existing products bachane hain.
