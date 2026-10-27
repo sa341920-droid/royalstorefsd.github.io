@@ -1,0 +1,15 @@
+
+name = "royal-mobile-store-api"
+main = "worker.js"
+compatibility_date = "2026-10-26"
+keep_vars = true
+
+[ai]
+binding = "AI"
+
+[[kv_namespaces]]
+binding = "STORE"
+id = "bf8cb34f7ac241a2a086a54e75b59f44"
+
+[observability]
+enabled = true
