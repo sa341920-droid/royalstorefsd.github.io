@@ -1,22 +1,45 @@
-ROYAL MOBILE & PRINTING STORE — 100 ITEMS + 20 LUXURY THEMES
+ROYAL MOBILE & PRINTING STORE — BACKEND DEPLOYMENT PACK
 
-Is package mein index.html website frontend hai. GitHub Pages ke liye repository ke root mein index.html upload karein.
+Is package mein worker.js ek Cloudflare Worker hai jo storefront aur API ek hi deployment mein serve karta hai.
+Isay abhi production-ready complete Amazon/Daraz replacement na samjhein. Is mein backend foundation aur kuch business APIs hain; external services ko alag authorize/configure karna hoga.
 
-PRODUCT PICTURE UPLOAD (UPDATED):
-- Admin / Branding & Store Customization > Manage Products kholein.
-- Naya product add karte waqt Product image > Choose File se phone gallery, laptop ya PC se picture select karein.
-- Pehle se mojood product ke liye us row mein Choose File par tap/click karein; picture preview aur upload automatically ho jayega.
-- Image URL paste karna zaroori nahi.
-- Picture browser mein save karne se pehle resize/compress hoti hai.
-- Browser storage limited hoti hai. Bohat zyada/bari pictures par storage full ho sakti hai; aisi surat mein smaller pictures use karein. Cloud image storage is package mein connected nahi.
+IS PACKAGE MEIN MAUJOOD FOUNDATION
+- Cloudflare Worker website + API
+- Cloudflare KV se cloud-side product/order/business records (STORE binding required)
+- Owner bootstrap/login aur secure password hashing/session tokens
+- Staff accounts aur module permissions ke API routes
+- Product CRUD aur 100 starter items seed endpoint
+- Order requests save karna aur order status update API
+- Invoice/customer/supplier/expense/payment/production/staff records ke APIs
+- Optional Workers AI assistant (AI binding required)
+- Theme selector ko customer header se hata kar admin-login area mein move kiya gaya
 
-FEATURES:
-- 100 starter catalog items across mobiles, accessories, printing, vinyl, sublimation, gifts and stationery.
-- Product add/delete/edit: name, category, price, stock quantity, description, direct device image upload.
-- 20 selectable luxury themes, 3D-style cards, search, cart, WhatsApp order inquiry, CSV catalog export.
-- Exact original logo upload option; original logo file package mein bundled nahi hai. Logo & Cover section mein apni original file select karein. Naya logo generate nahi hota.
+CLOUDFARE SETUP
+1. Cloudflare Dashboard > Workers & Pages > apna Worker open karein.
+2. worker.js ka poora code editor mein paste karein, Save and Deploy karein.
+3. Settings > Bindings mein KV Namespace binding add karein:
+   Variable name: STORE
+   KV namespace: royal-store-data (ya aapka existing KV namespace)
+4. Settings > Variables and Secrets mein secret add karein:
+   ADMIN_PASSWORD = lamba, unique bootstrap/admin password (12+ chars recommended)
+5. Optional: Workers AI binding ko AI naam se connect karein, warna AI chat fallback response dega.
+6. Worker URL khol kar /health check karein. storeBinding=true aur adminConfigured=true expected hain.
+7. Owner account bootstrap ke liye POST request /api/auth/bootstrap-owner par JSON bhejna hoga:
+   {"bootstrapPassword":"YOUR_ADMIN_PASSWORD","email":"owner@example.com","name":"Farhan Abbas","password":"A-NEW-STRONG-PASSWORD-12+"}
+   Is request ko trusted API client se bhejein; actual email apna use karein. Password kisi ko share na karein.
+8. Owner login /api/auth/login par email/password se hota hai.
 
-IMPORTANT LIMITATIONS:
-Yeh abhi browser-side frontend prototype hai. Data sirf current browser/device mein localStorage par save hota hai; mobile, laptop aur PC ke darmiyan cloud sync nahi. Demo login secure account system nahi hai. Real payments, order database, courier tracking, secure staff roles, live accounting/ledger, social auto-publishing aur AI integration ke liye backend, database, credentials/configuration aur testing zaroori hai. Isay abhi production financial/customer system ke taur par use na karein.
+IMPORTANT LIMITATIONS / JO ABHI ALAG KAAM MANGTA HAI
+- Password reset by email: email provider/verification flow configure nahi hai.
+- Invoice records save hote hain, lekin certified accounting, automatic tax calculations, ledger reconciliation aur polished PDF invoice generation ko separately implement/test karna hai.
+- Payments: COD ko order method ke taur par record kiya ja sakta hai; bank/wallet/manual verification aur online gateway live nahi hain. Easypaisa/JazzCash/bank/online gateway ke merchant credentials, callbacks/webhooks aur test transactions required hain.
+- Courier: live tracking API connected nahi. Courier provider account/API key aur webhook integration required hai.
+- Social posting: automatic Facebook/Instagram/TikTok publishing connected nahi. Platform app approval, page/business permissions, access tokens aur platform-specific APIs required hain. Passwords share na karein.
+- Image uploads: KV is not ideal for a large product image library; Cloudflare R2/object storage and access rules should be configured for durable cross-device images.
+- Theme selection is owner-only in this UI, but the selected theme is currently browser-local; shared theme persistence across all devices needs a server-side settings API and frontend wiring.
+- Backups/restore, rate limiting, security audit, privacy policy, terms, refund policy and production testing remain required before accepting real customer/payment data.
 
-100 items reset karne se current browser catalog replace hota hai. Pehle CSV export karein agar existing products bachane hain.
+DEPLOYMENT NOTES
+- This Worker serves the website from its own root URL. GitHub Pages URL will not automatically update from this file unless you separately deploy the frontend there.
+- Do not paste secret keys into public GitHub files or the website HTML.
+- Never claim payment, courier or social auto-publishing is live until provider callbacks and real test transactions succeed.
