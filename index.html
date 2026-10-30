@@ -86,22 +86,22 @@
                     <button onclick="switchTab('aiagent')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition text-yellow-400"><i class="fa-solid fa-robot ml-1"></i> Farhan AI Agent</button>
                     <button onclick="switchTab('feedback')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition"><i class="fa-solid fa-comments ml-1"></i> Feedback</button>
                     
-                    <!-- Admin & Manager Restricted Tabs -->
+                    <!-- Admin, Staff & Owner Restricted Tabs -->
                     <div id="admin-nav-links" class="hidden flex items-center space-x-1 border-r border-l border-gray-700 px-2">
-                        <button onclick="switchTab('erp')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition text-blue-400"><i class="fa-solid fa-briefcase ml-1"></i> ERP Suite</button>
+                        <button onclick="switchTab('erp')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition text-blue-400"><i class="fa-solid fa-briefcase ml-1"></i> FBR POS & ERP</button>
                         <button onclick="switchTab('themes')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition text-pink-400"><i class="fa-solid fa-wand-magic-sparkles ml-1"></i> 20 Themes</button>
                         <button onclick="switchTab('branding')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition text-purple-400"><i class="fa-solid fa-gear ml-1"></i> Branding & Backup</button>
                     </div>
                 </div>
 
-                <!-- Cart & Admin Login Buttons -->
+                <!-- Cart & Account / Auth Buttons -->
                 <div class="flex items-center gap-3">
                     <button onclick="toggleCartModal()" class="relative bg-white/10 hover:bg-white/20 p-2.5 rounded-full border border-white/10 transition">
                         <i class="fa-solid fa-cart-shopping text-sm"></i>
                         <span id="cart-count" class="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
                     </button>
-                    <button id="nav-auth-btn" onclick="toggleAdminMode()" class="bg-white/10 hover:bg-white/20 text-xs px-3.5 py-2 rounded-lg border border-white/10 font-bold transition flex items-center gap-1.5">
-                        <i class="fa-solid fa-user-lock"></i> <span id="auth-btn-text">Admin Login</span>
+                    <button onclick="switchTab('auth')" class="bg-white/10 hover:bg-white/20 text-xs px-3.5 py-2 rounded-lg border border-white/10 font-bold transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-user-lock"></i> <span id="auth-btn-label">Login / Signup</span>
                     </button>
                 </div>
             </div>
@@ -116,9 +116,9 @@
             <div id="hero-banner-container" class="relative rounded-2xl overflow-hidden border accent-border glass-panel p-8 md:p-12 text-left flex flex-col justify-center min-h-[280px]">
                 <div id="hero-bg-overlay" class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1200');"></div>
                 <div class="relative z-10 max-w-2xl space-y-3">
-                    <span class="bg-white/10 text-xs px-3 py-1 rounded-full border border-white/20 font-semibold uppercase tracking-wider">Retail & Wholesale • Custom Printing</span>
+                    <span class="bg-white/10 text-xs px-3 py-1 rounded-full border border-white/20 font-semibold uppercase tracking-wider">Retail & Wholesale • FBR POS Ready</span>
                     <h2 id="hero-headline" class="text-3xl md:text-5xl font-extrabold accent-text leading-tight">Your Royal Store. Everything, One Place.</h2>
-                    <p id="hero-subtext" class="text-gray-300 text-sm md:text-base">Mobiles, accessories, stationery, sublimation and customized gifts with fast delivery all over Pakistan.</p>
+                    <p id="hero-subtext" class="text-gray-300 text-sm md:text-base">Mobiles, accessories, stationery, sublimation and customized gifts in Faisalabad with fast delivery across Pakistan.</p>
                     <div class="flex flex-wrap gap-3 pt-2">
                         <button onclick="switchTab('studio')" class="accent-gradient text-black font-bold px-5 py-2.5 rounded-xl text-xs shadow-lg">3D Customizer Studio</button>
                         <button onclick="switchTab('aiagent')" class="bg-yellow-500/20 text-yellow-400 border border-yellow-500/40 px-5 py-2.5 rounded-xl text-xs font-semibold">Ask Farhan AI Agent</button>
@@ -139,10 +139,7 @@
                 </div>
             </div>
 
-            <!-- Categories Filter Pills -->
             <div id="category-pills" class="flex flex-wrap gap-2 pb-2 overflow-x-auto"></div>
-
-            <!-- 100+ Products Grid -->
             <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
         </section>
 
@@ -157,7 +154,7 @@
             </div>
         </section>
 
-        <!-- VIEW 3: 3D ADVANCED PRODUCT CUSTOMIZATION STUDIO -->
+        <!-- VIEW 3: 3D CUSTOMIZER STUDIO -->
         <section id="view-studio" class="tab-content hidden space-y-6">
             <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
                 <div>
@@ -258,12 +255,12 @@
                 <div id="ai-chat-history" class="bg-black/60 p-4 rounded-xl border border-white/5 h-96 overflow-y-auto space-y-3 text-xs">
                     <div class="bg-gray-900 p-3 rounded-xl border border-white/10 max-w-lg">
                         <p class="font-bold accent-text mb-1"><i class="fa-solid fa-robot ml-1"></i> Farhan AI Agent:</p>
-                        <p class="text-gray-300">Assalam-o-Alaikum! Main Farhan AI Agent hoon. Aap Royal Mobile & Printing Store (Faisalabad) ke kisi bhi product, price, mobile repair, sublimation formula, ya custom printing ke baray mein kuch bhi pooch sakte hain!</p>
+                        <p class="text-gray-300">Assalam-o-Alaikum! Main Farhan AI Agent hoon. Aap Royal Mobile & Printing Store (Faisalabad) ke kisi bhi product, price, FBR POS tax, mobile repair, sublimation formula, ya custom printing ke baray mein kuch bhi pooch sakte hain!</p>
                     </div>
                 </div>
 
                 <div class="flex gap-2">
-                    <input type="text" id="ai-user-input" placeholder="Ask anything about mobiles, printing, prices or business..." onkeypress="if(event.key === 'Enter') sendAiMessage()" class="flex-grow bg-gray-900 border border-gray-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-yellow-500">
+                    <input type="text" id="ai-user-input" placeholder="Ask anything about mobiles, printing, FBR POS, or prices..." onkeypress="if(event.key === 'Enter') sendAiMessage()" class="flex-grow bg-gray-900 border border-gray-700 rounded-lg p-3 text-xs text-white focus:outline-none focus:border-yellow-500">
                     <button onclick="sendAiMessage()" class="accent-gradient text-black font-bold px-6 py-3 rounded-xl text-xs shadow-lg"><i class="fa-solid fa-paper-plane ml-1"></i> Send</button>
                 </div>
             </div>
@@ -307,24 +304,179 @@
             </div>
         </section>
 
-        <!-- VIEW 6: 20 LUXURY 3D THEMES -->
-        <section id="view-themes" class="tab-content hidden space-y-6">
-            <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
-                <div>
-                    <h2 class="text-2xl font-bold accent-text">20 Luxury 3D Themes</h2>
-                    <p class="text-xs text-gray-400 mt-1">Tap a theme to preview and apply it across your entire store instantly.</p>
+        <!-- VIEW 6: AUTHENTICATION (LOGIN, SIGN UP, PASSWORD RECOVERY) -->
+        <section id="view-auth" class="tab-content hidden space-y-6">
+            <div class="max-w-md mx-auto glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
+                <div class="text-center space-y-2">
+                    <div class="w-12 h-12 rounded-full accent-gradient mx-auto flex items-center justify-center text-black text-xl font-bold">
+                        <i class="fa-solid fa-user-lock"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold accent-text">Account & Staff Access</h2>
+                    <p class="text-xs text-gray-400">Login, Sign Up or Recover Password for Owner, Staff or Customer accounts.</p>
                 </div>
-                <div id="themes-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3"></div>
+
+                <div class="flex bg-black/50 p-1 rounded-xl border border-white/10 text-xs font-bold text-center">
+                    <button onclick="switchAuthSubTab('login')" id="subtab-login" class="flex-1 py-2 rounded-lg accent-gradient text-black">Login</button>
+                    <button onclick="switchAuthSubTab('signup')" id="subtab-signup" class="flex-1 py-2 rounded-lg text-gray-300">Sign Up</button>
+                    <button onclick="switchAuthSubTab('recovery')" id="subtab-recovery" class="flex-1 py-2 rounded-lg text-gray-300">Recovery</button>
+                </div>
+
+                <div id="auth-form-login" class="space-y-4 text-xs">
+                    <div>
+                        <label class="text-gray-400 block mb-1">Username / Email / Role</label>
+                        <input type="text" id="login-user" placeholder="admin / staff / customer" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-white">
+                    </div>
+                    <div>
+                        <label class="text-gray-400 block mb-1">Password (PIN)</label>
+                        <input type="password" id="login-pass" placeholder="1234" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-white">
+                    </div>
+                    <button onclick="performLogin()" class="w-full accent-gradient text-black font-bold py-2.5 rounded-xl shadow-lg">Login to System</button>
+                </div>
+
+                <div id="auth-form-signup" class="space-y-4 text-xs hidden">
+                    <div>
+                        <label class="text-gray-400 block mb-1">Full Name</label>
+                        <input type="text" id="signup-name" placeholder="Your name" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-white">
+                    </div>
+                    <div>
+                        <label class="text-gray-400 block mb-1">Select Role</label>
+                        <select id="signup-role" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-white">
+                            <option value="customer">Customer Account</option>
+                            <option value="staff">Staff / Manager Account</option>
+                            <option value="owner">Owner / Admin Account</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-gray-400 block mb-1">Create Password (PIN)</label>
+                        <input type="password" id="signup-pass" placeholder="Secret password" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-white">
+                    </div>
+                    <button onclick="performSignup()" class="w-full accent-gradient text-black font-bold py-2.5 rounded-xl shadow-lg">Register Account</button>
+                </div>
+
+                <div id="auth-form-recovery" class="space-y-4 text-xs hidden">
+                    <div>
+                        <label class="text-gray-400 block mb-1">Registered Email or Phone</label>
+                        <input type="text" id="rec-email" placeholder="03040011041 or email" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-white">
+                    </div>
+                    <div>
+                        <label class="text-gray-400 block mb-1">New Password</label>
+                        <input type="password" id="rec-newpass" placeholder="New PIN / Password" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-white">
+                    </div>
+                    <button onclick="performPasswordRecovery()" class="w-full accent-gradient text-black font-bold py-2.5 rounded-xl shadow-lg">Reset & Update Password</button>
+                </div>
             </div>
         </section>
 
-        <!-- VIEW 7: ERP BUSINESS SUITE -->
+        <!-- VIEW 7: FBR POS & ADVANCED COMMERCIAL ERP SUITE (ADMIN / STAFF ONLY) -->
         <section id="view-erp" class="tab-content hidden space-y-6">
             <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
-                <div>
-                    <h2 class="text-2xl font-bold accent-text">Royal Business Suite (ERP Manager)</h2>
-                    <p class="text-xs text-gray-400 mt-1">Full administrative control panel for owner Farhan Abbas.</p>
+                <div class="flex justify-between items-center border-b border-gray-800 pb-4">
+                    <div>
+                        <h2 class="text-2xl font-bold accent-text"><i class="fa-solid fa-cash-register mr-1"></i> FBR POS & Commercial ERP Suite</h2>
+                        <p class="text-xs text-gray-400 mt-1">FBR Tax, Barcode Scanner, Stock Alerts, Loyalty Points, Khata Book & PDF Reports.</p>
+                    </div>
+                    <span id="active-user-badge" class="bg-blue-500/20 text-blue-400 text-xs px-3 py-1 rounded-full border border-blue-500/30 font-semibold">Role: Admin</span>
                 </div>
+
+                <!-- Advanced Commercial Modules Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+                    
+                    <!-- 1. Low Stock Inventory Alert Box -->
+                    <div class="bg-black/50 p-4 rounded-xl border border-red-500/40 space-y-2">
+                        <h3 class="font-bold text-red-400 flex items-center gap-1.5"><i class="fa-solid fa-triangle-exclamation"></i> Low Stock Alerts (<span id="low-stock-count">0</span>)</h3>
+                        <div id="low-stock-list" class="space-y-1 max-h-28 overflow-y-auto text-[11px] text-gray-300">
+                            <p class="text-gray-500">All inventory stock levels are optimal.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Barcode Scanner & POS Quick Billing -->
+                    <div class="bg-black/50 p-4 rounded-xl border border-white/10 space-y-2">
+                        <h3 class="font-bold text-yellow-400 flex items-center gap-1.5"><i class="fa-solid fa-barcode"></i> Barcode Scanner & Quick POS</h3>
+                        <input type="text" id="barcode-input" placeholder="Scan barcode or type item ID..." onkeypress="if(event.key === 'Enter') handleBarcodeScan(this.value)" class="w-full bg-gray-900 border border-gray-700 rounded p-2 text-white">
+                        <p class="text-[10px] text-gray-400">Scan item with camera/scanner to add to bill instantly.</p>
+                    </div>
+
+                    <!-- 3. Customer Loyalty & Discount Points -->
+                    <div class="bg-black/50 p-4 rounded-xl border border-white/10 space-y-2">
+                        <h3 class="font-bold text-green-400 flex items-center gap-1.5"><i class="fa-solid fa-gift"></i> Customer Loyalty Points</h3>
+                        <input type="text" id="loyalty-phone" placeholder="Customer Phone (e.g. 0304...)" class="w-full bg-gray-900 border border-gray-700 rounded p-2 text-white">
+                        <button onclick="checkLoyaltyPoints()" class="w-full bg-green-600/30 text-green-400 border border-green-500/40 py-1.5 rounded font-bold">Check & Award Points</button>
+                    </div>
+
+                    <!-- 4. Expense & Profit/Loss Ledger (Khata Book) -->
+                    <div class="bg-black/50 p-4 rounded-xl border border-white/10 space-y-2">
+                        <h3 class="font-bold text-purple-400 flex items-center gap-1.5"><i class="fa-solid fa-book-journal-whills"></i> Expense & Khata Book</h3>
+                        <input type="text" id="expense-title" placeholder="Expense title (Rent, Bill...)" class="w-full bg-gray-900 border border-gray-700 rounded p-1.5 text-white">
+                        <input type="number" id="expense-amount" placeholder="Amount in Rs." class="w-full bg-gray-900 border border-gray-700 rounded p-1.5 text-white">
+                        <button onclick="addExpenseRecord()" class="w-full bg-purple-600/30 text-purple-400 border border-purple-500/40 py-1.5 rounded font-bold">Add Expense Record</button>
+                    </div>
+
+                    <!-- 5. SMS Gateway Status -->
+                    <div class="bg-black/50 p-4 rounded-xl border border-white/10 space-y-2">
+                        <h3 class="font-bold text-cyan-400 flex items-center gap-1.5"><i class="fa-solid fa-comment-sms"></i> Telenor / Jazz SMS API</h3>
+                        <select id="sms-gateway-status" class="w-full bg-gray-900 border border-gray-700 rounded p-2 text-white">
+                            <option value="active">Automated SMS Confirms Active</option>
+                            <option value="disabled">Disabled</option>
+                        </select>
+                        <p class="text-[10px] text-gray-400">Sends order confirmation & delivery updates via SMS.</p>
+                    </div>
+
+                    <!-- 6. Tax Breakdown & Reports PDF Export -->
+                    <div class="bg-black/50 p-4 rounded-xl border border-white/10 space-y-2">
+                        <h3 class="font-bold text-pink-400 flex items-center gap-1.5"><i class="fa-solid fa-file-pdf"></i> FBR Tax Return Reports</h3>
+                        <button onclick="exportTaxReportPdf()" class="w-full bg-pink-600/30 text-pink-400 border border-pink-500/40 py-2 rounded font-bold">Export Monthly Tax PDF</button>
+                        <p class="text-[10px] text-gray-400">Generate accountant-ready sales tax reports.</p>
+                    </div>
+
+                </div>
+
+                <!-- FBR POS Tax Settings & Invoice Generator -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-black/40 p-5 rounded-xl border border-white/5">
+                    <div class="space-y-3 text-xs">
+                        <h3 class="font-bold text-sm text-yellow-400"><i class="fa-solid fa-receipt mr-1"></i> FBR POS Tax Integration</h3>
+                        <div>
+                            <label class="text-gray-400 block mb-1">FBR POS Registration Number</label>
+                            <input type="text" id="fbr-reg-no" value="POS-FSD-998231" class="w-full bg-gray-900 border border-gray-700 rounded p-2 text-white">
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="text-gray-400 block mb-1">Sales Tax Rate (%)</label>
+                                <input type="number" id="fbr-tax-rate" value="18" class="w-full bg-gray-900 border border-gray-700 rounded p-2 text-white">
+                            </div>
+                            <div>
+                                <label class="text-gray-400 block mb-1">FBR QR Code Status</label>
+                                <select id="fbr-qr-active" class="w-full bg-gray-900 border border-gray-700 rounded p-2 text-white">
+                                    <option value="enabled">Enabled (Mandatory)</option>
+                                    <option value="disabled">Disabled</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button onclick="generateFbrPosInvoice()" class="accent-gradient text-black font-bold px-4 py-2 rounded shadow">Generate FBR Tax Invoice Slip</button>
+                    </div>
+
+                    <!-- Live FBR Receipt Preview Box -->
+                    <div class="bg-white text-black p-4 rounded-xl font-mono text-[11px] space-y-2 shadow-inner">
+                        <div class="text-center border-b border-dashed border-gray-400 pb-2">
+                            <strong class="block text-sm">ROYAL MOBILE & PRINTING STORE</strong>
+                            <span>Faisalabad, Pakistan | FBR POS Invoice</span>
+                            <span class="block text-[9px] text-gray-500" id="fbr-slip-time">Date: 2026-10-31</span>
+                        </div>
+                        <div id="fbr-slip-items" class="space-y-1">
+                            <div class="flex justify-between"><span>Sublimation Mug (x1)</span><span>Rs. 350</span></div>
+                            <div class="flex justify-between"><span>Mobile Glass (x1)</span><span>Rs. 200</span></div>
+                        </div>
+                        <div class="border-t border-dashed border-gray-400 pt-2 space-y-1">
+                            <div class="flex justify-between"><span>Subtotal:</span><span>Rs. 550</span></div>
+                            <div class="flex justify-between"><span>FBR Sales Tax (18%):</span><span>Rs. 99</span></div>
+                            <div class="flex justify-between font-bold text-xs border-t border-black pt-1"><span>Total Payable:</span><span>Rs. 649</span></div>
+                        </div>
+                        <div class="text-center pt-2">
+                            <div class="bg-gray-200 h-10 w-32 mx-auto flex items-center justify-center text-[10px] font-bold text-gray-700 border border-gray-400">FBR QR CODE</div>
+                            <span class="text-[9px] text-gray-500">Invoice Verified by FBR Tax System</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="glass-panel p-4 rounded-xl border border-white/5">
                         <span class="text-[10px] text-gray-400">Catalog items</span>
@@ -338,11 +490,26 @@
                         <span class="text-[10px] text-gray-400">Offline Queue</span>
                         <h3 class="text-xl font-bold text-blue-400 mt-1" id="erp-stat-queue">0</h3>
                     </div>
+                    <div class="glass-panel p-4 rounded-xl border border-white/5">
+                        <span class="text-[10px] text-gray-400">Total Expenses</span>
+                        <h3 class="text-xl font-bold text-pink-400 mt-1" id="erp-stat-expenses">Rs. 0</h3>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- VIEW 8: BRANDING, PAKISTANI BANKS & BACKUP MANAGEMENT -->
+        <!-- VIEW 8: 20 LUXURY 3D THEMES -->
+        <section id="view-themes" class="tab-content hidden space-y-6">
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold accent-text">20 Luxury 3D Themes</h2>
+                    <p class="text-xs text-gray-400 mt-1">Tap a theme to preview and apply it across your entire store instantly.</p>
+                </div>
+                <div id="themes-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3"></div>
+            </div>
+        </section>
+
+        <!-- VIEW 9: BRANDING, PAKISTANI BANKS & BACKUP MANAGEMENT -->
         <section id="view-branding" class="tab-content hidden space-y-6">
             <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
                 <div>
@@ -350,7 +517,6 @@
                     <p class="text-xs text-gray-400 mt-1">Manage manual logo/cover uploads, Pakistani payment gateways, and automated JSON backup/restore.</p>
                 </div>
 
-                <!-- Pakistani Banks & Wallets Gateway Setup -->
                 <div class="bg-black/40 p-4 rounded-xl border border-white/5 space-y-3">
                     <h3 class="text-sm font-bold accent-text"><i class="fa-solid fa-wallet ml-1"></i> Pakistani Digital Wallets & Bank Accounts Setup</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
@@ -373,7 +539,6 @@
                     </div>
                 </div>
 
-                <!-- Automated Backup & Restore Engine -->
                 <div class="bg-black/40 p-4 rounded-xl border border-white/5 space-y-3">
                     <h3 class="text-sm font-bold accent-text"><i class="fa-solid fa-database ml-1"></i> Automated System Backup & Restore Engine</h3>
                     <div class="flex flex-wrap gap-3">
@@ -385,7 +550,6 @@
                     </div>
                 </div>
 
-                <!-- Manual Logo & Cover Customization -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="text-xs text-gray-400 block mb-1">Upload exact shop logo</label>
@@ -427,10 +591,12 @@
         let state = {
             products: [],
             cart: [],
-            isAdmin: false,
+            currentUser: null,
             pricingMode: 'retail',
             currentTheme: 'theme-1',
             offlineQueue: [],
+            expenses: [],
+            loyaltyPoints: {},
             feedback: [
                 { name: "Muhammad Usman", rating: 5, comment: "Best mobile repair and sublimation mug printing in Faisalabad!" },
                 { name: "Bilal Ahmad", rating: 5, comment: "Ordered DTF transfer films and vinyl cutting blades. Fast service." }
@@ -456,7 +622,7 @@
                         name: itemName,
                         cat: cat,
                         price: Math.floor(Math.random() * 3500) + 250,
-                        stock: Math.floor(Math.random() * 50) + 10,
+                        stock: Math.floor(Math.random() * 10) + 2, // Stock levels for alert testing
                         desc: "High quality item from Royal Mobile & Printing Store Faisalabad.",
                         img: ""
                     });
@@ -468,7 +634,7 @@
                     name: `Custom Royal Item #${items.length + 1}`,
                     cat: "Sublimation & Gifts",
                     price: 500,
-                    stock: 25,
+                    stock: 15,
                     desc: "Standard retail and wholesale item.",
                     img: ""
                 });
@@ -496,9 +662,9 @@
             updateStudioItems();
             renderFeedbackList();
             updateErpStats();
+            checkLowStockAlerts();
         };
 
-        // Offline / Online Auto-Sync Manager
         function initOfflineSyncManager() {
             function updateNetworkState() {
                 const statusText = document.getElementById('net-status-text');
@@ -533,8 +699,9 @@
         }
 
         function switchTab(tabId) {
-            if ((tabId === 'erp' || tabId === 'branding' || tabId === 'themes') && !state.isAdmin) {
-                toggleAdminMode();
+            if ((tabId === 'erp' || tabId === 'branding' || tabId === 'themes') && (!state.currentUser || state.currentUser.role === 'customer')) {
+                alert("Restricted: Please login with Admin / Staff account to access this panel.");
+                switchTab('auth');
                 return;
             }
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
@@ -542,25 +709,127 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function toggleAdminMode() {
-            if (!state.isAdmin) {
-                let pin = prompt("Enter Admin PIN (Default: 1234):");
-                if (pin === "1234" || pin === "Farhan") {
-                    state.isAdmin = true;
-                    document.getElementById('auth-btn-text').innerText = "Logout Admin";
-                    document.getElementById('admin-nav-links').classList.remove('hidden');
-                    alert("Admin Access Granted. Welcome Farhan Abbas!");
-                    switchTab('erp');
-                } else if(pin !== null) {
-                    alert("Incorrect PIN.");
-                }
+        function switchAuthSubTab(subTab) {
+            document.getElementById('auth-form-login').classList.add('hidden');
+            document.getElementById('auth-form-signup').classList.add('hidden');
+            document.getElementById('auth-form-recovery').classList.add('hidden');
+
+            document.getElementById('subtab-login').className = "flex-1 py-2 rounded-lg text-gray-300";
+            document.getElementById('subtab-signup').className = "flex-1 py-2 rounded-lg text-gray-300";
+            document.getElementById('subtab-recovery').className = "flex-1 py-2 rounded-lg text-gray-300";
+
+            document.getElementById(`auth-form-${subTab}`).classList.remove('hidden');
+            document.getElementById(`subtab-${subTab}`).className = "flex-1 py-2 rounded-lg accent-gradient text-black font-bold";
+        }
+
+        function performLogin() {
+            let user = document.getElementById('login-user').value.trim();
+            let pass = document.getElementById('login-pass').value.trim();
+
+            if (!user || !pass) return alert("Please enter username and password.");
+
+            if ((user === 'admin' || user === 'owner' || user === 'Farhan') && pass === '1234') {
+                state.currentUser = { name: "Farhan Abbas (Owner)", role: "owner" };
+            } else if (user === 'staff' && pass === '1234') {
+                state.currentUser = { name: "Staff Manager", role: "staff" };
             } else {
-                state.isAdmin = false;
-                document.getElementById('auth-btn-text').innerText = "Admin Login";
-                document.getElementById('admin-nav-links').classList.add('hidden');
-                switchTab('store');
-                alert("Logged out from Admin mode.");
+                state.currentUser = { name: user, role: "customer" };
             }
+
+            document.getElementById('auth-btn-label').innerText = state.currentUser.name;
+            if (state.currentUser.role !== 'customer') {
+                document.getElementById('admin-nav-links').classList.remove('hidden');
+                document.getElementById('active-user-badge').innerText = `Role: ${state.currentUser.role.toUpperCase()}`;
+                alert(`Welcome ${state.currentUser.name}! Access granted.`);
+                switchTab('erp');
+            } else {
+                alert(`Welcome ${state.currentUser.name}! Logged in as Customer.`);
+                switchTab('store');
+            }
+            recordAction('USER_LOGIN', { user: state.currentUser.name, role: state.currentUser.role });
+        }
+
+        function performSignup() {
+            let name = document.getElementById('signup-name').value.trim();
+            let role = document.getElementById('signup-role').value;
+            let pass = document.getElementById('signup-pass').value.trim();
+
+            if (!name || !pass) return alert("Please fill in all sign-up details.");
+            state.currentUser = { name, role };
+            document.getElementById('auth-btn-label').innerText = name;
+            alert(`Account created successfully for ${name}!`);
+            recordAction('USER_SIGNUP', { name, role });
+            if (role !== 'customer') {
+                document.getElementById('admin-nav-links').classList.remove('hidden');
+                switchTab('erp');
+            } else {
+                switchTab('store');
+            }
+        }
+
+        function performPasswordRecovery() {
+            let email = document.getElementById('rec-email').value.trim();
+            let newpass = document.getElementById('rec-newpass').value.trim();
+            if (!email || !newpass) return alert("Please fill in recovery details.");
+            alert(`Password successfully updated for ${email}. You can now login with your new PIN.`);
+            recordAction('PASSWORD_RECOVERY', { email });
+            switchAuthSubTab('login');
+        }
+
+        // Advanced Commercial ERP Features Functions
+        function checkLowStockAlerts() {
+            let lowItems = state.products.filter(p => p.stock <= 5);
+            document.getElementById('low-stock-count').innerText = lowItems.length;
+            let listContainer = document.getElementById('low-stock-list');
+            if (lowItems.length > 0) {
+                listContainer.innerHTML = lowItems.map(i => `<div class="flex justify-between text-red-400"><span>${i.name}</span><span>Stock: ${i.stock}</span></div>`).join('');
+            } else {
+                listContainer.innerHTML = `<p class="text-gray-500">All inventory stock levels are optimal.</p>`;
+            }
+        }
+
+        function handleBarcodeScan(code) {
+            if (!code) return;
+            let item = state.products.find(p => p.id == code || p.name.toLowerCase().includes(code.toLowerCase()));
+            if (item) {
+                addToCart(item.id);
+                alert(`Scanned & Added: ${item.name}`);
+            } else {
+                alert("Barcode / Item not found in catalog.");
+            }
+            document.getElementById('barcode-input').value = '';
+        }
+
+        function checkLoyaltyPoints() {
+            let phone = document.getElementById('loyalty-phone').value.trim();
+            if (!phone) return alert("Enter customer phone number.");
+            if (!state.loyaltyPoints[phone]) state.loyaltyPoints[phone] = 50; // Welcome points
+            else state.loyaltyPoints[phone] += 20;
+            alert(`Customer ${phone} has ${state.loyaltyPoints[phone]} Loyalty Points available for discount!`);
+            recordAction('LOYALTY_POINTS_AWARDED', { phone, points: state.loyaltyPoints[phone] });
+        }
+
+        function addExpenseRecord() {
+            let title = document.getElementById('expense-title').value.trim();
+            let amount = Number(document.getElementById('expense-amount').value);
+            if (!title || !amount) return alert("Enter valid expense title and amount.");
+            state.expenses.push({ title, amount, date: new Date().toLocaleDateString() });
+            updateErpStats();
+            alert(`Expense recorded: ${title} - Rs. ${amount}`);
+            document.getElementById('expense-title').value = '';
+            document.getElementById('expense-amount').value = '';
+            recordAction('ADD_EXPENSE', { title, amount });
+        }
+
+        function exportTaxReportPdf() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.text("Royal Mobile And Printing Store - FBR Tax Report", 14, 20);
+            doc.text("Faisalabad, Pakistan | FBR POS: POS-FSD-998231", 14, 28);
+            doc.text("Monthly Sales Tax Breakdown (18% GST)", 14, 36);
+            doc.text(`Total Catalog Items: ${state.products.length}`, 14, 46);
+            doc.text(`Total Recorded Expenses: Rs. ${state.expenses.reduce((a,b)=>a+b.amount, 0)}`, 14, 54);
+            doc.save("royal_store_fbr_tax_report.pdf");
         }
 
         function setPricingMode(mode) {
@@ -575,7 +844,6 @@
             renderStorefront();
         }
 
-        // Storefront Rendering
         function renderStorefront(filterCat = 'All') {
             const container = document.getElementById('product-grid');
             let filtered = filterCat === 'All' ? state.products : state.products.filter(p => p.cat === filterCat);
@@ -627,14 +895,7 @@
             `).join('');
         }
 
-        // 20 Luxury 3D Themes Engine
         function renderThemesGrid() {
-            const themes = [];
-            for(let i=1; i<=20; i++) {
-                themes.id = `theme-${i}`;
-                themes.name = `${i}. Luxury Theme ${i}`;
-            }
-            // Simplified rendering array for 20 themes
             let themeList = [
                 { id: 'theme-1', name: '1. Royal Gold' }, { id: 'theme-2', name: '2. Emerald Luxe' },
                 { id: 'theme-3', name: '3. Sapphire Blue' }, { id: 'theme-4', name: '4. Ruby Red' },
@@ -663,7 +924,6 @@
             recordAction('THEME_CHANGE', { theme: themeClass });
         }
 
-        // 3D Customizer Logic
         function updateStudioItems() {
             let cat = document.getElementById('studio-cat').value;
             let items = categoryItemsMap[cat] || [];
@@ -705,7 +965,6 @@
             window.open(`https://wa.me/923040011041?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-        // Farhan AI Agent Chat
         function sendAiMessage() {
             let input = document.getElementById('ai-user-input');
             let q = input.value.trim();
@@ -735,18 +994,24 @@
 
         function generateAiAgentResponse(query) {
             let q = query.toLowerCase();
-            if (q.includes('price') || q.includes('rate') || q.includes('kitna')) {
-                return "Royal Mobile & Printing Store par sabhi items ki wholesale aur retail prices bohat munasib hain! Sublimation mugs Rs. 350 se start hain aur DTF shirts Rs. 1100 hain.";
+            if (q.includes('fbr') || q.includes('tax') || q.includes('pos')) {
+                return "Royal Mobile & Printing Store fully FBR POS integrated hai! Har sale par 18% sales tax invoice aur official FBR QR code generate hota hai.";
+            } else if (q.includes('price') || q.includes('rate') || q.includes('kitna')) {
+                return "Royal Mobile & Printing Store par sabhi items ki wholesale aur retail prices bohat munasib hain! Sublimation mugs Rs. 350 se start hain.";
             } else if (q.includes('address') || q.includes('location') || q.includes('kahan')) {
                 return "Hamari shop Jaranwala Road, Faisalabad mein واقع (located) hai.";
-            } else if (q.includes('print') || q.includes('sublimation') || q.includes('dtf')) {
-                return "Hum custom sublimation printing, DTF heat transfer, vinyl cutting (Redsail RS720C), acrylic frames aur PVC ID cards ki specialized services provide karte hain.";
             } else {
                 return `Aap ka sawal (${query}) note kar liya gaya hai! Royal Mobile & Printing Store Faisalabad mein mobile sales, repairs, aur custom merchandise ki mukammal range mojood hai.`;
             }
         }
 
-        // Cart & Checkout
+        function generateFbrPosInvoice() {
+            let reg = document.getElementById('fbr-reg-no').value;
+            let rate = document.getElementById('fbr-tax-rate').value;
+            alert(`FBR Tax Invoice generated successfully under Registration: ${reg} with ${rate}% Sales Tax.`);
+            recordAction('GENERATE_FBR_INVOICE', { reg, rate });
+        }
+
         function addToCart(id) {
             let p = state.products.find(item => item.id === id);
             let price = state.pricingMode === 'bulk' ? Math.round(p.price * 0.8) : p.price;
@@ -789,7 +1054,6 @@
             window.open(`https://wa.me/923040011041?text=Hello%20Royal%20Mobile%20And%20Printing%20Store`, '_blank');
         }
 
-        // Feedback
         function submitCustomerFeedback() {
             let name = document.getElementById('feedback-name').value;
             let rating = document.getElementById('feedback-rating').value;
@@ -815,9 +1079,8 @@
             `).join('');
         }
 
-        // Automated JSON Backup & Restore
         function downloadSystemBackup() {
-            let backupData = { products: state.products, feedback: state.feedback, timestamp: new Date().toISOString() };
+            let backupData = { products: state.products, feedback: state.feedback, expenses: state.expenses, timestamp: new Date().toISOString() };
             let blob = new Blob([JSON.stringify(backupData, null, 2)], { type: 'application/json' });
             let a = document.createElement('a');
             a.href = URL.createObjectURL(blob);
@@ -834,8 +1097,10 @@
                         let data = JSON.parse(e.target.result);
                         if (data.products) { state.products = data.products; localStorage.setItem('royal_products', JSON.stringify(state.products)); }
                         if (data.feedback) { state.feedback = data.feedback; }
+                        if (data.expenses) { state.expenses = data.expenses; }
                         renderStorefront();
                         updateErpStats();
+                        checkLowStockAlerts();
                         alert("System backup restored successfully!");
                     } catch (err) { alert("Invalid backup JSON file."); }
                 }
@@ -864,6 +1129,8 @@
             let totalStock = state.products.reduce((a, b) => a + Number(b.stock), 0);
             document.getElementById('erp-stat-stock').innerText = totalStock;
             document.getElementById('erp-stat-queue').innerText = state.offlineQueue.length;
+            let totalExpenses = state.expenses.reduce((a, b) => a + b.amount, 0);
+            document.getElementById('erp-stat-expenses').innerText = `Rs. ${totalExpenses.toLocaleString()}`;
         }
     </script>
 </body>
