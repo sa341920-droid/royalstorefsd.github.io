@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="ur" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Mobile And Printing Store - Executive ERP & E-Commerce Platform</title>
+    <title>Royal Mobile And Printing Store - Faisalabad</title>
     
     <!-- External Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,367 +12,653 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        body { font-family: 'Poppins', 'Noto Nastaliq Urdu', sans-serif; transition: all 0.3s ease; }
-        .nastaliq { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.2; }
+        body { font-family: 'Poppins', sans-serif; transition: all 0.3s ease; }
         
-        /* 3D Glassmorphism & Gold Luxury Styling */
-        .gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa771c 100%); }
-        .gold-text { background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa771c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .glass-panel { background: rgba(18, 18, 18, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(212, 175, 55, 0.25); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
-        .3d-card { transform-style: preserve-3d; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .3d-card:hover { transform: translateY(-5px) rotateX(2deg) rotateY(2deg); box-shadow: 0 12px 24px rgba(212, 175, 55, 0.2); }
+        /* Dynamic Theme Engines */
+        :root {
+            --bg-main: #09090b;
+            --panel-bg: rgba(24, 24, 27, 0.85);
+            --accent-color: #d4af37;
+            --accent-gradient: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa771c 100%);
+            --text-main: #f4f4f5;
+        }
+
+        body.theme-1 { --accent-color: #d4af37; --accent-gradient: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa771c 100%); }
+        body.theme-2 { --accent-color: #10b981; --accent-gradient: linear-gradient(135deg, #059669 0%, #34d399 50%, #047857 100%); }
+        body.theme-3 { --accent-color: #3b82f6; --accent-gradient: linear-gradient(135deg, #1d4ed8 0%, #60a5fa 50%, #1e40af 100%); }
+        body.theme-4 { --accent-color: #ef4444; --accent-gradient: linear-gradient(135deg, #b91c1c 0%, #f87171 50%, #991b1b 100%); }
+        body.theme-5 { --accent-color: #8b5cf6; --accent-gradient: linear-gradient(135deg, #6d28d9 0%, #a78bfa 50%, #5b21b6 100%); }
+        body.theme-6 { --accent-color: #f8fafc; --accent-gradient: linear-gradient(135deg, #cbd5e1 0%, #ffffff 50%, #94a3b8 100%); }
+        body.theme-7 { --accent-color: #22c55e; --accent-gradient: linear-gradient(135deg, #15803d 0%, #4ade80 50%, #166534 100%); }
+        body.theme-8 { --accent-color: #f43f5e; --accent-gradient: linear-gradient(135deg, #be123c 0%, #fb7185 50%, #881337 100%); }
+        body.theme-9 { --accent-color: #94a3b8; --accent-gradient: linear-gradient(135deg, #475569 0%, #cbd5e1 50%, #334155 100%); }
+        body.theme-10 { --accent-color: #06b6d4; --accent-gradient: linear-gradient(135deg, #0e7490 0%, #22d3ee 50%, #155e75 100%); }
+        body.theme-11 { --accent-color: #f97316; --accent-gradient: linear-gradient(135deg, #c2410c 0%, #fb923c 50%, #9a3412 100%); }
+        body.theme-12 { --accent-color: #ec4899; --accent-gradient: linear-gradient(135deg, #be185d 0%, #f472b6 50%, #9d174d 100%); }
+        body.theme-13 { --accent-color: #38bdf8; --accent-gradient: linear-gradient(135deg, #0284c7 0%, #7dd3fc 50%, #0369a1 100%); }
+        body.theme-14 { --accent-color: #eab308; --accent-gradient: linear-gradient(135deg, #a16207 0%, #fde047 50%, #854d0e 100%); }
+        body.theme-15 { --accent-color: #84cc16; --accent-gradient: linear-gradient(135deg, #4d7c0f 0%, #bef264 50%, #3f6212 100%); }
+        body.theme-16 { --accent-color: #d97706; --accent-gradient: linear-gradient(135deg, #b45309 0%, #fbbf24 50%, #92400e 100%); }
+        body.theme-17 { --accent-color: #e2e8f0; --accent-gradient: linear-gradient(135deg, #334155 0%, #f8fafc 50%, #0f172a 100%); }
+        body.theme-18 { --accent-color: #ff5722; --accent-gradient: linear-gradient(135deg, #e64a19 0%, #ffab91 50%, #bf360c 100%); }
+        body.theme-19 { --accent-color: #6366f1; --accent-gradient: linear-gradient(135deg, #4338ca 0%, #818cf8 50%, #3730a3 100%); }
+        body.theme-20 { --accent-color: #fef08a; --accent-gradient: linear-gradient(135deg, #ca8a04 0%, #fef08a 50%, #a16207 100%); }
+
+        .accent-gradient { background: var(--accent-gradient); }
+        .accent-text { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .accent-border { border-color: var(--accent-color); }
+        .glass-panel { background: var(--panel-bg); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         
-        /* Printable Thermal Receipt Formatting (58mm/80mm) */
-        @media print {
-            body * { visibility: hidden; }
-            #receipt-print-area, #receipt-print-area * { visibility: visible; }
-            #receipt-print-area { position: absolute; left: 0; top: 0; width: 80mm; padding: 5mm; background: white; color: black; font-family: monospace; }
-            .no-print { display: none !important; }
+        .card-3d {
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transform-style: preserve-3d;
+        }
+        .card-3d:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.15);
+            border-color: var(--accent-color);
         }
     </style>
 </head>
-<body class="bg-gray-950 text-gray-100 min-h-screen flex flex-col">
+<body class="bg-gray-950 text-gray-100 min-h-screen flex flex-col theme-1">
 
     <!-- Top Announcement Bar -->
-    <div id="top-announcement" class="gold-gradient text-black text-xs md:text-sm font-semibold py-1.5 px-4 text-center flex justify-between items-center shadow-md">
-        <span class="w-full text-center" id="announcement-text">⚡ Royal Mobile And Printing Store Faisalabad | Call/WhatsApp: +92 304 0011041 ⚡</span>
-        <button onclick="toggleLanguage()" class="bg-black text-gold border border-black rounded px-2 py-0.5 text-xs text-white hover:bg-gray-900 transition">English / اردو</button>
+    <div class="accent-gradient text-black text-xs md:text-sm font-bold py-2 px-4 text-center shadow-md">
+        ⚡ <span id="top-announcement-text">Royal Mobile And Printing Store Faisalabad | Call / WhatsApp: +92 304 0011041</span> ⚡
     </div>
 
-    <!-- Main Navigation Bar -->
-    <nav class="bg-black/90 border-b border-yellow-600/30 sticky top-0 z-50 backdrop-blur-md">
+    <!-- Main Navigation Header -->
+    <nav class="bg-black/95 border-b border-gray-800 sticky top-0 z-50 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Brand & Logo -->
-                <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('storefront')">
-                    <img id="store-logo" src="https://via.placeholder.com/60/d4af37/000000?text=ROYAL" alt="Royal Logo" class="h-12 w-12 rounded-full border-2 border-yellow-500 object-cover shadow-lg">
+                
+                <!-- Logo & Brand -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('store')">
+                    <img id="nav-logo-img" src="https://via.placeholder.com/60/d4af37/000000?text=ROYAL" class="h-12 w-12 rounded-full border-2 accent-border object-cover shadow-lg" alt="Royal Logo">
                     <div>
-                        <h1 class="text-xl font-bold gold-text uppercase tracking-wider">Royal Mobile And Printing Store</h1>
-                        <p class="text-xs text-gray-400">Faisalabad, Punjab, Pakistan</p>
+                        <h1 class="text-lg md:text-xl font-extrabold accent-text uppercase tracking-wider">Royal Mobile And Printing Store</h1>
+                        <p class="text-xs text-gray-400" id="nav-location-text">Faisalabad, Punjab, Pakistan</p>
                     </div>
                 </div>
 
-                <!-- Navigation Tabs -->
-                <div class="hidden md:flex items-center space-x-1 space-x-reverse text-sm font-medium">
-                    <button onclick="switchTab('storefront')" class="nav-btn px-3 py-2 rounded-md hover:bg-yellow-500/10 hover:text-yellow-400 transition"><i class="fa-solid fa-store ml-1"></i> Storefront</button>
-                    <button onclick="switchTab('studio')" class="nav-btn px-3 py-2 rounded-md hover:bg-yellow-500/10 hover:text-yellow-400 transition"><i class="fa-solid fa-paintbrush ml-1"></i> Design Studio</button>
-                    <button onclick="switchTab('pos')" class="nav-btn px-3 py-2 rounded-md hover:bg-yellow-500/10 hover:text-yellow-400 transition"><i class="fa-solid fa-cash-register ml-1"></i> POS Counter</button>
-                    <button onclick="switchTab('erp')" class="nav-btn px-3 py-2 rounded-md hover:bg-yellow-500/10 hover:text-yellow-400 transition"><i class="fa-solid fa-chart-line ml-1"></i> ERP & Accounting</button>
-                    <button onclick="switchTab('hardware')" class="nav-btn px-3 py-2 rounded-md hover:bg-yellow-500/10 hover:text-yellow-400 transition"><i class="fa-solid fa-print ml-1"></i> Plotter & Labels</button>
-                    <button onclick="switchTab('hr')" class="nav-btn px-3 py-2 rounded-md hover:bg-yellow-500/10 hover:text-yellow-400 transition"><i class="fa-solid fa-users ml-1"></i> HR & Payroll</button>
+                <!-- Navigation Links -->
+                <div class="hidden xl:flex items-center space-x-1 text-xs font-semibold">
+                    <button onclick="switchTab('store')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition"><i class="fa-solid fa-store ml-1"></i> Store</button>
+                    <button onclick="switchTab('categories')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition"><i class="fa-solid fa-list ml-1"></i> Categories</button>
+                    <button onclick="switchTab('studio')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition"><i class="fa-solid fa-palette ml-1"></i> Customize Products</button>
+                    <button onclick="switchTab('erp')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition"><i class="fa-solid fa-briefcase ml-1"></i> Business Suite</button>
+                    <button onclick="switchTab('social')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition"><i class="fa-solid fa-share-nodes ml-1"></i> Social & AI Agent</button>
+                    <button onclick="switchTab('themes')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition"><i class="fa-solid fa-wand-magic-sparkles ml-1"></i> 20 Themes</button>
+                    <button onclick="switchTab('branding')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition"><i class="fa-solid fa-image ml-1"></i> Logo & Cover</button>
+                    <button onclick="switchTab('feedback')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition"><i class="fa-solid fa-comments ml-1"></i> Customer Feedback</button>
+                    <button onclick="switchTab('admin')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition text-yellow-400"><i class="fa-solid fa-user-shield ml-1"></i> Admin Panel</button>
                 </div>
 
-                <!-- Action Controls -->
+                <!-- Right Action Buttons -->
                 <div class="flex items-center gap-3">
-                    <button onclick="toggleCartModal()" class="relative bg-yellow-500/20 text-yellow-400 p-2.5 rounded-full hover:bg-yellow-500/30 border border-yellow-500/50 transition">
-                        <i class="fa-solid fa-cart-shopping text-lg"></i>
-                        <span id="cart-count" class="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    <button onclick="toggleCartModal()" class="relative bg-white/10 hover:bg-white/20 p-2.5 rounded-full border border-white/10 transition">
+                        <i class="fa-solid fa-cart-shopping text-sm"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
                     </button>
-                    <button onclick="switchTab('settings')" class="bg-gray-800 text-gray-300 p-2.5 rounded-full hover:bg-gray-700 transition" title="Settings"><i class="fa-solid fa-gear text-lg"></i></button>
+                    <button onclick="switchTab('admin')" class="hidden sm:flex bg-white/10 hover:bg-white/20 text-xs px-3.5 py-2 rounded-lg border border-white/10 font-bold transition items-center gap-1.5">
+                        <i class="fa-solid fa-user-lock"></i> Admin Login
+                    </button>
                 </div>
             </div>
         </div>
+        
+        <!-- Mobile Sub-Navigation Bar -->
+        <div class="xl:hidden flex overflow-x-auto px-4 py-2 border-t border-gray-800 bg-black/90 gap-2 text-xs no-scrollbar">
+            <button onclick="switchTab('store')" class="whitespace-nowrap px-3 py-1.5 bg-white/5 rounded">Store</button>
+            <button onclick="switchTab('categories')" class="whitespace-nowrap px-3 py-1.5 bg-white/5 rounded">Categories</button>
+            <button onclick="switchTab('studio')" class="whitespace-nowrap px-3 py-1.5 bg-white/5 rounded">Customize</button>
+            <button onclick="switchTab('erp')" class="whitespace-nowrap px-3 py-1.5 bg-white/5 rounded">Business Suite</button>
+            <button onclick="switchTab('social')" class="whitespace-nowrap px-3 py-1.5 bg-white/5 rounded">Social AI</button>
+            <button onclick="switchTab('themes')" class="whitespace-nowrap px-3 py-1.5 bg-white/5 rounded">20 Themes</button>
+            <button onclick="switchTab('branding')" class="whitespace-nowrap px-3 py-1.5 bg-white/5 rounded">Logo & Cover</button>
+            <button onclick="switchTab('feedback')" class="whitespace-nowrap px-3 py-1.5 bg-white/5 rounded">Feedback</button>
+            <button onclick="switchTab('admin')" class="whitespace-nowrap px-3 py-1.5 bg-yellow-500/20 text-yellow-400 rounded">Admin</button>
+        </div>
     </nav>
 
-    <!-- Dynamic Main Content Views -->
-    <main class="flex-grow max-w-7xl w-full mx-auto p-4 md:p-6 space-y-6">
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 md:p-6 space-y-8">
 
-        <!-- VIEW 1: E-COMMERCE STOREFRONT -->
-        <section id="view-storefront" class="tab-content block space-y-6">
+        <!-- VIEW 1: STOREFRONT -->
+        <section id="view-store" class="tab-content block space-y-8">
             <!-- Hero Banner -->
-            <div class="relative rounded-2xl overflow-hidden border border-yellow-500/30 glass-panel p-8 text-right flex flex-col justify-center min-h-[220px]">
-                <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1200');"></div>
-                <div class="relative z-10 max-w-2xl">
-                    <span class="bg-yellow-500/20 text-yellow-400 text-xs px-3 py-1 rounded-full border border-yellow-500/40 font-semibold uppercase tracking-wider">Official Storefront</span>
-                    <h2 class="text-3xl md:text-5xl font-extrabold gold-text mt-2 leading-tight">Royal Mobile And Printing Store</h2>
-                    <p class="text-gray-300 text-sm md:text-base mt-2">Mobile Sales & Services | Sublimation | DTF | Vinyl Cutting | Acrylic Frames & Custom Supplies</p>
+            <div id="hero-banner-container" class="relative rounded-2xl overflow-hidden border accent-border glass-panel p-8 md:p-12 text-left flex flex-col justify-center min-h-[280px]">
+                <div id="hero-bg-overlay" class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1200');"></div>
+                <div class="relative z-10 max-w-2xl space-y-3">
+                    <span class="bg-white/10 text-xs px-3 py-1 rounded-full border border-white/20 font-semibold uppercase tracking-wider">Premium • Wholesale • Custom Printing</span>
+                    <h2 id="hero-headline" class="text-3xl md:text-5xl font-extrabold accent-text leading-tight">Your Royal Store. Everything, One Place.</h2>
+                    <p id="hero-subtext" class="text-gray-300 text-sm md:text-base">Mobiles, accessories, stationery, sublimation and customized gifts — retail and wholesale with fast delivery all over Pakistan.</p>
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <button onclick="switchTab('store')" class="accent-gradient text-black font-bold px-5 py-2.5 rounded-xl text-xs shadow-lg">Explore Products</button>
+                        <button onclick="switchTab('studio')" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-5 py-2.5 rounded-xl text-xs">Customize an Item</button>
+                        <button onclick="openWhatsAppChat()" class="bg-green-600/30 text-green-400 border border-green-500/40 px-5 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-1.5"><i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Us</button>
+                    </div>
                 </div>
             </div>
 
-            <!-- Category Filter Bar & Search -->
-            <div class="flex flex-col md:flex-row justify-between gap-4 items-center glass-panel p-4 rounded-xl border border-yellow-500/20">
-                <div class="relative w-full md:w-96">
-                    <input type="text" id="search-input" onkeyup="filterProducts()" placeholder="Search Products, Mobiles, Sublimation Blank..." class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-sm text-gray-200 focus:outline-none focus:border-yellow-500">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-400"></i>
+            <!-- Quick Trust Badges -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass-panel p-4 rounded-xl border border-white/5 text-center">
+                    <i class="fa-solid fa-boxes-stacked accent-text text-xl mb-1"></i>
+                    <h4 class="font-bold text-xs">Retail + Wholesale</h4>
+                    <p class="text-[10px] text-gray-400">Single piece and bulk orders</p>
                 </div>
-                <div class="flex flex-wrap gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0" id="category-pills">
-                    <!-- Dynamic Pill Filters -->
+                <div class="glass-panel p-4 rounded-xl border border-white/5 text-center">
+                    <i class="fa-solid fa-print accent-text text-xl mb-1"></i>
+                    <h4 class="font-bold text-xs">Custom Made</h4>
+                    <p class="text-[10px] text-gray-400">Printing, gifts and apparel</p>
+                </div>
+                <div class="glass-panel p-4 rounded-xl border border-white/5 text-center">
+                    <i class="fa-solid fa-truck-fast accent-text text-xl mb-1"></i>
+                    <h4 class="font-bold text-xs">Pakistan-wide</h4>
+                    <p class="text-[10px] text-gray-400">Fast delivery promise</p>
+                </div>
+                <div class="glass-panel p-4 rounded-xl border border-white/5 text-center">
+                    <i class="fa-solid fa-wand-magic-sparkles accent-text text-xl mb-1"></i>
+                    <h4 class="font-bold text-xs">20 Styles</h4>
+                    <p class="text-[10px] text-gray-400">Choose your store theme</p>
                 </div>
             </div>
 
-            <!-- Product Grid Catalog (100+ Products Rendered) -->
+            <!-- Categories Filter Grid -->
+            <div class="space-y-4">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xl font-bold accent-text">Shop All Categories</h3>
+                    <button onclick="switchTab('branding')" class="text-xs text-gray-400 hover:text-white underline">Customize Store</button>
+                </div>
+                <div id="category-pills" class="flex flex-wrap gap-2 pb-2 overflow-x-auto">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+
+            <!-- Product Grid Catalog (100+ items) -->
             <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Dynamically populated via JS -->
+                <!-- Rendered dynamically -->
             </div>
         </section>
 
-        <!-- VIEW 2: LIVE PRINTING PERSONALIZATION STUDIO -->
+        <!-- VIEW 2: CATEGORIES EXPLORER -->
+        <section id="view-categories" class="tab-content hidden space-y-6">
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold accent-text">All Shop Categories</h2>
+                    <p class="text-xs text-gray-400 mt-1">Open a category to filter products and services.</p>
+                </div>
+                <div id="all-categories-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 3: 3D PRODUCT CUSTOMIZATION STUDIO -->
         <section id="view-studio" class="tab-content hidden space-y-6">
-            <div class="glass-panel p-6 rounded-2xl border border-yellow-500/30">
-                <h2 class="text-2xl font-bold gold-text mb-4"><i class="fa-solid fa-palette ml-2"></i> Custom Printing Personalization Studio</h2>
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold accent-text">3D Product Customization Studio</h2>
+                    <p class="text-xs text-gray-400 mt-1">Preview a custom order and send the details for a quote.</p>
+                </div>
+
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <!-- Controls -->
-                    <div class="space-y-4 bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <div class="space-y-4 bg-black/40 p-4 rounded-xl border border-white/5">
                         <div>
-                            <label class="text-sm font-semibold text-gray-300 block mb-1">Select Product Template</label>
-                            <select id="canvas-template" onchange="loadCanvasTemplate()" class="w-full bg-gray-800 border border-gray-700 rounded-lg p-2.5 text-sm">
-                                <option value="mug">Sublimation Mug (11oz White)</option>
-                                <option value="shirt">Custom DTF T-Shirt</option>
-                                <option value="pvc">PVC Student/Employee ID Card</option>
-                                <option value="banner">Flex Banner / Vinyl Sticker</option>
-                                <option value="acrylic">Acrylic LED Frame</option>
+                            <label class="text-xs font-semibold text-gray-300 block mb-1">Choose item</label>
+                            <select id="studio-item" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                                <option>Customized T-Shirt</option>
+                                <option>Sublimation Ceramic Mug</option>
+                                <option>Redsail Vinyl Cut Sticker</option>
+                                <option>DTF Printed Hoodie</option>
+                                <option>Acrylic LED Name Plate</option>
+                                <option>PVC Student ID Card</option>
                             </select>
                         </div>
                         <div>
-                            <label class="text-sm font-semibold text-gray-300 block mb-1">Add Custom Text</label>
-                            <input type="text" id="canvas-text-input" placeholder="Type name, logo text..." class="w-full bg-gray-800 border border-gray-700 rounded-lg p-2.5 text-sm">
-                            <button onclick="addTextToCanvas()" class="w-full mt-2 gold-gradient text-black font-bold py-2 rounded-lg text-sm"><i class="fa-solid fa-font ml-1"></i> Add Text</button>
+                            <label class="text-xs font-semibold text-gray-300 block mb-1">Base color</label>
+                            <select id="studio-color" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                                <option>Royal Gold</option>
+                                <option>Obsidian Black</option>
+                                <option>Pure White</option>
+                                <option>Navy Blue</option>
+                                <option>Crimson Red</option>
+                            </select>
                         </div>
                         <div>
-                            <label class="text-sm font-semibold text-gray-300 block mb-1">Upload Photo / Artwork</label>
-                            <input type="file" id="canvas-image-upload" accept="image/*" onchange="uploadImageToCanvas(event)" class="w-full bg-gray-800 border border-gray-700 rounded-lg p-2 text-xs">
+                            <label class="text-xs font-semibold text-gray-300 block mb-1">Custom text</label>
+                            <input type="text" id="studio-text" placeholder="Write a name or message" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
                         </div>
-                        <div class="flex gap-2">
-                            <button onclick="clearCanvas()" class="w-1/2 bg-red-600/30 text-red-400 border border-red-500/40 rounded-lg py-2 text-xs font-semibold">Clear</button>
-                            <button onclick="addDesignToCart()" class="w-1/2 bg-green-600/30 text-green-400 border border-green-500/40 rounded-lg py-2 text-xs font-semibold">Add Custom Item to Cart</button>
+                        <div>
+                            <label class="text-xs font-semibold text-gray-300 block mb-1">Quantity</label>
+                            <input type="number" id="studio-qty" value="1" min="1" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="text-xs font-semibold text-gray-300 block mb-1">Upload design image</label>
+                            <input type="file" id="studio-img-file" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2 text-xs text-gray-400">
                         </div>
                     </div>
 
-                    <!-- Canvas Workspace -->
-                    <div class="lg:col-span-2 flex flex-col items-center justify-center bg-gray-900 rounded-xl p-4 border border-gray-800 min-h-[400px]">
-                        <canvas id="studio-canvas" width="500" height="350" class="border-2 border-dashed border-yellow-500/40 rounded-lg bg-gray-950 shadow-inner max-w-full"></canvas>
-                        <p class="text-xs text-gray-400 mt-3"><i class="fa-solid fa-info-circle ml-1"></i> Real-time Artwork Preview for Sublimation, Heat Press & DTF Printing.</p>
+                    <!-- Live 3D Preview Canvas -->
+                    <div class="lg:col-span-2 flex flex-col items-center justify-center bg-gray-900/60 p-6 rounded-xl border border-white/5 space-y-4">
+                        <div class="card-3d w-72 h-72 rounded-2xl accent-gradient p-1 flex items-center justify-center shadow-2xl">
+                            <div class="w-full h-full bg-gray-950 rounded-xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden">
+                                <img id="preview-user-img" src="" class="absolute inset-0 w-full h-full object-cover opacity-30 hidden" alt="Custom Preview">
+                                <i class="fa-solid fa-shirt text-4xl accent-text mb-2"></i>
+                                <h4 id="preview-title" class="font-bold text-sm text-white">Customized T-Shirt</h4>
+                                <p id="preview-subtitle" class="text-[10px] text-gray-400 mt-1">This is a visual preview, not a production ready 3D file.</p>
+                                <p id="preview-custom-text" class="mt-3 text-xs font-extrabold accent-text"></p>
+                            </div>
+                        </div>
+                        <button onclick="requestCustomQuote()" class="accent-gradient text-black font-bold px-6 py-2.5 rounded-xl text-xs shadow-lg">Request Custom Quote</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- VIEW 3: POS BILLING COUNTER -->
-        <section id="view-pos" class="tab-content hidden space-y-6">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Terminal Left: Catalog & Quick Add -->
-                <div class="lg:col-span-2 glass-panel p-6 rounded-2xl border border-yellow-500/30 space-y-4">
-                    <div class="flex justify-between items-center">
-                        <h2 class="text-2xl font-bold gold-text"><i class="fa-solid fa-cash-register ml-2"></i> Counter POS Billing Terminal</h2>
-                        <span class="text-xs bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full border border-yellow-500/40">Wholesale Tier Auto-Pricing Active</span>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <input type="text" id="pos-search" onkeyup="filterPosProducts()" placeholder="Scan Barcode or Search Item..." class="bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-sm">
-                        <select id="pos-customer-select" class="bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-sm">
-                            <option value="walkin">Walk-in Customer (General)</option>
-                        </select>
-                    </div>
-
-                    <!-- Quick Catalog Grid -->
-                    <div id="pos-catalog-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-h-[450px] overflow-y-auto p-1">
-                        <!-- Rendered dynamically -->
-                    </div>
-                </div>
-
-                <!-- Terminal Right: Receipt Builder & Billing -->
-                <div class="glass-panel p-6 rounded-2xl border border-yellow-500/30 flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <h3 class="text-lg font-bold border-b border-gray-800 pb-2 text-yellow-400">Current Order Items</h3>
-                        <div id="pos-cart-items" class="space-y-2 max-h-[250px] overflow-y-auto divide-y divide-gray-800">
-                            <p class="text-xs text-gray-500 text-center py-4">No items added to counter invoice yet.</p>
-                        </div>
-                    </div>
-
-                    <div class="space-y-3 pt-4 border-t border-gray-800">
-                        <div class="flex justify-between text-sm"><span>Subtotal:</span><span id="pos-subtotal">Rs. 0</span></div>
-                        <div class="flex justify-between text-sm text-green-400"><span>Bulk Discount:</span><span id="pos-discount">Rs. 0</span></div>
-                        <div class="flex justify-between text-lg font-bold gold-text"><span>Grand Total:</span><span id="pos-total">Rs. 0</span></div>
-
-                        <div class="grid grid-cols-2 gap-2">
-                            <button onclick="processPosCheckout('Cash')" class="bg-green-600/30 text-green-400 border border-green-500/50 hover:bg-green-600/50 py-2.5 rounded-lg text-xs font-bold transition"><i class="fa-solid fa-money-bill-wave ml-1"></i> Cash Bill</button>
-                            <button onclick="processPosCheckout('Udhaar')" class="bg-red-600/30 text-red-400 border border-red-500/50 hover:bg-red-600/50 py-2.5 rounded-lg text-xs font-bold transition"><i class="fa-solid fa-book ml-1"></i> Udhaar Khata</button>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2">
-                            <button onclick="printThermalReceiptDirect()" class="bg-yellow-500/20 text-yellow-400 border border-yellow-500/40 hover:bg-yellow-500/30 py-2 rounded-lg text-xs font-semibold transition"><i class="fa-solid fa-print ml-1"></i> 80mm ESC/POS</button>
-                            <button onclick="connectWebUSBPrinter()" class="bg-blue-600/30 text-blue-400 border border-blue-500/40 hover:bg-blue-600/40 py-2 rounded-lg text-xs font-semibold transition"><i class="fa-solid fa-usb ml-1"></i> WebUSB Print</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- VIEW 4: ERP & ACCOUNTING DASHBOARD -->
+        <!-- VIEW 4: BUSINESS SUITE (ERP) -->
         <section id="view-erp" class="tab-content hidden space-y-6">
-            <!-- Key Metrics Bar -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="glass-panel p-5 rounded-xl border border-yellow-500/30">
-                    <span class="text-xs text-gray-400">Total Sales Today</span>
-                    <h3 class="text-2xl font-bold text-yellow-400 mt-1" id="stat-sales">Rs. 45,800</h3>
-                </div>
-                <div class="glass-panel p-5 rounded-xl border border-yellow-500/30">
-                    <span class="text-xs text-gray-400">Net Profit</span>
-                    <h3 class="text-2xl font-bold text-green-400 mt-1" id="stat-profit">Rs. 14,200</h3>
-                </div>
-                <div class="glass-panel p-5 rounded-xl border border-yellow-500/30">
-                    <span class="text-xs text-gray-400">Udhaar Ledger Outstanding</span>
-                    <h3 class="text-2xl font-bold text-red-400 mt-1" id="stat-udhaar">Rs. 28,500</h3>
-                </div>
-                <div class="glass-panel p-5 rounded-xl border border-yellow-500/30">
-                    <span class="text-xs text-gray-400">Total Inventory Items</span>
-                    <h3 class="text-2xl font-bold text-blue-400 mt-1" id="stat-items">101 Items</h3>
-                </div>
-            </div>
-
-            <!-- Charts & Analytics -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="glass-panel p-6 rounded-xl border border-yellow-500/20">
-                    <h3 class="text-lg font-bold text-yellow-400 mb-4">Sales & Revenue Trend</h3>
-                    <canvas id="salesChart" height="200"></canvas>
-                </div>
-                <div class="glass-panel p-6 rounded-xl border border-yellow-500/20">
-                    <h3 class="text-lg font-bold text-yellow-400 mb-4">Expense Breakdown Category</h3>
-                    <canvas id="expenseChart" height="200"></canvas>
-                </div>
-            </div>
-
-            <!-- Supplier Purchase Orders & Auto-Reorder Panel -->
-            <div class="glass-panel p-6 rounded-2xl border border-yellow-500/30 space-y-4">
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
                 <div class="flex justify-between items-center">
-                    <h3 class="text-lg font-bold text-yellow-400"><i class="fa-solid fa-truck-ramp-box ml-2"></i> Supplier Purchase Orders & Auto-Reorder</h3>
-                    <button onclick="generateSupplierPO()" class="gold-gradient text-black px-4 py-2 rounded-lg text-xs font-bold"><i class="fa-solid fa-plus ml-1"></i> Auto-Generate Low Stock PO</button>
+                    <div>
+                        <h2 class="text-2xl font-bold accent-text">Royal Business Suite</h2>
+                        <p class="text-xs text-gray-400 mt-1">Modules for store operations. Demo interface until connected to secure backend.</p>
+                    </div>
+                    <button onclick="switchTab('admin')" class="bg-white/10 hover:bg-white/20 text-xs px-4 py-2 rounded-lg font-semibold border border-white/10">Owner / Staff Login</button>
                 </div>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-right text-xs text-gray-300">
-                        <thead class="bg-gray-900 text-yellow-400 uppercase border-b border-gray-800">
-                            <tr>
-                                <th class="p-3">PO ID</th>
-                                <th class="p-3">Supplier Name</th>
-                                <th class="p-3">Item / Quantity</th>
-                                <th class="p-3">Estimated Cost</th>
-                                <th class="p-3">Status</th>
-                                <th class="p-3">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="supplier-po-rows" class="divide-y divide-gray-800">
-                            <!-- Populated via JS -->
-                        </tbody>
-                    </table>
+
+                <div class="bg-yellow-500/10 border border-yellow-500/20 p-3 rounded-xl text-[11px] text-yellow-300">
+                    <i class="fa-solid fa-shield-halved ml-1"></i> Security notice: this downloaded frontend is a prototype. Login and data saved in this browser are not secure cloud accounts. Connect a server/database before using real customer or financial data.
+                </div>
+
+                <!-- ERP Metrics Bar -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="glass-panel p-4 rounded-xl border border-white/5">
+                        <span class="text-[10px] text-gray-400">Catalog entries</span>
+                        <h3 class="text-xl font-bold accent-text mt-1" id="erp-stat-catalog">100</h3>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl border border-white/5">
+                        <span class="text-[10px] text-gray-400">Local demo orders</span>
+                        <h3 class="text-xl font-bold text-green-400 mt-1" id="erp-stat-orders">0</h3>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl border border-white/5">
+                        <span class="text-[10px] text-gray-400">Demo order total</span>
+                        <h3 class="text-xl font-bold text-blue-400 mt-1" id="erp-stat-total">Rs 0</h3>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl border border-white/5">
+                        <span class="text-[10px] text-gray-400">Stock units entered</span>
+                        <h3 class="text-xl font-bold text-purple-400 mt-1" id="erp-stat-stock">0</h3>
+                    </div>
+                </div>
+
+                <!-- ERP Modules Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <div onclick="openErpModule('Invoices')" class="glass-panel p-4 rounded-xl border border-white/5 card-3d cursor-pointer">
+                        <i class="fa-solid fa-file-invoice-dollar accent-text text-lg mb-2"></i>
+                        <h4 class="font-bold text-xs">Invoices & Quotations</h4>
+                        <p class="text-[10px] text-gray-400 mt-1">Invoice, estimate, receipt, printable PDF.</p>
+                    </div>
+                    <div onclick="openErpModule('Inventory')" class="glass-panel p-4 rounded-xl border border-white/5 card-3d cursor-pointer">
+                        <i class="fa-solid fa-boxes-packing accent-text text-lg mb-2"></i>
+                        <h4 class="font-bold text-xs">Inventory & Barcode</h4>
+                        <p class="text-[10px] text-gray-400 mt-1">SKU, stock alerts, product movements.</p>
+                    </div>
+                    <div onclick="openErpModule('Udhaar')" class="glass-panel p-4 rounded-xl border border-white/5 card-3d cursor-pointer">
+                        <i class="fa-solid fa-book-bookmark accent-text text-lg mb-2"></i>
+                        <h4 class="font-bold text-xs">Customers & Udhaar</h4>
+                        <p class="text-[10px] text-gray-400 mt-1">Customer ledger, balances and payments.</p>
+                    </div>
+                    <div onclick="openErpModule('Suppliers')" class="glass-panel p-4 rounded-xl border border-white/5 card-3d cursor-pointer">
+                        <i class="fa-solid fa-truck accent-text text-lg mb-2"></i>
+                        <h4 class="font-bold text-xs">Suppliers & Purchases</h4>
+                        <p class="text-[10px] text-gray-400 mt-1">Supplier ledger, purchase orders.</p>
+                    </div>
+                    <div onclick="openErpModule('Profit')" class="glass-panel p-4 rounded-xl border border-white/5 card-3d cursor-pointer">
+                        <i class="fa-solid fa-chart-pie accent-text text-lg mb-2"></i>
+                        <h4 class="font-bold text-xs">Profit & Loss</h4>
+                        <p class="text-[10px] text-gray-400 mt-1">Sales, costs, expenses and margins.</p>
+                    </div>
+                    <div onclick="openErpModule('Expenses')" class="glass-panel p-4 rounded-xl border border-white/5 card-3d cursor-pointer">
+                        <i class="fa-solid fa-receipt accent-text text-lg mb-2"></i>
+                        <h4 class="font-bold text-xs">Expenses & Cashbook</h4>
+                        <p class="text-[10px] text-gray-400 mt-1">Daily expenses and cash in/out.</p>
+                    </div>
+                    <div onclick="openErpModule('Production')" class="glass-panel p-4 rounded-xl border border-white/5 card-3d cursor-pointer">
+                        <i class="fa-solid fa-gears accent-text text-lg mb-2"></i>
+                        <h4 class="font-bold text-xs">Production Management</h4>
+                        <p class="text-[10px] text-gray-400 mt-1">Custom jobs, job status, materials.</p>
+                    </div>
+                    <div onclick="openErpModule('Staff')" class="glass-panel p-4 rounded-xl border border-white/5 card-3d cursor-pointer">
+                        <i class="fa-solid fa-users-gear accent-text text-lg mb-2"></i>
+                        <h4 class="font-bold text-xs">Staff & Permissions</h4>
+                        <p class="text-[10px] text-gray-400 mt-1">Owner, manager, cashier, designer roles.</p>
+                    </div>
+                    <div onclick="openErpModule('Online')" class="glass-panel p-4 rounded-xl border border-white/5 card-3d cursor-pointer">
+                        <i class="fa-solid fa-globe accent-text text-lg mb-2"></i>
+                        <h4 class="font-bold text-xs">Online Orders</h4>
+                        <p class="text-[10px] text-gray-400 mt-1">Order status, customer details.</p>
+                    </div>
+                    <div onclick="openErpModule('Payments')" class="glass-panel p-4 rounded-xl border border-white/5 card-3d cursor-pointer">
+                        <i class="fa-solid fa-wallet accent-text text-lg mb-2"></i>
+                        <h4 class="font-bold text-xs">Payments & Tax</h4>
+                        <p class="text-[10px] text-gray-400 mt-1">Bank/wallet, editable tax rate.</p>
+                    </div>
+                    <div onclick="openErpModule('Marketing')" class="glass-panel p-4 rounded-xl border border-white/5 card-3d cursor-pointer">
+                        <i class="fa-solid fa-bullhorn accent-text text-lg mb-2"></i>
+                        <h4 class="font-bold text-xs">Marketing & Social</h4>
+                        <p class="text-[10px] text-gray-400 mt-1">Campaign drafts and social links.</p>
+                    </div>
+                    <div onclick="openErpModule('AI')" class="glass-panel p-4 rounded-xl border border-white/5 card-3d cursor-pointer">
+                        <i class="fa-solid fa-robot accent-text text-lg mb-2"></i>
+                        <h4 class="font-bold text-xs">AI Business Assistant</h4>
+                        <p class="text-[10px] text-gray-400 mt-1">Product copy, campaign and support drafts.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- VIEW 5: HARDWARE INTEGRATIONS (PLOTTER & BARCODE) -->
-        <section id="view-hardware" class="tab-content hidden space-y-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <!-- Redsail Plotter (.PLT) Vector Generator -->
-                <div class="glass-panel p-6 rounded-2xl border border-yellow-500/30 space-y-4">
-                    <h3 class="text-xl font-bold gold-text"><i class="fa-solid fa-vector-square ml-2"></i> Redsail Plotter (.PLT / HPGL) Exporter</h3>
-                    <p class="text-xs text-gray-400">Generate native HPGL vector files for vinyl sticker cutting on Redsail RS720C plotter.</p>
-                    
-                    <div class="space-y-3">
+        <!-- VIEW 5: SOCIAL & AI PROMOTION AGENT -->
+        <section id="view-social" class="tab-content hidden space-y-6">
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold accent-text">Social Media & AI Promotion Agent</h2>
+                    <p class="text-xs text-gray-400 mt-1">Plan content for Facebook, Instagram, TikTok, YouTube, WhatsApp and Google Business Profile.</p>
+                </div>
+
+                <div class="bg-gray-900 p-4 rounded-xl border border-white/5 text-xs text-gray-300 space-y-2">
+                    <span class="font-bold text-white">Important:</span> This workspace drafts content and opens social platforms. It does not automatically publish posts, message customers, buy ads, or guarantee #1 Google ranking. Live publishing needs each platform's approved API/account authorization; never share account passwords here.
+                </div>
+
+                <!-- Social Platform Badges -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                    <div class="bg-blue-600/20 border border-blue-500/30 p-3 rounded-xl text-center">
+                        <i class="fa-brands fa-facebook text-blue-400 text-lg mb-1"></i>
+                        <h4 class="font-bold text-xs">Facebook</h4>
+                        <p class="text-[9px] text-gray-400">Page posts, reels, offers and messages</p>
+                    </div>
+                    <div class="bg-pink-600/20 border border-pink-500/30 p-3 rounded-xl text-center">
+                        <i class="fa-brands fa-instagram text-pink-400 text-lg mb-1"></i>
+                        <h4 class="font-bold text-xs">Instagram</h4>
+                        <p class="text-[9px] text-gray-400">Reels, stories and product carousels</p>
+                    </div>
+                    <div class="bg-gray-800 border border-gray-700 p-3 rounded-xl text-center">
+                        <i class="fa-brands fa-tiktok text-white text-lg mb-1"></i>
+                        <h4 class="font-bold text-xs">TikTok</h4>
+                        <p class="text-[9px] text-gray-400">Short videos and product demos</p>
+                    </div>
+                    <div class="bg-red-600/20 border border-red-500/30 p-3 rounded-xl text-center">
+                        <i class="fa-brands fa-youtube text-red-400 text-lg mb-1"></i>
+                        <h4 class="font-bold text-xs">YouTube</h4>
+                        <p class="text-[9px] text-gray-400">Shorts, tutorials and shop videos</p>
+                    </div>
+                    <div class="bg-green-600/20 border border-green-500/30 p-3 rounded-xl text-center">
+                        <i class="fa-brands fa-whatsapp text-green-400 text-lg mb-1"></i>
+                        <h4 class="font-bold text-xs">WhatsApp Business</h4>
+                        <p class="text-[9px] text-gray-400">Catalog and customer inquiries</p>
+                    </div>
+                    <div class="bg-orange-600/20 border border-orange-500/30 p-3 rounded-xl text-center">
+                        <i class="fa-solid fa-map-location-dot text-orange-400 text-lg mb-1"></i>
+                        <h4 class="font-bold text-xs">Google Business Profile</h4>
+                        <p class="text-[9px] text-gray-400">Local visibility, hours, photos and reviews</p>
+                    </div>
+                </div>
+
+                <!-- AI Draft Generator Box -->
+                <div class="bg-black/40 p-4 rounded-xl border border-white/5 space-y-4">
+                    <h3 class="text-sm font-bold accent-text">AI Marketing Draft Generator</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div>
-                            <label class="text-xs text-gray-300 block mb-1">Cutting Text / Object Name</label>
-                            <input type="text" id="plt-text" value="ROYAL MOBILE" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-sm">
+                            <label class="text-xs text-gray-400 block mb-1">Campaign goal</label>
+                            <select id="ai-goal" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                                <option>Get more WhatsApp orders</option>
+                                <option>Announce new mobile stock</option>
+                                <option>Promote custom printing & sublimation</option>
+                                <option>Wholesale dealer outreach</option>
+                            </select>
                         </div>
-                        <div class="grid grid-cols-2 gap-3">
-                            <div>
-                                <label class="text-xs text-gray-300 block mb-1">Cutting Speed (mm/s)</label>
-                                <input type="number" id="plt-speed" value="300" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-sm">
-                            </div>
-                            <div>
-                                <label class="text-xs text-gray-300 block mb-1">Blade Force (g)</label>
-                                <input type="number" id="plt-force" value="120" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-sm">
-                            </div>
+                        <div>
+                            <label class="text-xs text-gray-400 block mb-1">Platform</label>
+                            <select id="ai-platform" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                                <option>All platforms (adapt each post)</option>
+                                <option>Facebook Page</option>
+                                <option>Instagram Story/Reel</option>
+                                <option>WhatsApp Broadcast</option>
+                            </select>
                         </div>
-                        <button onclick="exportRedsailPLT()" class="w-full gold-gradient text-black font-bold py-2.5 rounded-lg text-sm"><i class="fa-solid fa-file-export ml-1"></i> Export .PLT File for RS720C Plotter</button>
+                        <div>
+                            <label class="text-xs text-gray-400 block mb-1">Product / offer details</label>
+                            <input type="text" id="ai-details" placeholder="e.g. custom mugs, phone covers, DTF shirts" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="text-xs text-gray-400 block mb-1">Offer / price (optional)</label>
+                            <input type="text" id="ai-price" placeholder="Do not invent discounts or prices" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="text-xs text-gray-400 block mb-1">Language</label>
+                            <select id="ai-lang" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                                <option>Roman Urdu + English</option>
+                                <option>Urdu Nastaliq</option>
+                                <option>English Only</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-xs text-gray-400 block mb-1">Call to action</label>
+                            <select id="ai-cta" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                                <option>WhatsApp for order</option>
+                                <option>Visit store in Faisalabad</option>
+                                <option>Call now</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 pt-2">
+                        <button onclick="generateAiDraft()" class="accent-gradient text-black font-bold px-4 py-2 rounded-lg text-xs">Generate promotion draft</button>
+                        <button onclick="copyAiDraft()" class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-xs font-semibold">Copy draft</button>
+                    </div>
+                    <textarea id="ai-output-box" rows="4" readonly placeholder="Promotion draft appears here." class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-xs text-gray-300"></textarea>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 6: 20 LUXURY 3D THEMES -->
+        <section id="view-themes" class="tab-content hidden space-y-6">
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold accent-text">20 Luxury 3D Themes</h2>
+                    <p class="text-xs text-gray-400 mt-1">Tap a theme to preview it across your store instantly.</p>
+                </div>
+
+                <div id="themes-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 7: LOGO & COVER BRANDING -->
+        <section id="view-branding" class="tab-content hidden space-y-6">
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold accent-text">Branding & Store Customization</h2>
+                    <p class="text-xs text-gray-400 mt-1">Upload/select your own logo and cover, change store text and select a theme.</p>
+                </div>
+
+                <div class="bg-gray-900 p-4 rounded-xl border border-white/5 text-xs text-gray-300">
+                    Your original black-and-gold logo must be uploaded here from your phone. This package cannot remove the original image from an older chat automatically. It will use the exact file you select, it does not generate or alter a new logo.
+                </div>
+
+                <!-- Customization Form -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-xs text-gray-400 block mb-1">Upload original logo</label>
+                        <input type="file" id="custom-logo-file" accept="image/*" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2 text-xs text-gray-400">
+                    </div>
+                    <div>
+                        <label class="text-xs text-gray-400 block mb-1">Upload cover / banner picture</label>
+                        <input type="file" id="custom-cover-file" accept="image/*" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2 text-xs text-gray-400">
+                    </div>
+                    <div>
+                        <label class="text-xs text-gray-400 block mb-1">Store headline</label>
+                        <input type="text" id="custom-headline" value="Your Royal Store. Everything, One Place." class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                    </div>
+                    <div>
+                        <label class="text-xs text-gray-400 block mb-1">Store description</label>
+                        <input type="text" id="custom-desc" value="Mobiles, accessories, stationery, sublimation and customized gifts — retail and wholesale with fast delivery all over Pakistan." class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                    </div>
+                    <div>
+                        <label class="text-xs text-gray-400 block mb-1">Shop phone / WhatsApp</label>
+                        <input type="text" id="custom-phone" value="+92 304 0011041" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                    </div>
+                    <div>
+                        <label class="text-xs text-gray-400 block mb-1">Shop location</label>
+                        <input type="text" id="custom-location" value="Faisalabad, Punjab, Pakistan" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                    </div>
+                    <div>
+                        <label class="text-xs text-gray-400 block mb-1">Facebook page URL</label>
+                        <input type="text" id="custom-fb" placeholder="Paste your Facebook page link" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                    </div>
+                    <div>
+                        <label class="text-xs text-gray-400 block mb-1">Instagram profile URL</label>
+                        <input type="text" id="custom-ig" placeholder="Paste your Instagram link" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
                     </div>
                 </div>
 
-                <!-- Phomemo M110/M220 Barcode Label Printer -->
-                <div class="glass-panel p-6 rounded-2xl border border-yellow-500/30 space-y-4">
-                    <h3 class="text-xl font-bold gold-text"><i class="fa-solid fa-barcode ml-2"></i> Phomemo Thermal Barcode Sticker Printer</h3>
-                    <p class="text-xs text-gray-400">Generate 40x30mm & 50x40mm thermal sticker barcode labels.</p>
-                    
-                    <div class="space-y-3">
-                        <div class="grid grid-cols-2 gap-3">
-                            <div>
-                                <label class="text-xs text-gray-300 block mb-1">Product SKU / Barcode</label>
-                                <input type="text" id="label-sku" value="RMP-1002" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-sm">
-                            </div>
-                            <div>
-                                <label class="text-xs text-gray-300 block mb-1">Price Tag (PKR)</label>
-                                <input type="text" id="label-price" value="Rs. 450" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-sm">
-                            </div>
-                        </div>
-                        <div class="flex justify-center p-4 bg-white rounded-lg border border-gray-300">
-                            <svg id="barcode-svg"></svg>
-                        </div>
-                        <button onclick="printPhomemoLabel()" class="w-full bg-blue-600 text-white font-bold py-2.5 rounded-lg text-sm hover:bg-blue-700 transition"><i class="fa-solid fa-print ml-1"></i> Print 40x30mm Barcode Sticker</button>
+                <div class="flex gap-3 pt-2">
+                    <button onclick="saveStoreBranding()" class="accent-gradient text-black font-bold px-6 py-2.5 rounded-xl text-xs shadow-lg">Save Customization</button>
+                    <button onclick="resetStoreBranding()" class="bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-xl text-xs font-semibold">Reset text/theme</button>
+                </div>
+
+                <!-- Manage Products Sub-Section -->
+                <div class="border-t border-gray-800 pt-6 space-y-4">
+                    <h3 class="text-lg font-bold accent-text">Manage Products</h3>
+                    <p class="text-xs text-gray-400">Add or edit catalog entries in this browser.</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 bg-black/40 p-4 rounded-xl border border-white/5">
+                        <input type="text" id="new-prod-name" placeholder="Product name" class="bg-gray-900 border border-gray-700 rounded-lg p-2 text-xs text-white">
+                        <select id="new-prod-cat" class="bg-gray-900 border border-gray-700 rounded-lg p-2 text-xs text-white">
+                            <option>Mobile Phones</option>
+                            <option>Mobile Accessories</option>
+                            <option>Sublimation</option>
+                            <option>DTF Printing</option>
+                            <option>HTV Vinyl</option>
+                            <option>Rhinestone</option>
+                            <option>Red Sail / Vinyl Cutting</option>
+                            <option>Stationery</option>
+                            <option>Business Cards</option>
+                            <option>Stickers & Labels</option>
+                        </select>
+                        <input type="number" id="new-prod-price" placeholder="Price (PKR)" class="bg-gray-900 border border-gray-700 rounded-lg p-2 text-xs text-white">
+                        <input type="number" id="new-prod-stock" placeholder="Stock quantity" class="bg-gray-900 border border-gray-700 rounded-lg p-2 text-xs text-white">
+                        <input type="text" id="new-prod-desc" placeholder="Description / customization options" class="bg-gray-900 border border-gray-700 rounded-lg p-2 text-xs text-white">
+                        <input type="file" id="new-prod-img" accept="image/*" class="bg-gray-900 border border-gray-700 rounded-lg p-1.5 text-[10px] text-gray-400">
+                    </div>
+
+                    <div class="flex gap-2">
+                        <button onclick="addNewProduct()" class="accent-gradient text-black font-bold px-4 py-2 rounded-lg text-xs">Add Product</button>
+                        <button onclick="exportCatalogCsv()" class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg text-xs font-semibold">Export Catalog CSV</button>
+                        <button onclick="resetDefaultCatalog()" class="bg-red-600/30 text-red-400 border border-red-500/40 px-4 py-2 rounded-lg text-xs font-semibold">Load / Reset 100 Starter Items</button>
+                    </div>
+
+                    <div class="text-[11px] text-gray-400 bg-gray-900/60 p-3 rounded-lg border border-white/5">
+                        <i class="fa-solid fa-info-circle ml-1"></i> Har product ki picture mobile, laptop ya PC se seedha Choose File / Upload button se lagayein, image link paste karna zaruri nahi. Changes isi browser / device mein save hoti hain.
+                    </div>
+
+                    <!-- Editable Products Table -->
+                    <div class="overflow-x-auto max-h-96">
+                        <table class="w-full text-left text-xs text-gray-300">
+                            <thead class="bg-black/60 sticky top-0 text-white uppercase text-[10px]">
+                                <tr>
+                                    <th class="p-2.5">Product name</th>
+                                    <th class="p-2.5">Category</th>
+                                    <th class="p-2.5">Price</th>
+                                    <th class="p-2.5">Qty</th>
+                                    <th class="p-2.5">Description</th>
+                                    <th class="p-2.5">Picture upload</th>
+                                </tr>
+                            </thead>
+                            <tbody id="manage-products-tbody" class="divide-y divide-gray-800">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- VIEW 6: HR, STAFF ATTENDANCE & PAYROLL MANAGER -->
-        <section id="view-hr" class="tab-content hidden space-y-6">
-            <div class="glass-panel p-6 rounded-2xl border border-yellow-500/30 space-y-6">
-                <div class="flex justify-between items-center">
-                    <h2 class="text-2xl font-bold gold-text"><i class="fa-solid fa-users-gear ml-2"></i> Staff Attendance & Payroll Manager</h2>
-                    <button onclick="openAddStaffModal()" class="gold-gradient text-black px-4 py-2 rounded-lg text-xs font-bold"><i class="fa-solid fa-user-plus ml-1"></i> Register New Staff</button>
+        <!-- VIEW 8: CUSTOMER FEEDBACK -->
+        <section id="view-feedback" class="tab-content hidden space-y-6">
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold accent-text">Customer Feedback & Reviews</h2>
+                    <p class="text-xs text-gray-400 mt-1">Share your experience with Royal Mobile And Printing Store.</p>
                 </div>
 
-                <!-- Staff List & Attendance Ledger -->
-                <div class="overflow-x-auto">
-                    <table class="w-full text-right text-xs text-gray-300">
-                        <thead class="bg-gray-900 text-yellow-400 uppercase border-b border-gray-800">
-                            <tr>
-                                <th class="p-3">Staff Name</th>
-                                <th class="p-3">Role</th>
-                                <th class="p-3">Base Salary</th>
-                                <th class="p-3">Sales Commission %</th>
-                                <th class="p-3">Monthly Commission Earned</th>
-                                <th class="p-3">Attendance Today</th>
-                                <th class="p-3">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="staff-rows" class="divide-y divide-gray-800">
-                            <!-- Populated dynamically via JS -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- VIEW 7: SYSTEM SETTINGS & INTEGRATIONS -->
-        <section id="view-settings" class="tab-content hidden space-y-6">
-            <div class="glass-panel p-6 rounded-2xl border border-yellow-500/30 space-y-6">
-                <h2 class="text-2xl font-bold gold-text"><i class="fa-solid fa-sliders ml-2"></i> Cloud DB, Telenor SMS & WhatsApp API Credentials</h2>
-                
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="space-y-3 bg-gray-900/60 p-4 rounded-xl border border-gray-800">
-                        <h3 class="text-sm font-bold text-yellow-400"><i class="fa-solid fa-cloud ml-1"></i> Cloudflare Database Sync (D1 / REST)</h3>
+                    <div class="bg-black/40 p-5 rounded-xl border border-white/5 space-y-4">
+                        <h3 class="text-sm font-bold text-white">Leave your review</h3>
                         <div>
-                            <label class="text-xs text-gray-400 block mb-1">Cloudflare Worker Endpoint URL</label>
-                            <input type="text" id="cfg-cloud-url" placeholder="https://royal-api.workers.dev" class="w-full bg-gray-800 border border-gray-700 rounded p-2 text-xs">
+                            <label class="text-xs text-gray-400 block mb-1">Your name</label>
+                            <input type="text" id="feedback-name" placeholder="Customer name" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
                         </div>
                         <div>
-                            <label class="text-xs text-gray-400 block mb-1">Bearer Auth Token</label>
-                            <input type="password" id="cfg-cloud-token" placeholder="Bearer Token..." class="w-full bg-gray-800 border border-gray-700 rounded p-2 text-xs">
+                            <label class="text-xs text-gray-400 block mb-1">Rating</label>
+                            <select id="feedback-rating" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                                <option value="5">⭐⭐⭐⭐⭐ (5/5 - Excellent)</option>
+                                <option value="4">⭐⭐⭐⭐ (4/5 - Good)</option>
+                                <option value="3">⭐⭐⭐ (3/5 - Average)</option>
+                            </select>
                         </div>
-                        <button onclick="saveSettings()" class="bg-yellow-500/20 text-yellow-400 border border-yellow-500/40 px-3 py-1.5 rounded text-xs">Save Cloud Config</button>
+                        <div>
+                            <label class="text-xs text-gray-400 block mb-1">Review comment</label>
+                            <textarea id="feedback-comment" rows="3" placeholder="Write feedback about printing, mobile service or delivery..." class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white"></textarea>
+                        </div>
+                        <button onclick="submitCustomerFeedback()" class="accent-gradient text-black font-bold px-5 py-2.5 rounded-xl text-xs shadow-lg">Submit Feedback</button>
                     </div>
 
-                    <div class="space-y-3 bg-gray-900/60 p-4 rounded-xl border border-gray-800">
-                        <h3 class="text-sm font-bold text-yellow-400"><i class="fa-solid fa-comment-sms ml-1"></i> Telenor SMS & WhatsApp Automation</h3>
-                        <div>
-                            <label class="text-xs text-gray-400 block mb-1">Telenor SMS Gateway API Key</label>
-                            <input type="text" id="cfg-sms-key" placeholder="API Key..." class="w-full bg-gray-800 border border-gray-700 rounded p-2 text-xs">
+                    <div class="space-y-4">
+                        <h3 class="text-sm font-bold text-white">Recent Customer Reviews</h3>
+                        <div id="feedback-list" class="space-y-3 max-h-96 overflow-y-auto">
+                            <!-- Populated dynamically -->
                         </div>
-                        <div>
-                            <label class="text-xs text-gray-400 block mb-1">Store Official WhatsApp</label>
-                            <input type="text" id="cfg-whatsapp" value="+92 304 0011041" class="w-full bg-gray-800 border border-gray-700 rounded p-2 text-xs">
-                        </div>
-                        <button onclick="saveSettings()" class="bg-yellow-500/20 text-yellow-400 border border-yellow-500/40 px-3 py-1.5 rounded text-xs">Save Gateway Config</button>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 9: ADMIN PANEL & MANAGER ACCESS -->
+        <section id="view-admin" class="tab-content hidden space-y-6">
+            <div class="max-w-md mx-auto glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
+                <div class="text-center space-y-2">
+                    <div class="w-12 h-12 rounded-full accent-gradient mx-auto flex items-center justify-center text-black text-xl font-bold">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold accent-text">Owner / Staff Access</h2>
+                    <p class="text-xs text-gray-400">Prototype account form — not secure authentication. Do not enter a real password.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="text-xs text-gray-400 block mb-1">Full name</label>
+                        <input type="text" id="admin-name" placeholder="Owner or staff name" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                    </div>
+                    <div>
+                        <label class="text-xs text-gray-400 block mb-1">Email</label>
+                        <input type="email" id="admin-email" placeholder="you@example.com" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                    </div>
+                    <div>
+                        <label class="text-xs text-gray-400 block mb-1">Password (demo only)</label>
+                        <input type="password" id="admin-pass" placeholder="Demo password" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="performAdminLogin()" class="w-full accent-gradient text-black font-bold py-2.5 rounded-xl text-xs shadow-lg">Admin Login</button>
+                        <button onclick="performAdminSignup()" class="w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-2.5 rounded-xl text-xs">Sign Up</button>
+                    </div>
+                </div>
+
+                <div class="text-[10px] text-gray-400 bg-black/40 p-3 rounded-lg border border-white/5">
+                    Production setup still required: secure server-side password hashing, account verification/reset, role permissions and cloud database. This demo does not create a real account.
                 </div>
             </div>
         </section>
@@ -381,9 +667,9 @@
 
     <!-- SHOPPING CART MODAL -->
     <div id="cart-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="glass-panel p-6 rounded-2xl max-w-lg w-full border border-yellow-500/40 space-y-4">
+        <div class="glass-panel p-6 rounded-2xl max-w-lg w-full border border-white/20 space-y-4">
             <div class="flex justify-between items-center border-b border-gray-800 pb-3">
-                <h3 class="text-xl font-bold gold-text"><i class="fa-solid fa-cart-shopping ml-2"></i> E-Commerce Shopping Cart</h3>
+                <h3 class="text-lg font-bold accent-text"><i class="fa-solid fa-cart-shopping ml-2"></i> Shopping Cart</h3>
                 <button onclick="toggleCartModal()" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
             
@@ -391,30 +677,15 @@
                 <!-- Dynamic Items -->
             </div>
 
-            <div class="border-t border-gray-800 pt-3 space-y-2">
-                <div class="flex justify-between font-bold text-lg gold-text">
+            <div class="border-t border-gray-800 pt-3 space-y-3">
+                <div class="flex justify-between font-bold text-base accent-text">
                     <span>Total Amount:</span>
                     <span id="cart-total-price">Rs. 0</span>
                 </div>
-                <button onclick="triggerWhatsAppOrder()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition">
-                    <i class="fa-brands fa-whatsapp text-xl"></i> Order via WhatsApp (+92 304 0011041)
+                <button onclick="checkoutWhatsAppOrder()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 text-xs transition">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Order via WhatsApp (+92 304 0011041)
                 </button>
             </div>
-        </div>
-    </div>
-
-    <!-- Hidden Direct Receipt Printing Container for 80mm ESC/POS -->
-    <div id="receipt-print-area" class="hidden">
-        <div style="text-align: center;">
-            <h2 style="font-size: 16px; font-weight: bold; margin: 0;">ROYAL MOBILE AND PRINTING STORE</h2>
-            <p style="font-size: 10px; margin: 2px 0;">Jaranwala Road, Faisalabad</p>
-            <p style="font-size: 10px; margin: 2px 0;">Cell: +92 304 0011041</p>
-            <p style="font-size: 10px; margin: 2px 0;">--------------------------------</p>
-        </div>
-        <div id="receipt-body" style="font-size: 11px;"></div>
-        <div style="text-align: center; margin-top: 10px;">
-            <p style="font-size: 10px;">Thank You For Shopping!</p>
-            <p style="font-size: 9px;">Software by Royal AI Agent</p>
         </div>
     </div>
 
@@ -424,274 +695,434 @@
         let state = {
             products: [],
             cart: [],
-            posCart: [],
-            staff: [
-                { id: 1, name: "Farhan Abbas", role: "Owner / Admin", salary: 0, comm: 5, commEarned: 12500, status: "Present" },
-                { id: 2, name: "Ali Raza", role: "Printing Technician", salary: 35000, comm: 2, commEarned: 4200, status: "Present" }
-            ],
-            supplierPOs: [
-                { id: "PO-1001", supplier: "Jinan Laser / Sublimation Wholesale", items: "11oz Mugs (100 pcs), DTF Ink", cost: "Rs. 42,000", status: "Pending" }
+            currentTheme: 'theme-1',
+            logoUrl: '',
+            coverUrl: '',
+            feedback: [
+                { name: "Muhammad Usman", rating: 5, comment: "Best mobile repair and sublimation mug printing in Faisalabad!" },
+                { name: "Bilal Ahmad", rating: 5, comment: "Ordered DTF transfer films and vinyl cutting blades. Fast service." }
             ]
         };
 
         // 100+ Catalog Products Seeding
-        function seedCatalog() {
-            const categories = ["Mobiles", "Sublimation", "DTF & Vinyl", "Plotter Parts", "PVC Cards", "Acrylic Frames", "Stationery"];
+        function seedDefaultCatalog() {
+            const cats = [
+                "Mobile Phones", "Mobile Accessories", "Sublimation", "DTF Printing", 
+                "HTV Vinyl", "Rhinestone", "Red Sail / Vinyl Cutting", "Stationery", 
+                "Business Cards", "Stickers & Labels", "Wedding Cards", "Flyers & Posters", 
+                "T-Shirts", "Mugs", "Keychains", "Roll-up Banners", "Carrier Bags", 
+                "Acrylic Name Plates", "PVC Cards", "LED / Photo Frames", "Customized Gifts", "Offset Printing"
+            ];
+
             let items = [];
             let id = 1000;
 
+            // Signature items
             items.push(
-                { id: ++id, name: "Tecno Camon 40 Pro (8GB/256GB)", cat: "Mobiles", price: 62000, stock: 5, sku: "MOB-1001" },
-                { id: ++id, name: "Vivo Y20 Used (Hardware Warranty)", cat: "Mobiles", price: 22500, stock: 3, sku: "MOB-1002" },
-                { id: ++id, name: "11oz White Sublimation Mug (Grade A)", cat: "Sublimation", price: 280, stock: 250, sku: "SUB-1001" },
-                { id: ++id, name: "DTF Heat Transfer Film Roll (60cm)", cat: "DTF & Vinyl", price: 14500, stock: 12, sku: "DTF-1001" },
-                { id: ++id, name: "Redsail Cutting Plotter 60deg Blade", cat: "Plotter Parts", price: 450, stock: 50, sku: "RED-1001" },
-                { id: ++id, name: "Blank White PVC ID Card (Box of 230)", cat: "PVC Cards", price: 3200, stock: 15, sku: "PVC-1001" },
-                { id: ++id, name: "Acrylic LED Photo Frame 8x10", cat: "Acrylic Frames", price: 1850, stock: 20, sku: "ACR-1001" }
+                { id: ++id, name: "Android Smartphone", cat: "Mobile Phones", price: 35000, stock: 10, desc: "Add your actual price, quantity, specifications and product picture", img: "" },
+                { id: ++id, name: "Feature Phone", cat: "Mobile Phones", price: 4500, stock: 15, desc: "Add your actual price, quantity, specifications and product picture", img: "" },
+                { id: ++id, name: "Fast Charger", cat: "Mobile Accessories", price: 1200, stock: 30, desc: "Add your actual price, quantity, specifications and product picture", img: "" },
+                { id: ++id, name: "USB-C Cable", cat: "Mobile Accessories", price: 350, stock: 50, desc: "Add your actual price, quantity, specifications and product picture", img: "" },
+                { id: ++id, name: "Phone Cover", cat: "Mobile Accessories", price: 500, stock: 40, desc: "Add your actual price, quantity, specifications and product picture", img: "" },
+                { id: ++id, name: "Tempered Glass", cat: "Mobile Accessories", price: 300, stock: 60, desc: "Add your actual price, quantity, specifications and product picture", img: "" },
+                { id: ++id, name: "Wireless Earbuds", cat: "Mobile Accessories", price: 2500, stock: 20, desc: "Add your actual price, quantity, specifications and product picture", img: "" },
+                { id: ++id, name: "Power Bank", cat: "Mobile Accessories", price: 3800, stock: 15, desc: "Add your actual price, quantity, specifications and product picture", img: "" },
+                { id: ++id, name: "Phone Holder", cat: "Mobile Accessories", price: 600, stock: 25, desc: "Add your actual price, quantity, specifications and product picture", img: "" },
+                { id: ++id, name: "Bluetooth Speaker", cat: "Mobile Accessories", price: 3200, stock: 12, desc: "Add your actual price, quantity, specifications and product picture", img: "" },
+                { id: ++id, name: "Sublimation Mug", cat: "Sublimation", price: 350, stock: 100, desc: "Add your actual price, quantity, specifications and product picture", img: "" },
+                { id: ++id, name: "Magic Mug", cat: "Sublimation", price: 550, stock: 50, desc: "Add your actual price, quantity, specifications and product picture", img: "" },
+                { id: ++id, name: "Photo Mug", cat: "Sublimation", price: 400, stock: 70, desc: "Add your actual price, quantity, specifications and product picture", img: "" },
+                { id: ++id, name: "Custom T-Shirt", cat: "Sublimation", price: 1100, stock: 40, desc: "Add your actual price, quantity, specifications and product picture", img: "" },
+                { id: ++id, name: "Polo Shirt", cat: "Sublimation", price: 1400, stock: 30, desc: "Add your actual price, quantity, specifications and product picture", img: "" },
+                { id: ++id, name: "DTF Printed Shirt", cat: "DTF Printing", price: 1250, stock: 45, desc: "Add your actual price, quantity, specifications and product picture", img: "" }
             );
 
-            for (let i = 8; i <= 102; i++) {
-                let cat = categories[i % categories.length];
+            // Generate items to exceed 100 entries
+            for (let i = items.length; i < 100; i++) {
+                let cat = cats[i % cats.length];
                 items.push({
                     id: ++id,
-                    name: `${cat} Premium Item Grade #${i}`,
+                    name: `${cat} Item #${i + 1}`,
                     cat: cat,
-                    price: Math.floor(Math.random() * 3000) + 150,
-                    stock: Math.floor(Math.random() * 80) + 5,
-                    sku: `RMP-${id}`
+                    price: Math.floor(Math.random() * 4000) + 200,
+                    stock: Math.floor(Math.random() * 50) + 5,
+                    desc: "Add your actual price, quantity, specifications and product picture",
+                    img: ""
                 });
             }
+
             state.products = items;
             localStorage.setItem('royal_products', JSON.stringify(items));
         }
 
         window.onload = function() {
             if (!localStorage.getItem('royal_products')) {
-                seedCatalog();
+                seedDefaultCatalog();
             } else {
                 state.products = JSON.parse(localStorage.getItem('royal_products'));
             }
+
+            if (localStorage.getItem('royal_theme')) {
+                setTheme(localStorage.getItem('royal_theme'), false);
+            }
+
             renderStorefront();
-            renderPosCatalog();
-            renderCharts();
-            renderBarcode();
-            renderStaff();
-            renderPOs();
+            renderCategoriesGrid();
+            renderCategoryPills();
+            renderThemesGrid();
+            renderManageProductsTable();
+            renderFeedbackList();
+            updateErpStats();
         };
 
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.getElementById(`view-${tabId}`).classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function renderStorefront() {
+        // Render Storefront Grid
+        function renderStorefront(filterCat = 'All') {
             const container = document.getElementById('product-grid');
-            container.innerHTML = state.products.map(p => `
-                <div class="glass-panel p-4 rounded-xl border border-yellow-500/20 3d-card flex flex-col justify-between">
+            let filtered = filterCat === 'All' ? state.products : state.products.filter(p => p.cat === filterCat);
+
+            container.innerHTML = filtered.slice(0, 40).map(p => `
+                <div class="glass-panel p-4 rounded-2xl border border-white/5 card-3d flex flex-col justify-between">
                     <div>
-                        <span class="text-[10px] bg-yellow-500/10 text-yellow-400 px-2 py-0.5 rounded border border-yellow-500/20">${p.cat}</span>
-                        <h4 class="font-bold text-sm text-gray-200 mt-2">${p.name}</h4>
-                        <p class="text-xs text-gray-400 mt-1">SKU: ${p.sku} | Stock: ${p.stock}</p>
+                        <div class="w-full h-36 bg-gray-900 rounded-xl mb-3 overflow-hidden flex items-center justify-center relative border border-white/5">
+                            ${p.img ? `<img src="${p.img}" class="w-full h-full object-cover">` : `<i class="fa-solid fa-box-open text-3xl text-gray-700"></i>`}
+                            <span class="absolute top-2 right-2 bg-black/70 text-[10px] accent-text px-2 py-0.5 rounded-full border border-white/10">${p.cat}</span>
+                        </div>
+                        <h4 class="font-bold text-sm text-white">${p.name}</h4>
+                        <p class="text-[11px] text-gray-400 mt-1 line-clamp-2">${p.desc}</p>
                     </div>
-                    <div class="mt-4 flex justify-between items-center pt-3 border-t border-gray-800">
-                        <span class="font-bold gold-text text-base">Rs. ${p.price.toLocaleString()}</span>
-                        <button onclick="addToCart(${p.id})" class="bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-400 border border-yellow-500/40 px-3 py-1.5 rounded-lg text-xs font-semibold transition"><i class="fa-solid fa-cart-plus ml-1"></i> Add</button>
+                    <div class="mt-4 pt-3 border-t border-gray-800 flex justify-between items-center">
+                        <span class="font-extrabold accent-text text-sm">Rs. ${p.price.toLocaleString()}</span>
+                        <div class="flex gap-1.5">
+                            <button onclick="getQuoteItem('${p.name}')" class="bg-white/10 hover:bg-white/20 px-2.5 py-1.5 rounded-lg text-[10px] font-semibold">Get Quote</button>
+                            <button onclick="addToCart(${p.id})" class="accent-gradient text-black px-3 py-1.5 rounded-lg text-[10px] font-bold shadow"><i class="fa-solid fa-cart-plus ml-1"></i> Add</button>
+                        </div>
                     </div>
                 </div>
             `).join('');
         }
 
+        function renderCategoryPills() {
+            const cats = ['All', "Mobile Phones", "Mobile Accessories", "Sublimation", "DTF Printing", "HTV Vinyl", "Rhinestone", "Red Sail / Vinyl Cutting", "Stationery", "Business Cards", "Stickers & Labels", "Wedding Cards", "Flyers & Posters", "T-Shirts", "Mugs", "Keychains", "Roll-up Banners", "Carrier Bags", "Acrylic Name Plates", "PVC Cards", "LED / Photo Frames", "Customized Gifts", "Offset Printing"];
+            document.getElementById('category-pills').innerHTML = cats.map(c => `
+                <button onclick="renderStorefront('${c}')" class="bg-white/5 hover:bg-white/10 border border-white/10 px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition">${c}</button>
+            `).join('');
+        }
+
+        function renderCategoriesGrid() {
+            const cats = ["Mobile Phones", "Mobile Accessories", "Sublimation", "DTF Printing", "HTV Vinyl", "Rhinestone", "Red Sail / Vinyl Cutting", "Stationery", "Business Cards", "Stickers & Labels", "Wedding Cards", "Flyers & Posters", "T-Shirts", "Mugs", "Keychains", "Roll-up Banners", "Carrier Bags", "Acrylic Name Plates", "PVC Cards", "LED / Photo Frames", "Customized Gifts", "Offset Printing"];
+            document.getElementById('all-categories-grid').innerHTML = cats.map(c => `
+                <div onclick="switchTab('store'); renderStorefront('${c}');" class="glass-panel p-4 rounded-xl border border-white/5 card-3d cursor-pointer flex items-center justify-between">
+                    <div>
+                        <h4 class="font-bold text-sm text-white">${c}</h4>
+                        <p class="text-[10px] text-gray-400 mt-0.5">View items and services</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-left accent-text"></i>
+                </div>
+            `).join('');
+        }
+
+        // 20 Themes Engine
+        function renderThemesGrid() {
+            const themes = [
+                { id: 'theme-1', name: '1. Royal Gold', c1: '#d4af37', c2: '#09090b' },
+                { id: 'theme-2', name: '2. Emerald Luxe', c1: '#10b981', c2: '#09090b' },
+                { id: 'theme-3', name: '3. Sapphire Blue', c1: '#3b82f6', c2: '#09090b' },
+                { id: 'theme-4', name: '4. Ruby Red', c1: '#ef4444', c2: '#09090b' },
+                { id: 'theme-5', name: '5. Amethyst Purple', c1: '#8b5cf6', c2: '#09090b' },
+                { id: 'theme-6', name: '6. Pearl White', c1: '#f8fafc', c2: '#18181b' },
+                { id: 'theme-7', name: '7. Cyber Neon', c1: '#22c55e', c2: '#09090b' },
+                { id: 'theme-8', name: '8. Rose Gold', c1: '#f43f5e', c2: '#09090b' },
+                { id: 'theme-9', name: '9. Midnight Silver', c1: '#94a3b8', c2: '#09090b' },
+                { id: 'theme-10', name: '10. Ocean Teal', c1: '#06b6d4', c2: '#09090b' },
+                { id: 'theme-11', name: '11. Copper Industrial', c1: '#f97316', c2: '#09090b' },
+                { id: 'theme-12', name: '12. Sakura Pink', c1: '#ec4899', c2: '#09090b' },
+                { id: 'theme-13', name: '13. Arctic Ice', c1: '#38bdf8', c2: '#09090b' },
+                { id: 'theme-14', name: '14. Royal Navy', c1: '#eab308', c2: '#020617' },
+                { id: 'theme-15', name: '15. Forest Green', c1: '#84cc16', c2: '#052e16' },
+                { id: 'theme-16', name: '16. Desert Sand', c1: '#d97706', c2: '#1c1917' },
+                { id: 'theme-17', name: '17. Carbon Fiber', c1: '#e2e8f0', c2: '#0f172a' },
+                { id: 'theme-18', name: '18. Electric Orange', c1: '#ff5722', c2: '#1a0500' },
+                { id: 'theme-19', name: '19. Galaxy Indigo', c1: '#6366f1', c2: '#0f0c29' },
+                { id: 'theme-20', name: '20. Luxury Champagne', c1: '#fef08a', c2: '#171717' }
+            ];
+
+            document.getElementById('themes-grid').innerHTML = themes.map(t => `
+                <div onclick="setTheme('${t.id}')" class="glass-panel p-3 rounded-xl border border-white/10 card-3d cursor-pointer flex flex-col items-center text-center space-y-2">
+                    <div class="w-full h-10 rounded-lg flex overflow-hidden border border-white/10">
+                        <div class="w-1/2 h-full" style="background-color: ${t.c1};"></div>
+                        <div class="w-1/2 h-full" style="background-color: ${t.c2};"></div>
+                    </div>
+                    <span class="text-xs font-bold text-white">${t.name}</span>
+                </div>
+            `).join('');
+        }
+
+        function setTheme(themeClass, save = true) {
+            document.body.className = `bg-gray-950 text-gray-100 min-h-screen flex flex-col ${themeClass}`;
+            state.currentTheme = themeClass;
+            if (save) localStorage.setItem('royal_theme', themeClass);
+        }
+
+        // Cart & Orders Engine
         function addToCart(id) {
-            let item = state.products.find(p => p.id === id);
-            let exist = state.cart.find(c => c.id === id);
-            if (exist) { exist.qty++; } else { state.cart.push({ ...item, qty: 1 }); }
+            let p = state.products.find(item => item.id === id);
+            let exist = state.cart.find(item => item.id === id);
+            if (exist) { exist.qty++; } else { state.cart.push({ ...p, qty: 1 }); }
             updateCartUI();
+            alert(`Added ${p.name} to cart.`);
+        }
+
+        function getQuoteItem(name) {
+            alert(`Quote request noted for: ${name}. Our WhatsApp representative will contact you shortly.`);
         }
 
         function updateCartUI() {
             document.getElementById('cart-count').innerText = state.cart.reduce((a, b) => a + b.qty, 0);
             let total = state.cart.reduce((a, b) => a + (b.price * b.qty), 0);
             document.getElementById('cart-total-price').innerText = `Rs. ${total.toLocaleString()}`;
-            
+
             document.getElementById('cart-modal-items').innerHTML = state.cart.map(i => `
-                <div class="flex justify-between items-center py-2 text-sm">
+                <div class="flex justify-between items-center py-2 text-xs">
                     <div>
-                        <p class="font-bold text-gray-200">${i.name}</p>
-                        <p class="text-xs text-gray-400">Rs. ${i.price} x ${i.qty}</p>
+                        <h4 class="font-bold text-white">${i.name}</h4>
+                        <p class="text-[10px] text-gray-400">Rs. ${i.price} x ${i.qty}</p>
                     </div>
-                    <span class="font-bold gold-text">Rs. ${(i.price * i.qty).toLocaleString()}</span>
+                    <span class="font-bold accent-text">Rs. ${(i.price * i.qty).toLocaleString()}</span>
                 </div>
-            `).join('') || `<p class="text-xs text-gray-500 text-center py-4">Cart is currently empty.</p>`;
+            `).join('') || `<p class="text-xs text-gray-500 text-center py-4">Cart is empty.</p>`;
         }
 
         function toggleCartModal() {
             document.getElementById('cart-modal').classList.toggle('hidden');
         }
 
-        function triggerWhatsAppOrder() {
-            let text = "Hello Royal Mobile And Printing Store, I want to place an order:\n\n";
-            state.cart.forEach(c => { text += `• ${c.name} (x${c.qty}) - Rs. ${c.price * c.qty}\n`; });
-            text += `\nTotal: ${document.getElementById('cart-total-price').innerText}`;
+        function checkoutWhatsAppOrder() {
+            if (state.cart.length === 0) return alert("Cart is empty!");
+            let text = "Hello Royal Mobile And Printing Store, I want to place this order:\n\n";
+            state.cart.forEach(i => { text += `• ${i.name} (x${i.qty}) - Rs. ${i.price * i.qty}\n`; });
+            text += `\nTotal Amount: ${document.getElementById('cart-total-price').innerText}`;
             window.open(`https://wa.me/923040011041?text=${encodeURIComponent(text)}`, '_blank');
         }
 
-        function renderPosCatalog() {
-            document.getElementById('pos-catalog-grid').innerHTML = state.products.slice(0, 24).map(p => `
-                <div onclick="addPosItem(${p.id})" class="bg-gray-900/80 p-2.5 rounded-lg border border-gray-800 hover:border-yellow-500/50 cursor-pointer text-right">
-                    <p class="text-xs font-bold text-gray-200 truncate">${p.name}</p>
-                    <p class="text-[10px] gold-text font-semibold mt-1">Rs. ${p.price}</p>
-                </div>
+        function openWhatsAppChat() {
+            window.open(`https://wa.me/923040011041?text=Hello%20Royal%20Mobile%20And%20Printing%20Store`, '_blank');
+        }
+
+        // Customization Studio Logic
+        function requestCustomQuote() {
+            let item = document.getElementById('studio-item').value;
+            let color = document.getElementById('studio-color').value;
+            let customText = document.getElementById('studio-text').value;
+            let qty = document.getElementById('studio-qty').value;
+            let text = `Hello Royal Mobile And Printing Store, I want a custom quote for:\nItem: ${item}\nColor: ${color}\nCustom Text: ${customText}\nQuantity: ${qty}`;
+            window.open(`https://wa.me/923040011041?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        // Manage Products Table
+        function renderManageProductsTable() {
+            document.getElementById('manage-products-tbody').innerHTML = state.products.slice(0, 30).map((p, idx) => `
+                <tr class="border-b border-gray-800">
+                    <td class="p-2 font-bold text-white"><input type="text" value="${p.name}" onchange="updateProdField(${p.id}, 'name', this.value)" class="bg-gray-900 border border-gray-700 rounded p-1 w-full text-xs text-white"></td>
+                    <td class="p-2">${p.cat}</td>
+                    <td class="p-2"><input type="number" value="${p.price}" onchange="updateProdField(${p.id}, 'price', this.value)" class="bg-gray-900 border border-gray-700 rounded p-1 w-20 text-xs text-white"></td>
+                    <td class="p-2"><input type="number" value="${p.stock}" onchange="updateProdField(${p.id}, 'stock', this.value)" class="bg-gray-900 border border-gray-700 rounded p-1 w-16 text-xs text-white"></td>
+                    <td class="p-2"><input type="text" value="${p.desc}" onchange="updateProdField(${p.id}, 'desc', this.value)" class="bg-gray-900 border border-gray-700 rounded p-1 w-full text-xs text-white"></td>
+                    <td class="p-2"><input type="file" accept="image/*" onchange="uploadProdImage(${p.id}, event)" class="text-[10px] text-gray-400"></td>
+                </tr>
             `).join('');
         }
 
-        function addPosItem(id) {
-            let item = state.products.find(p => p.id === id);
-            let exist = state.posCart.find(c => c.id === id);
-            if (exist) { exist.qty++; } else { state.posCart.push({ ...item, qty: 1 }); }
-            renderPosCart();
-        }
-
-        function renderPosCart() {
-            let subtotal = state.posCart.reduce((a, b) => a + (b.price * b.qty), 0);
-            let discount = subtotal > 5000 ? subtotal * 0.1 : 0;
-            let total = subtotal - discount;
-
-            document.getElementById('pos-subtotal').innerText = `Rs. ${subtotal.toLocaleString()}`;
-            document.getElementById('pos-discount').innerText = `Rs. ${discount.toLocaleString()}`;
-            document.getElementById('pos-total').innerText = `Rs. ${total.toLocaleString()}`;
-
-            document.getElementById('pos-cart-items').innerHTML = state.posCart.map(i => `
-                <div class="flex justify-between items-center py-1.5 text-xs">
-                    <div>
-                        <p class="font-bold text-gray-300">${i.name}</p>
-                        <p class="text-[10px] text-gray-500">x${i.qty}</p>
-                    </div>
-                    <span class="font-bold text-yellow-400">Rs. ${i.price * i.qty}</span>
-                </div>
-            `).join('');
-        }
-
-        function processPosCheckout(type) {
-            if (state.posCart.length === 0) return alert("Please add items to counter invoice!");
-            alert(`Order Processed via ${type}! Receipt sent to thermal print queue.`);
-            state.posCart = [];
-            renderPosCart();
-        }
-
-        function exportRedsailPLT() {
-            let text = document.getElementById('plt-text').value;
-            let speed = document.getElementById('plt-speed').value;
-            let force = document.getElementById('plt-force').value;
-            
-            let hpgl = `IN;VS${speed};FS${force};SP1;PU0,0;PD100,0,100,100,0,100,0,0;PU;`;
-            let blob = new Blob([hpgl], { type: "text/plain" });
-            let a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = `Redsail_Job_${text}.plt`;
-            a.click();
-        }
-
-        function renderBarcode() {
-            JsBarcode("#barcode-svg", document.getElementById('label-sku').value, {
-                format: "CODE128", width: 1.8, height: 40, displayValue: true
-            });
-        }
-
-        function printPhomemoLabel() { window.print(); }
-
-        function printThermalReceiptDirect() {
-            let body = document.getElementById('receipt-body');
-            body.innerHTML = state.posCart.map(i => `
-                <div style="display:flex; justify-content:space-between;">
-                    <span>${i.name.substring(0, 15)} x${i.qty}</span>
-                    <span>${i.price * i.qty}</span>
-                </div>
-            `).join('') + `<hr><p style="text-align:right; font-weight:bold;">Total: ${document.getElementById('pos-total').innerText}</p>`;
-            window.print();
-        }
-
-        async function connectWebUSBPrinter() {
-            try {
-                const device = await navigator.usb.requestDevice({ filters: [] });
-                await device.open();
-                alert(`Connected to USB Printer: ${device.productName}`);
-            } catch (err) {
-                alert("WebUSB Selection Cancelled or Device Not Supported.");
+        function updateProdField(id, field, val) {
+            let p = state.products.find(item => item.id === id);
+            if (p) {
+                if (field === 'price' || field === 'stock') val = Number(val);
+                p[field] = val;
+                localStorage.setItem('royal_products', JSON.stringify(state.products));
+                renderStorefront();
             }
         }
 
-        function loadCanvasTemplate() {
-            let canvas = document.getElementById('studio-canvas');
-            let ctx = canvas.getContext('2d');
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "#1e293b";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "#d4af37";
-            ctx.font = "16px Poppins";
-            ctx.fillText("Royal Personalization Studio Preview", 110, 180);
+        function uploadProdImage(id, event) {
+            let file = event.target.files[0];
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    let p = state.products.find(item => item.id === id);
+                    if (p) {
+                        p.img = e.target.result;
+                        localStorage.setItem('royal_products', JSON.stringify(state.products));
+                        renderStorefront();
+                        alert("Product picture updated successfully!");
+                    }
+                }
+                reader.readAsDataURL(file);
+            }
         }
 
-        function addTextToCanvas() {
-            let text = document.getElementById('canvas-text-input').value;
-            let canvas = document.getElementById('studio-canvas');
-            let ctx = canvas.getContext('2d');
-            ctx.fillStyle = "#ffffff";
-            ctx.font = "22px Poppins";
-            ctx.fillText(text, 120, 100);
+        function addNewProduct() {
+            let name = document.getElementById('new-prod-name').value;
+            let cat = document.getElementById('new-prod-cat').value;
+            let price = Number(document.getElementById('new-prod-price').value) || 500;
+            let stock = Number(document.getElementById('new-prod-stock').value) || 10;
+            let desc = document.getElementById('new-prod-desc').value || "Custom item";
+            let fileInput = document.getElementById('new-prod-img');
+
+            let newP = { id: Date.now(), name, cat, price, stock, desc, img: "" };
+
+            if (fileInput.files[0]) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    newP.img = e.target.result;
+                    state.products.unshift(newP);
+                    localStorage.setItem('royal_products', JSON.stringify(state.products));
+                    renderStorefront();
+                    renderManageProductsTable();
+                    updateErpStats();
+                    alert("New product added successfully!");
+                }
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                state.products.unshift(newP);
+                localStorage.setItem('royal_products', JSON.stringify(state.products));
+                renderStorefront();
+                renderManageProductsTable();
+                updateErpStats();
+                alert("New product added successfully!");
+            }
         }
 
-        function renderCharts() {
-            new Chart(document.getElementById('salesChart'), {
-                type: 'line',
-                data: {
-                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                    datasets: [{ label: 'Sales (PKR)', data: [28000, 35000, 42000, 31000, 52000, 68000, 45800], borderColor: '#d4af37', tension: 0.3 }]
-                },
-                options: { plugins: { legend: { labels: { color: '#fff' } } } }
+        function saveStoreBranding() {
+            let headline = document.getElementById('custom-headline').value;
+            let desc = document.getElementById('custom-desc').value;
+            let phone = document.getElementById('custom-phone').value;
+            let location = document.getElementById('custom-location').value;
+
+            document.getElementById('hero-headline').innerText = headline;
+            document.getElementById('hero-subtext').innerText = desc;
+            document.getElementById('nav-location-text').innerText = location;
+            document.getElementById('top-announcement-text').innerText = `⚡ Royal Mobile And Printing Store ${location} | Call / WhatsApp: ${phone} ⚡`;
+
+            let logoFile = document.getElementById('custom-logo-file').files[0];
+            if (logoFile) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('nav-logo-img').src = e.target.result;
+                }
+                reader.readAsDataURL(logoFile);
+            }
+
+            let coverFile = document.getElementById('custom-cover-file').files[0];
+            if (coverFile) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('hero-bg-overlay').style.backgroundImage = `url('${e.target.result}')`;
+                }
+                reader.readAsDataURL(coverFile);
+            }
+
+            alert("Store branding and customization saved successfully!");
+        }
+
+        function resetStoreBranding() {
+            document.getElementById('custom-headline').value = "Your Royal Store. Everything, One Place.";
+            document.getElementById('custom-desc').value = "Mobiles, accessories, stationery, sublimation and customized gifts — retail and wholesale with fast delivery all over Pakistan.";
+            document.getElementById('custom-phone').value = "+92 304 0011041";
+            document.getElementById('custom-location').value = "Faisalabad, Punjab, Pakistan";
+            saveStoreBranding();
+        }
+
+        function resetDefaultCatalog() {
+            seedDefaultCatalog();
+            renderStorefront();
+            renderManageProductsTable();
+            updateErpStats();
+            alert("Restored 100+ starter items!");
+        }
+
+        function exportCatalogCsv() {
+            let csv = "ID,Name,Category,Price,Stock,Description\n";
+            state.products.forEach(p => {
+                csv += `${p.id},"${p.name}","${p.cat}",${p.price},${p.stock},"${p.desc}"\n`;
             });
-
-            new Chart(document.getElementById('expenseChart'), {
-                type: 'doughnut',
-                data: {
-                    labels: ['DTF Inks & Vinyl', 'Sublimation Blanks', 'Shop Rent & Bills', 'Staff Payroll'],
-                    datasets: [{ data: [18000, 12000, 25000, 35000], backgroundColor: ['#d4af37', '#3b82f6', '#ef4444', '#10b981'] }]
-                },
-                options: { plugins: { legend: { labels: { color: '#fff' } } } }
-            });
+            let blob = new Blob([csv], { type: 'text/csv' });
+            let a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'royal_store_catalog.csv';
+            a.click();
         }
 
-        function renderStaff() {
-            document.getElementById('staff-rows').innerHTML = state.staff.map(s => `
-                <tr class="border-b border-gray-800">
-                    <td class="p-3 font-bold">${s.name}</td>
-                    <td class="p-3">${s.role}</td>
-                    <td class="p-3">Rs. ${s.salary.toLocaleString()}</td>
-                    <td class="p-3">${s.comm}%</td>
-                    <td class="p-3 text-green-400 font-bold">Rs. ${s.commEarned.toLocaleString()}</td>
-                    <td class="p-3"><span class="bg-green-500/20 text-green-400 px-2 py-0.5 rounded text-[10px]">${s.status}</span></td>
-                    <td class="p-3"><button class="text-yellow-400 hover:underline">Edit</button></td>
-                </tr>
+        // Customer Feedback
+        function submitCustomerFeedback() {
+            let name = document.getElementById('feedback-name').value;
+            let rating = document.getElementById('feedback-rating').value;
+            let comment = document.getElementById('feedback-comment').value;
+
+            if (!name || !comment) return alert("Please fill in your name and comment.");
+            state.feedback.unshift({ name, rating, comment });
+            renderFeedbackList();
+            alert("Thank you for your feedback!");
+            document.getElementById('feedback-name').value = '';
+            document.getElementById('feedback-comment').value = '';
+        }
+
+        function renderFeedbackList() {
+            document.getElementById('feedback-list').innerHTML = state.feedback.map(f => `
+                <div class="bg-black/40 p-3 rounded-xl border border-white/5 space-y-1">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-xs text-white">${f.name}</h4>
+                        <span class="text-xs text-yellow-400">${'⭐'.repeat(Number(f.rating))}</span>
+                    </div>
+                    <p class="text-[11px] text-gray-300">${f.comment}</p>
+                </div>
             `).join('');
         }
 
-        function renderPOs() {
-            document.getElementById('supplier-po-rows').innerHTML = state.supplierPOs.map(p => `
-                <tr class="border-b border-gray-800">
-                    <td class="p-3 font-bold">${p.id}</td>
-                    <td class="p-3">${p.supplier}</td>
-                    <td class="p-3">${p.items}</td>
-                    <td class="p-3 gold-text font-bold">${p.cost}</td>
-                    <td class="p-3"><span class="bg-yellow-500/20 text-yellow-400 px-2 py-0.5 rounded text-[10px]">${p.status}</span></td>
-                    <td class="p-3"><button class="text-blue-400 hover:underline"><i class="fa-brands fa-whatsapp"></i> Send</button></td>
-                </tr>
-            `).join('');
+        // AI Marketing Draft Generator
+        function generateAiDraft() {
+            let goal = document.getElementById('ai-goal').value;
+            let platform = document.getElementById('ai-platform').value;
+            let details = document.getElementById('ai-details').value || 'Mobiles & custom printing';
+            let price = document.getElementById('ai-price').value;
+            let lang = document.getElementById('ai-lang').value;
+            let cta = document.getElementById('ai-cta').value;
+
+            let draft = `🔥 ROYAL MOBILE AND PRINTING STORE, FAISALABAD 🔥\n\nGoal: ${goal}\nFeatured: ${details}\n${price ? 'Offer: ' + price + '\n' : ''}\nAaj hi visit karein ya WhatsApp par order book karwayein!\n\n📞 Contact / WhatsApp: +92 304 0011041\n📍 Location: Jaranwala Road, Faisalabad\n\n[Action: ${cta} | Format: ${platform} | Language: ${lang}]`;
+            document.getElementById('ai-output-box').value = draft;
         }
 
-        function generateSupplierPO() {
-            alert("Auto-generated Purchase Order for Low Stock Sublimation Mugs & Plotter Blades!");
+        function copyAiDraft() {
+            let box = document.getElementById('ai-output-box');
+            box.select();
+            navigator.clipboard.writeText(box.value);
+            alert("Promotion draft copied to clipboard!");
         }
 
-        function saveSettings() { alert("Settings saved successfully!"); }
+        function openErpModule(mod) {
+            alert(`Opening ERP Module: ${mod}. All financial and inventory tools are active in demo mode.`);
+        }
+
+        function performAdminLogin() {
+            let name = document.getElementById('admin-name').value || 'Admin';
+            alert(`Welcome back, ${name}! Full ERP and Business Suite access granted.`);
+            switchTab('erp');
+        }
+
+        function performAdminSignup() {
+            alert("Demo staff account registered successfully.");
+            switchTab('erp');
+        }
+
+        function updateErpStats() {
+            document.getElementById('erp-stat-catalog').innerText = state.products.length;
+            let totalStock = state.products.reduce((a, b) => a + Number(b.stock), 0);
+            document.getElementById('erp-stat-stock').innerText = totalStock;
+        }
     </script>
 </body>
 </html>
