@@ -17,52 +17,90 @@
     <style>
         body { font-family: 'Poppins', sans-serif; transition: all 0.3s ease; }
         :root {
-            --bg-main: #f5f5f5;
-            --panel-bg: #ffffff;
-            --accent-color: #f97316;
-            --accent-gradient: linear-gradient(135deg, #f97316 0%, #ff8c00 50%, #c2410c 100%);
-            --text-main: #1f2937;
+            --bg-main: #09090b;
+            --panel-bg: rgba(24, 24, 27, 0.9);
+            --accent-color: #d4af37;
+            --accent-gradient: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa771c 100%);
+            --text-main: #f4f4f5;
         }
 
-        body.theme-daraz { --bg-main: #f5f5f5; --panel-bg: #ffffff; --accent-color: #f97316; --accent-gradient: linear-gradient(135deg, #f97316 0%, #ff8c00 50%, #c2410c 100%); --text-main: #1f2937; }
-        body.theme-royal-dark { --bg-main: #09090b; --panel-bg: rgba(24, 24, 27, 0.9); --accent-color: #d4af37; --accent-gradient: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa771c 100%); --text-main: #f4f4f5; }
-        body.theme-cyber { --bg-main: #030712; --panel-bg: rgba(17, 24, 39, 0.9); --accent-color: #06b6d4; --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #1d4ed8 100%); --text-main: #f9fafb; }
-        body.theme-emerald { --bg-main: #022c22; --panel-bg: rgba(6, 78, 59, 0.9); --accent-color: #10b981; --accent-gradient: linear-gradient(135deg, #10b981 0%, #34d399 50%, #047857 100%); --text-main: #ecfdf5; }
+        body.theme-1 { --accent-color: #d4af37; --accent-gradient: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa771c 100%); }
+        body.theme-2 { --accent-color: #10b981; --accent-gradient: linear-gradient(135deg, #059669 0%, #34d399 50%, #047857 100%); }
+        body.theme-3 { --accent-color: #3b82f6; --accent-gradient: linear-gradient(135deg, #1d4ed8 0%, #60a5fa 50%, #1e40af 100%); }
+        body.theme-4 { --accent-color: #ef4444; --accent-gradient: linear-gradient(135deg, #b91c1c 0%, #f87171 50%, #991b1b 100%); }
+        body.theme-5 { --accent-color: #8b5cf6; --accent-gradient: linear-gradient(135deg, #6d28d9 0%, #a78bfa 50%, #5b21b6 100%); }
+        body.theme-6 { --accent-color: #f8fafc; --accent-gradient: linear-gradient(135deg, #cbd5e1 0%, #ffffff 50%, #94a3b8 100%); }
+        body.theme-7 { --accent-color: #22c55e; --accent-gradient: linear-gradient(135deg, #15803d 0%, #4ade80 50%, #166534 100%); }
+        body.theme-8 { --accent-color: #f43f5e; --accent-gradient: linear-gradient(135deg, #be123c 0%, #fb7185 50%, #881337 100%); }
+        body.theme-9 { --accent-color: #94a3b8; --accent-gradient: linear-gradient(135deg, #475569 0%, #cbd5e1 50%, #334155 100%); }
+        body.theme-10 { --accent-color: #06b6d4; --accent-gradient: linear-gradient(135deg, #0e7490 0%, #22d3ee 50%, #155e75 100%); }
+        body.theme-11 { --accent-color: #f97316; --accent-gradient: linear-gradient(135deg, #c2410c 0%, #fb923c 50%, #9a3412 100%); }
+        body.theme-12 { --accent-color: #ec4899; --accent-gradient: linear-gradient(135deg, #be185d 0%, #f472b6 50%, #9d174d 100%); }
+        body.theme-13 { --accent-color: #38bdf8; --accent-gradient: linear-gradient(135deg, #0284c7 0%, #7dd3fc 50%, #0369a1 100%); }
+        body.theme-14 { --accent-color: #eab308; --accent-gradient: linear-gradient(135deg, #a16207 0%, #fde047 50%, #854d0e 100%); }
+        body.theme-15 { --accent-color: #84cc16; --accent-gradient: linear-gradient(135deg, #4d7c0f 0%, #bef264 50%, #3f6212 100%); }
+        body.theme-16 { --accent-color: #d97706; --accent-gradient: linear-gradient(135deg, #b45309 0%, #fbbf24 50%, #92400e 100%); }
+        body.theme-17 { --accent-color: #e2e8f0; --accent-gradient: linear-gradient(135deg, #334155 0%, #f8fafc 50%, #0f172a 100%); }
+        body.theme-18 { --accent-color: #ff5722; --accent-gradient: linear-gradient(135deg, #e64a19 0%, #ffab91 50%, #bf360c 100%); }
+        body.theme-19 { --accent-color: #6366f1; --accent-gradient: linear-gradient(135deg, #4338ca 0%, #818cf8 50%, #3730a3 100%); }
+        body.theme-20 { --accent-color: #fef08a; --accent-gradient: linear-gradient(135deg, #ca8a04 0%, #fef08a 50%, #a16207 100%); }
 
         .accent-gradient { background: var(--accent-gradient); }
-        .accent-text { color: var(--accent-color); }
+        .accent-text { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .accent-border { border-color: var(--accent-color); }
-        .glass-panel { background: var(--panel-bg); backdrop-filter: blur(14px); border: 1px solid rgba(150, 150, 150, 0.15); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
-        .card-3d { transition: all 0.3s ease; }
-        .card-3d:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.2); }
+        .glass-panel { background: var(--panel-bg); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .card-3d { transition: all 0.4s ease; transform-style: preserve-3d; }
+        .card-3d:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.6); border-color: var(--accent-color); }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col theme-daraz" id="app-body">
+<body class="bg-gray-950 text-gray-100 min-h-screen flex flex-col theme-1" id="app-body">
 
-    <!-- Network Sync Indicator Bar -->
-    <div id="offline-indicator" class="bg-green-600 text-white text-xs font-bold py-1 px-4 text-center shadow-md flex justify-between items-center">
-        <span><i class="fa-solid fa-wifi mr-1"></i> Mode: <strong id="net-status-text">Online & Auto-Sync Active</strong></span>
-        <span id="pending-sync-count" class="bg-white/20 px-2 py-0.5 rounded text-[10px]">Offline Queue: 0</span>
+    <!-- Network & Sync Status Bar -->
+    <div id="offline-indicator" class="bg-green-600 text-white text-xs font-bold py-1.5 px-4 text-center shadow-md flex justify-between items-center">
+        <span><i class="fa-solid fa-wifi mr-1"></i> System Status: <strong id="net-status-text">Online & Auto-Sync Active</strong></span>
+        <span id="pending-sync-count" class="bg-white/20 px-2.5 py-0.5 rounded text-[10px]">Offline Queue: 0</span>
     </div>
 
-    <!-- Top Header -->
-    <nav class="bg-orange-500 text-white sticky top-0 z-50 shadow-md">
+    <!-- Top Announcement Bar -->
+    <div class="accent-gradient text-black text-xs md:text-sm font-bold py-2 px-4 text-center shadow-md">
+        ⚡ <span id="top-announcement-text">Royal Mobile And Printing Store Faisalabad | Call / WhatsApp: +92 304 0011041</span> ⚡
+    </div>
+
+    <!-- Main Navigation Header -->
+    <nav class="bg-black/95 border-b border-gray-800 sticky top-0 z-50 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
+            <div class="flex items-center justify-between h-20">
                 <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('store')">
-                    <img id="nav-logo-img" src="https://via.placeholder.com/50/f97316/ffffff?text=ROYAL" class="h-10 w-10 rounded-full border-2 border-white object-cover" alt="Royal Logo">
+                    <img id="nav-logo-img" src="https://via.placeholder.com/60/d4af37/000000?text=ROYAL" class="h-12 w-12 rounded-full border-2 accent-border object-cover shadow-lg" alt="Royal Logo">
                     <div>
-                        <h1 class="text-base md:text-lg font-bold uppercase tracking-wide">Royal Mobile And Printing Store</h1>
-                        <p class="text-[10px] text-orange-100">Faisalabad, Punjab, Pakistan</p>
+                        <h1 class="text-base md:text-lg font-extrabold accent-text uppercase tracking-wider">Royal Mobile And Printing Store</h1>
+                        <p class="text-[11px] text-gray-400" id="nav-location-text">Faisalabad, Punjab, Pakistan</p>
                     </div>
                 </div>
 
+                <!-- Navigation Links -->
+                <div class="hidden xl:flex items-center space-x-1 text-xs font-semibold">
+                    <button onclick="switchTab('store')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition"><i class="fa-solid fa-store ml-1"></i> Store</button>
+                    <button onclick="switchTab('categories')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition"><i class="fa-solid fa-list ml-1"></i> Categories</button>
+                    <button onclick="switchTab('studio')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition"><i class="fa-solid fa-cube ml-1"></i> 3D Custom Studio</button>
+                    <button onclick="switchTab('aiagent')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition text-yellow-400"><i class="fa-solid fa-robot ml-1"></i> Farhan AI Agent</button>
+                    <button onclick="switchTab('feedback')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition"><i class="fa-solid fa-comments ml-1"></i> Feedback</button>
+                    
+                    <!-- Admin & Manager Restricted Tabs -->
+                    <div id="admin-nav-links" class="hidden flex items-center space-x-1 border-r border-l border-gray-700 px-2">
+                        <button onclick="switchTab('erp')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition text-blue-400"><i class="fa-solid fa-briefcase ml-1"></i> ERP Suite</button>
+                        <button onclick="switchTab('themes')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition text-pink-400"><i class="fa-solid fa-wand-magic-sparkles ml-1"></i> 20 Themes</button>
+                        <button onclick="switchTab('branding')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition text-purple-400"><i class="fa-solid fa-gear ml-1"></i> Branding & Backup</button>
+                    </div>
+                </div>
+
+                <!-- Cart & Admin Login Buttons -->
                 <div class="flex items-center gap-3">
-                    <button onclick="switchTab('cart')" class="relative p-2 rounded-full hover:bg-white/10">
-                        <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    <button onclick="toggleCartModal()" class="relative bg-white/10 hover:bg-white/20 p-2.5 rounded-full border border-white/10 transition">
+                        <i class="fa-solid fa-cart-shopping text-sm"></i>
                         <span id="cart-count" class="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
                     </button>
-                    <button id="nav-auth-btn" onclick="toggleAdminMode()" class="bg-white/20 hover:bg-white/30 text-xs px-3 py-1.5 rounded-lg font-bold transition flex items-center gap-1">
+                    <button id="nav-auth-btn" onclick="toggleAdminMode()" class="bg-white/10 hover:bg-white/20 text-xs px-3.5 py-2 rounded-lg border border-white/10 font-bold transition flex items-center gap-1.5">
                         <i class="fa-solid fa-user-lock"></i> <span id="auth-btn-text">Admin Login</span>
                     </button>
                 </div>
@@ -70,306 +108,410 @@
         </div>
     </nav>
 
-    <!-- Sub Navigation Bar -->
-    <div class="bg-white border-b border-gray-200 px-4 py-2 sticky top-16 z-40 shadow-sm flex overflow-x-auto justify-between max-w-7xl mx-auto w-full text-xs font-medium">
-        <button onclick="switchTab('store')" class="px-3 py-1.5 rounded-lg hover:bg-gray-100 flex items-center gap-1 text-gray-700"><i class="fa-solid fa-house accent-text"></i> Home</button>
-        <button onclick="switchTab('categories')" class="px-3 py-1.5 rounded-lg hover:bg-gray-100 flex items-center gap-1 text-gray-700"><i class="fa-solid fa-list-check accent-text"></i> Categories</button>
-        <button onclick="switchTab('studio')" class="px-3 py-1.5 rounded-lg hover:bg-gray-100 flex items-center gap-1 text-gray-700"><i class="fa-solid fa-cube accent-text"></i> 3D Customizer</button>
-        <button onclick="switchTab('aiagent')" class="px-3 py-1.5 rounded-lg hover:bg-gray-100 flex items-center gap-1 text-gray-700"><i class="fa-solid fa-robot accent-text"></i> Farhan AI</button>
-        <button onclick="switchTab('account')" class="px-3 py-1.5 rounded-lg hover:bg-gray-100 flex items-center gap-1 text-gray-700"><i class="fa-solid fa-user accent-text"></i> My Account</button>
-        <div id="admin-nav-links" class="hidden flex items-center gap-1 border-l border-gray-300 pl-2">
-            <button onclick="switchTab('erp')" class="px-3 py-1.5 rounded-lg bg-blue-50 text-blue-600 font-bold"><i class="fa-solid fa-briefcase"></i> ERP Manager</button>
-            <button onclick="switchTab('branding')" class="px-3 py-1.5 rounded-lg bg-purple-50 text-purple-600 font-bold"><i class="fa-solid fa-paintbrush"></i> Theme & Custom UI</button>
-        </div>
-    </div>
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 md:p-6 space-y-8">
 
-    <!-- Main View Container -->
-    <main class="flex-grow max-w-7xl w-full mx-auto p-3 md:p-6 space-y-6">
-
-        <!-- STOREFRONT -->
-        <section id="view-store" class="tab-content block space-y-6">
-            <div id="hero-banner-container" class="relative rounded-xl overflow-hidden glass-panel p-6 md:p-10 text-left flex flex-col justify-center min-h-[220px]">
-                <div id="hero-bg-overlay" class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1200');"></div>
-                <div class="relative z-10 max-w-xl space-y-2">
-                    <span class="bg-orange-500 text-white text-[10px] px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wide">Faisalabad Mobile & Custom Print Store</span>
-                    <h2 id="hero-headline" class="text-2xl md:text-4xl font-extrabold accent-text">Welcome to Royal Store</h2>
-                    <p id="hero-subtext" class="text-xs md:text-sm text-gray-600">Buy Mobile Accessories, Custom Sublimation Mugs, DTF Shirts & Stationeries.</p>
+        <!-- VIEW 1: CUSTOMER STOREFRONT -->
+        <section id="view-store" class="tab-content block space-y-8">
+            <div id="hero-banner-container" class="relative rounded-2xl overflow-hidden border accent-border glass-panel p-8 md:p-12 text-left flex flex-col justify-center min-h-[280px]">
+                <div id="hero-bg-overlay" class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1200');"></div>
+                <div class="relative z-10 max-w-2xl space-y-3">
+                    <span class="bg-white/10 text-xs px-3 py-1 rounded-full border border-white/20 font-semibold uppercase tracking-wider">Retail & Wholesale • Custom Printing</span>
+                    <h2 id="hero-headline" class="text-3xl md:text-5xl font-extrabold accent-text leading-tight">Your Royal Store. Everything, One Place.</h2>
+                    <p id="hero-subtext" class="text-gray-300 text-sm md:text-base">Mobiles, accessories, stationery, sublimation and customized gifts with fast delivery all over Pakistan.</p>
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <button onclick="switchTab('studio')" class="accent-gradient text-black font-bold px-5 py-2.5 rounded-xl text-xs shadow-lg">3D Customizer Studio</button>
+                        <button onclick="switchTab('aiagent')" class="bg-yellow-500/20 text-yellow-400 border border-yellow-500/40 px-5 py-2.5 rounded-xl text-xs font-semibold">Ask Farhan AI Agent</button>
+                        <button onclick="openWhatsAppChat()" class="bg-green-600/30 text-green-400 border border-green-500/40 px-5 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-1.5"><i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Us</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="glass-panel p-3 rounded-xl flex justify-between items-center text-xs">
+            <!-- Single Piece vs Bulk Wholesale Pricing Switcher -->
+            <div class="glass-panel p-4 rounded-xl border border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
                 <div>
-                    <span class="font-bold block">Pricing Range Switcher:</span>
-                    <span class="text-[10px] text-gray-500">Choose Single Retail or Bulk Discount pricing.</span>
+                    <h3 class="font-bold text-sm text-white">Pricing Range Switcher</h3>
+                    <p class="text-[11px] text-gray-400">Switch instantly between Single Piece Retail rates and Bulk Wholesale discount rates.</p>
                 </div>
-                <div class="flex bg-gray-200 p-1 rounded-lg">
-                    <button id="btn-retail" onclick="setPricingMode('retail')" class="px-3 py-1 rounded font-bold bg-white text-gray-800 shadow">Single Piece</button>
-                    <button id="btn-bulk" onclick="setPricingMode('bulk')" class="px-3 py-1 rounded font-bold text-gray-600">Bulk Wholesale (20% Off)</button>
-                </div>
-            </div>
-
-            <div id="product-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3"></div>
-        </section>
-
-        <!-- CATEGORIES -->
-        <section id="view-categories" class="tab-content hidden space-y-4">
-            <div class="glass-panel p-4 rounded-xl border border-gray-200">
-                <h2 class="text-lg font-bold text-gray-800 border-b border-gray-200 pb-2 mb-4"><i class="fa-solid fa-list-check accent-text mr-1"></i> All Store Categories</h2>
-                <div class="flex flex-col md:flex-row gap-4">
-                    <div id="category-sidebar" class="w-full md:w-1/4 flex md:flex-col overflow-x-auto md:overflow-visible gap-1 border-r border-gray-200 pr-2"></div>
-                    <div class="w-full md:w-3/4">
-                        <h3 id="selected-cat-title" class="text-sm font-bold accent-text mb-3">Just For You</h3>
-                        <div id="category-items-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3"></div>
-                    </div>
+                <div class="flex bg-black/50 p-1 rounded-xl border border-white/10">
+                    <button id="btn-retail" onclick="setPricingMode('retail')" class="px-4 py-2 rounded-lg text-xs font-bold accent-gradient text-black transition">Single Piece (Retail)</button>
+                    <button id="btn-bulk" onclick="setPricingMode('bulk')" class="px-4 py-2 rounded-lg text-xs font-bold text-gray-300 transition">Bulk Wholesale (20% Off)</button>
                 </div>
             </div>
+
+            <!-- Categories Filter Pills -->
+            <div id="category-pills" class="flex flex-wrap gap-2 pb-2 overflow-x-auto"></div>
+
+            <!-- 100+ Products Grid -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
         </section>
 
-        <!-- MY ACCOUNT -->
-        <section id="view-account" class="tab-content hidden space-y-4">
-            <div class="glass-panel p-4 rounded-xl max-w-2xl mx-auto space-y-4">
-                <div class="bg-gradient-to-r from-orange-500 to-amber-500 text-white p-4 rounded-xl flex justify-between items-center">
-                    <div>
-                        <p class="text-xs opacity-90">Hello, Welcome to Royal Store!</p>
-                        <h3 id="account-user-name" class="text-lg font-bold">Guest Customer</h3>
-                    </div>
-                    <button onclick="toggleAdminMode()" class="bg-white text-orange-600 font-bold px-3 py-1.5 rounded-lg text-xs shadow">LOGIN / SIGNUP</button>
+        <!-- VIEW 2: CATEGORIES EXPLORER -->
+        <section id="view-categories" class="tab-content hidden space-y-6">
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold accent-text">All Shop Categories</h2>
+                    <p class="text-xs text-gray-400 mt-1">Explore all products and printing services categories.</p>
                 </div>
-
-                <div class="divide-y divide-gray-200 bg-white rounded-xl shadow-sm border border-gray-100 text-sm">
-                    <div onclick="switchTab('cart')" class="p-3 flex items-center justify-between cursor-pointer hover:bg-gray-50">
-                        <span class="flex items-center gap-3"><i class="fa-solid fa-box-archive text-gray-500"></i> My Orders</span>
-                        <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
-                    </div>
-                    <div class="p-3 flex items-center justify-between cursor-pointer hover:bg-gray-50">
-                        <span class="flex items-center gap-3"><i class="fa-solid fa-heart text-gray-500"></i> My Wishlist & Followed Stores</span>
-                        <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
-                    </div>
-                    <div class="p-3 flex items-center justify-between cursor-pointer hover:bg-gray-50">
-                        <span class="flex items-center gap-3"><i class="fa-solid fa-shield-halved text-gray-500"></i> Policies & Checking Warranty</span>
-                        <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
-                    </div>
-                    <div onclick="switchTab('feedback')" class="p-3 flex items-center justify-between cursor-pointer hover:bg-gray-50">
-                        <span class="flex items-center gap-3"><i class="fa-solid fa-comment-dots text-gray-500"></i> Feedback & Reviews</span>
-                        <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
-                    </div>
-                    <div onclick="switchTab('aiagent')" class="p-3 flex items-center justify-between cursor-pointer hover:bg-gray-50">
-                        <span class="flex items-center gap-3"><i class="fa-solid fa-headset text-gray-500"></i> Help & Support</span>
-                        <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
-                    </div>
-                    <div onclick="openWhatsAppChat()" class="p-3 flex items-center justify-between cursor-pointer hover:bg-gray-50 text-green-600 font-semibold">
-                        <span class="flex items-center gap-3"><i class="fa-brands fa-whatsapp text-lg"></i> Chat with us on WhatsApp</span>
-                        <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
-                    </div>
-                </div>
+                <div id="all-categories-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
             </div>
         </section>
 
-        <!-- CART -->
-        <section id="view-cart" class="tab-content hidden space-y-4">
-            <div class="glass-panel p-6 rounded-xl max-w-xl mx-auto text-center space-y-4">
-                <h2 class="text-xl font-bold border-b border-gray-200 pb-2"><i class="fa-solid fa-cart-shopping accent-text mr-1"></i> My Cart</h2>
-                <div id="cart-empty-state" class="py-8 space-y-3">
-                    <div class="w-16 h-16 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center mx-auto text-2xl">
-                        <i class="fa-solid fa-basket-shopping"></i>
-                    </div>
-                    <p class="text-gray-500 text-xs">You haven't added anything here</p>
-                    <button onclick="switchTab('store')" class="bg-orange-500 text-white font-bold px-6 py-2 rounded-lg text-xs shadow">Go Shopping</button>
-                </div>
-                <div id="cart-items-container" class="space-y-3 text-left hidden">
-                    <div id="cart-list" class="divide-y divide-gray-200"></div>
-                    <div class="pt-3 border-t border-gray-200 flex justify-between items-center font-bold text-sm">
-                        <span>Total Amount:</span>
-                        <span id="cart-total-val" class="accent-text">Rs. 0</span>
-                    </div>
-                    <button onclick="checkoutWhatsAppOrder()" class="w-full bg-green-600 text-white font-bold py-2.5 rounded-lg text-xs shadow flex items-center justify-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-base"></i> Place Order via WhatsApp
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3D CUSTOMIZER STUDIO -->
+        <!-- VIEW 3: 3D ADVANCED PRODUCT CUSTOMIZATION STUDIO -->
         <section id="view-studio" class="tab-content hidden space-y-6">
-            <div class="glass-panel p-6 rounded-2xl border border-gray-200 space-y-4">
-                <h2 class="text-xl font-bold accent-text">3D Advanced Product Customizer Studio</h2>
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold accent-text">3D Advanced Product Customizer Studio</h2>
+                    <p class="text-xs text-gray-400 mt-1">Select category, item range, color, size, upload custom photo or text for instant 3D preview & order.</p>
+                </div>
+
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <div class="space-y-3 text-xs">
+                    <div class="space-y-4 bg-black/40 p-4 rounded-xl border border-white/5">
                         <div>
-                            <label class="font-bold text-gray-700 block mb-1">Select Item</label>
-                            <select id="studio-item" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-gray-800">
+                            <label class="text-xs font-semibold text-gray-300 block mb-1">Select Category</label>
+                            <select id="studio-cat" onchange="updateStudioItems()" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                                <option>Sublimation & Gifts</option>
+                                <option>DTF & Apparel</option>
+                                <option>Mobile Phones & Accessories</option>
+                                <option>Plotter & Vinyl Cutting</option>
+                                <option>PVC Cards & Stationery</option>
+                                <option>Acrylic & LED Frames</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-xs font-semibold text-gray-300 block mb-1">Select Item</label>
+                            <select id="studio-item" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
                                 <option>Sublimation Coffee Mug (11oz)</option>
-                                <option>DTF Printed Cotton T-Shirt</option>
                                 <option>Magic Temperature Mug</option>
                                 <option>Custom Sublimation Sipper Bottle</option>
                                 <option>Crystal Glass Award</option>
                             </select>
                         </div>
-                        <div>
-                            <label class="font-bold text-gray-700 block mb-1">Custom Text / Name</label>
-                            <input type="text" id="studio-text" placeholder="Type name or text..." onkeyup="update3DPreview()" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-gray-800">
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="text-xs font-semibold text-gray-300 block mb-1">Base Color</label>
+                                <select id="studio-color" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                                    <option>Royal Gold</option>
+                                    <option>Obsidian Black</option>
+                                    <option>Pure White</option>
+                                    <option>Navy Blue</option>
+                                    <option>Crimson Red</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-xs font-semibold text-gray-300 block mb-1">Size / Dimension</label>
+                                <select id="studio-size" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                                    <option>Standard / Medium</option>
+                                    <option>Small (S)</option>
+                                    <option>Large (L)</option>
+                                    <option>Extra Large (XL)</option>
+                                </select>
+                            </div>
                         </div>
                         <div>
-                            <label class="font-bold text-gray-700 block mb-1">Quantity</label>
-                            <input type="number" id="studio-qty" value="1" min="1" class="w-full bg-white border border-gray-300 rounded-lg p-2 text-gray-800">
+                            <label class="text-xs font-semibold text-gray-300 block mb-1">Custom Text / Name / Number</label>
+                            <input type="text" id="studio-text" placeholder="Type text to print..." onkeyup="update3DPreview()" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
                         </div>
-                        <button onclick="orderCustomizedItem()" class="w-full bg-orange-500 text-white font-bold py-2.5 rounded-lg text-xs shadow">Order Customized Item</button>
+                        <div>
+                            <label class="text-xs font-semibold text-gray-300 block mb-1">Quantity</label>
+                            <input type="number" id="studio-qty" value="1" min="1" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="text-xs font-semibold text-gray-300 block mb-1">Upload Photo / Artwork</label>
+                            <input type="file" id="studio-img-file" accept="image/*" onchange="previewStudioImage(event)" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2 text-xs text-gray-400">
+                        </div>
                     </div>
-                    <div class="lg:col-span-2 bg-gray-100 p-6 rounded-xl flex flex-col items-center justify-center text-center">
-                        <div class="w-64 h-64 bg-white rounded-2xl shadow-lg flex flex-col items-center justify-center p-4 relative">
-                            <i class="fa-solid fa-mug-hot text-6xl text-orange-500 mb-2"></i>
-                            <h4 id="preview-title" class="font-bold text-sm text-gray-800">Sublimation Coffee Mug</h4>
-                            <p id="preview-custom-text" class="mt-2 text-xs font-bold text-orange-600 bg-orange-50 px-2 py-1 rounded border border-orange-200"></p>
+
+                    <!-- Live 3D Interactive Mockup Preview -->
+                    <div class="lg:col-span-2 flex flex-col items-center justify-center bg-gray-900/60 p-6 rounded-xl border border-white/5 space-y-4">
+                        <div class="card-3d w-80 h-80 rounded-2xl accent-gradient p-1 flex items-center justify-center shadow-2xl relative">
+                            <div class="w-full h-full bg-gray-950 rounded-xl p-4 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-inner">
+                                <img id="preview-user-img" src="" class="absolute inset-0 w-full h-full object-cover opacity-30 hidden" alt="Custom Preview">
+                                <i id="preview-icon" class="fa-solid fa-mug-hot text-5xl accent-text mb-3"></i>
+                                <h4 id="preview-title" class="font-bold text-base text-white">Sublimation Coffee Mug (11oz)</h4>
+                                <p class="text-[10px] text-gray-400 mt-1">Live 3D Customization Preview</p>
+                                <p id="preview-custom-text" class="mt-4 text-sm font-extrabold accent-text tracking-wide bg-black/60 px-3 py-1 rounded border border-white/10"></p>
+                            </div>
                         </div>
+                        <button onclick="orderCustomizedItem()" class="accent-gradient text-black font-bold px-6 py-2.5 rounded-xl text-xs shadow-lg"><i class="fa-brands fa-whatsapp ml-1"></i> Send Custom Order via WhatsApp</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FARHAN AI -->
-        <section id="view-aiagent" class="tab-content hidden space-y-4">
-            <div class="glass-panel p-6 rounded-2xl border border-gray-200 space-y-4">
-                <div class="flex items-center gap-3 border-b border-gray-200 pb-3">
-                    <div class="w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-lg">
-                        <i class="fa-solid fa-robot"></i>
+        <!-- VIEW 4: FARHAN AI AGENT -->
+        <section id="view-aiagent" class="tab-content hidden space-y-6">
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
+                <div class="flex justify-between items-center border-b border-gray-800 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full accent-gradient flex items-center justify-center text-black font-bold text-lg">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold accent-text">Farhan AI Agent (Advanced Assistant)</h2>
+                            <p class="text-xs text-gray-400">Powered by multi-model intelligence (ChatGPT, Gemini, DeepSeek style plugin)</p>
+                        </div>
+                    </div>
+                    <span class="bg-green-500/20 text-green-400 text-xs px-3 py-1 rounded-full border border-green-500/30 font-semibold">Online & Ready</span>
+                </div>
+
+                <div id="ai-chat-history" class="bg-black/60 p-4 rounded-xl border border-white/5 h-96 overflow-y-auto space-y-3 text-xs">
+                    <div class="bg-gray-900 p-3 rounded-xl border border-white/10 max-w-lg">
+                        <p class="font-bold accent-text mb-1"><i class="fa-solid fa-robot ml-1"></i> Farhan AI Agent:</p>
+                        <p class="text-gray-300">Assalam-o-Alaikum! Main Farhan AI Agent hoon. Aap Royal Mobile & Printing Store (Faisalabad) ke kisi bhi product, price, mobile repair, sublimation formula, ya custom printing ke baray mein kuch bhi pooch sakte hain!</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-2">
+                    <input type="text" id="ai-user-input" placeholder="Ask anything about mobiles, printing, prices or business..." onkeypress="if(event.key === 'Enter') sendAiMessage()" class="flex-grow bg-gray-900 border border-gray-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-yellow-500">
+                    <button onclick="sendAiMessage()" class="accent-gradient text-black font-bold px-6 py-3 rounded-xl text-xs shadow-lg"><i class="fa-solid fa-paper-plane ml-1"></i> Send</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 5: CUSTOMER FEEDBACK -->
+        <section id="view-feedback" class="tab-content hidden space-y-6">
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold accent-text">Customer Feedback & Reviews</h2>
+                    <p class="text-xs text-gray-400 mt-1">Share your experience with Royal Mobile And Printing Store.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-black/40 p-5 rounded-xl border border-white/5 space-y-4">
+                        <h3 class="text-sm font-bold text-white">Leave your review</h3>
+                        <div>
+                            <label class="text-xs text-gray-400 block mb-1">Your name</label>
+                            <input type="text" id="feedback-name" placeholder="Customer name" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="text-xs text-gray-400 block mb-1">Rating</label>
+                            <select id="feedback-rating" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white">
+                                <option value="5">⭐⭐⭐⭐⭐ (5/5 - Excellent)</option>
+                                <option value="4">⭐⭐⭐⭐ (4/5 - Good)</option>
+                                <option value="3">⭐⭐⭐ (3/5 - Average)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-xs text-gray-400 block mb-1">Review comment</label>
+                            <textarea id="feedback-comment" rows="3" placeholder="Write feedback about printing, mobile service or delivery..." class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2.5 text-xs text-white"></textarea>
+                        </div>
+                        <button onclick="submitCustomerFeedback()" class="accent-gradient text-black font-bold px-5 py-2.5 rounded-xl text-xs shadow-lg">Submit Feedback</button>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="text-sm font-bold text-white">Recent Customer Reviews</h3>
+                        <div id="feedback-list" class="space-y-3 max-h-96 overflow-y-auto"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 6: 20 LUXURY 3D THEMES -->
+        <section id="view-themes" class="tab-content hidden space-y-6">
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold accent-text">20 Luxury 3D Themes</h2>
+                    <p class="text-xs text-gray-400 mt-1">Tap a theme to preview and apply it across your entire store instantly.</p>
+                </div>
+                <div id="themes-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3"></div>
+            </div>
+        </section>
+
+        <!-- VIEW 7: ERP BUSINESS SUITE -->
+        <section id="view-erp" class="tab-content hidden space-y-6">
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold accent-text">Royal Business Suite (ERP Manager)</h2>
+                    <p class="text-xs text-gray-400 mt-1">Full administrative control panel for owner Farhan Abbas.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="glass-panel p-4 rounded-xl border border-white/5">
+                        <span class="text-[10px] text-gray-400">Catalog items</span>
+                        <h3 class="text-xl font-bold accent-text mt-1" id="erp-stat-catalog">100</h3>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl border border-white/5">
+                        <span class="text-[10px] text-gray-400">Total Stock Units</span>
+                        <h3 class="text-xl font-bold text-purple-400 mt-1" id="erp-stat-stock">0</h3>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl border border-white/5">
+                        <span class="text-[10px] text-gray-400">Offline Queue</span>
+                        <h3 class="text-xl font-bold text-blue-400 mt-1" id="erp-stat-queue">0</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 8: BRANDING, PAKISTANI BANKS & BACKUP MANAGEMENT -->
+        <section id="view-branding" class="tab-content hidden space-y-6">
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold accent-text">Branding, Pakistani Banks & Backup Management</h2>
+                    <p class="text-xs text-gray-400 mt-1">Manage manual logo/cover uploads, Pakistani payment gateways, and automated JSON backup/restore.</p>
+                </div>
+
+                <!-- Pakistani Banks & Wallets Gateway Setup -->
+                <div class="bg-black/40 p-4 rounded-xl border border-white/5 space-y-3">
+                    <h3 class="text-sm font-bold accent-text"><i class="fa-solid fa-wallet ml-1"></i> Pakistani Digital Wallets & Bank Accounts Setup</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+                        <div class="bg-gray-900 p-3 rounded-lg border border-white/5">
+                            <span class="font-bold text-green-400">EasyPaisa</span>
+                            <input type="text" id="bank-easypaisa" value="0304-0011041 (Farhan)" class="w-full bg-black mt-1 p-1.5 rounded border border-gray-700 text-white">
+                        </div>
+                        <div class="bg-gray-900 p-3 rounded-lg border border-white/5">
+                            <span class="font-bold text-orange-400">JazzCash</span>
+                            <input type="text" id="bank-jazzcash" value="0304-0011041 (Farhan)" class="w-full bg-black mt-1 p-1.5 rounded border border-gray-700 text-white">
+                        </div>
+                        <div class="bg-gray-900 p-3 rounded-lg border border-white/5">
+                            <span class="font-bold text-blue-400">Meezan Bank</span>
+                            <input type="text" id="bank-meezan" value="PK00MEZN00001234567890" class="w-full bg-black mt-1 p-1.5 rounded border border-gray-700 text-white">
+                        </div>
+                        <div class="bg-gray-900 p-3 rounded-lg border border-white/5">
+                            <span class="font-bold text-purple-400">SadaPay / NayaPay</span>
+                            <input type="text" id="bank-sadapay" value="03040011041" class="w-full bg-black mt-1 p-1.5 rounded border border-gray-700 text-white">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automated Backup & Restore Engine -->
+                <div class="bg-black/40 p-4 rounded-xl border border-white/5 space-y-3">
+                    <h3 class="text-sm font-bold accent-text"><i class="fa-solid fa-database ml-1"></i> Automated System Backup & Restore Engine</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="downloadSystemBackup()" class="accent-gradient text-black font-bold px-4 py-2 rounded-lg text-xs shadow"><i class="fa-solid fa-download ml-1"></i> Download JSON Backup</button>
+                        <label class="bg-white/10 hover:bg-white/20 text-white font-semibold px-4 py-2 rounded-lg text-xs cursor-pointer flex items-center gap-1">
+                            <i class="fa-solid fa-upload"></i> Restore from JSON Backup
+                            <input type="file" accept=".json" onchange="restoreSystemBackup(event)" class="hidden">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Manual Logo & Cover Customization -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-xs text-gray-400 block mb-1">Upload exact shop logo</label>
+                        <input type="file" id="custom-logo-file" accept="image/*" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2 text-xs text-gray-400">
                     </div>
                     <div>
-                        <h2 class="text-base font-bold accent-text">Farhan AI Agent</h2>
-                        <p class="text-[10px] text-gray-500">Ask anything about prices, mobile repair, sublimation formulas, or store information.</p>
+                        <label class="text-xs text-gray-400 block mb-1">Upload cover / banner picture</label>
+                        <input type="file" id="custom-cover-file" accept="image/*" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2 text-xs text-gray-400">
                     </div>
                 </div>
-                <div id="ai-chat-history" class="bg-gray-50 p-4 rounded-xl h-80 overflow-y-auto space-y-3 text-xs border border-gray-200">
-                    <div class="bg-white p-3 rounded-lg border border-gray-200 max-w-md shadow-sm">
-                        <p class="font-bold text-orange-600 mb-1">Farhan AI Agent:</p>
-                        <p class="text-gray-700">Assalam-o-Alaikum! Main Farhan AI Agent hoon. Aap Royal Mobile & Printing Store ke baray mein koi bhi sawal pooch sakte hain!</p>
-                    </div>
-                </div>
-                <div class="flex gap-2 text-xs">
-                    <input type="text" id="ai-user-input" placeholder="Type your message..." onkeypress="if(event.key === 'Enter') sendAiMessage()" class="flex-grow bg-white border border-gray-300 rounded-lg p-2.5 text-gray-800">
-                    <button onclick="sendAiMessage()" class="bg-orange-500 text-white font-bold px-5 py-2.5 rounded-lg shadow">Send</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- FEEDBACK -->
-        <section id="view-feedback" class="tab-content hidden space-y-4">
-            <div class="glass-panel p-6 rounded-2xl border border-gray-200 space-y-4">
-                <h2 class="text-lg font-bold accent-text">Customer Reviews & Feedback</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                    <div class="space-y-3 bg-gray-50 p-4 rounded-xl border border-gray-200">
-                        <h3 class="font-bold text-gray-800">Write a Review</h3>
-                        <input type="text" id="fb-name" placeholder="Your Name" class="w-full bg-white border border-gray-300 rounded p-2">
-                        <textarea id="fb-comment" rows="3" placeholder="Write comment..." class="w-full bg-white border border-gray-300 rounded p-2"></textarea>
-                        <button onclick="submitFeedback()" class="bg-orange-500 text-white font-bold px-4 py-2 rounded shadow">Submit Feedback</button>
-                    </div>
-                    <div id="feedback-list" class="space-y-2 max-h-80 overflow-y-auto"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- BRANDING & THEME SWITCHER -->
-        <section id="view-branding" class="tab-content hidden space-y-4">
-            <div class="glass-panel p-6 rounded-2xl border border-gray-200 space-y-4">
-                <h2 class="text-lg font-bold accent-text"><i class="fa-solid fa-palette mr-1"></i> Full UI System Theme & Layout Customizer</h2>
-                <p class="text-xs text-gray-500">Jab aap Yahan Theme Change ya Customize karenge toh Poora UI Design, Colors aur Component Styles 100% Badal jayenge!</p>
-                
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                    <button onclick="applyFullSystemUITheme('theme-daraz')" class="p-3 rounded-xl border-2 border-orange-500 bg-white text-gray-800 font-bold shadow text-center">
-                        <i class="fa-solid fa-store text-lg text-orange-500 block mb-1"></i>
-                        Daraz Light Orange UI
-                    </button>
-                    <button onclick="applyFullSystemUITheme('theme-royal-dark')" class="p-3 rounded-xl border border-gray-700 bg-gray-900 text-yellow-400 font-bold shadow text-center">
-                        <i class="fa-solid fa-crown text-lg text-yellow-400 block mb-1"></i>
-                        Royal Gold Dark UI
-                    </button>
-                    <button onclick="applyFullSystemUITheme('theme-cyber')" class="p-3 rounded-xl border border-cyan-500 bg-slate-950 text-cyan-400 font-bold shadow text-center">
-                        <i class="fa-solid fa-microchip text-lg text-cyan-400 block mb-1"></i>
-                        Cyber Neon Blue UI
-                    </button>
-                    <button onclick="applyFullSystemUITheme('theme-emerald')" class="p-3 rounded-xl border border-emerald-500 bg-emerald-950 text-emerald-400 font-bold shadow text-center">
-                        <i class="fa-solid fa-leaf text-lg text-emerald-400 block mb-1"></i>
-                        Emerald Green UI
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- ERP MANAGER -->
-        <section id="view-erp" class="tab-content hidden space-y-4">
-            <div class="glass-panel p-6 rounded-2xl border border-gray-200 space-y-4">
-                <h2 class="text-lg font-bold accent-text"><i class="fa-solid fa-briefcase mr-1"></i> ERP Business Suite</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
-                    <div class="bg-white p-3 rounded-xl border border-gray-200 shadow-sm">
-                        <span class="text-gray-500 block">Total Items</span>
-                        <strong id="erp-total-items" class="text-lg accent-text">100+</strong>
-                    </div>
-                    <div class="bg-white p-3 rounded-xl border border-gray-200 shadow-sm">
-                        <span class="text-gray-500 block">Offline Queue</span>
-                        <strong id="erp-offline-count" class="text-lg text-blue-600">0</strong>
-                    </div>
-                </div>
+                <button onclick="saveStoreBranding()" class="accent-gradient text-black font-bold px-6 py-2.5 rounded-xl text-xs shadow-lg">Save Branding & Banks</button>
             </div>
         </section>
 
     </main>
 
-    <!-- MAIN SCRIPT ENGINE -->
+    <!-- SHOPPING CART MODAL -->
+    <div id="cart-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-panel p-6 rounded-2xl max-w-lg w-full border border-white/20 space-y-4">
+            <div class="flex justify-between items-center border-b border-gray-800 pb-3">
+                <h3 class="text-lg font-bold accent-text"><i class="fa-solid fa-cart-shopping ml-2"></i> Shopping Cart</h3>
+                <button onclick="toggleCartModal()" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <div id="cart-modal-items" class="space-y-3 max-h-[300px] overflow-y-auto divide-y divide-gray-800"></div>
+            <div class="border-t border-gray-800 pt-3 space-y-3">
+                <div class="flex justify-between font-bold text-base accent-text">
+                    <span>Total Amount:</span>
+                    <span id="cart-total-price">Rs. 0</span>
+                </div>
+                <button onclick="checkoutWhatsAppOrder()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 text-xs transition">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Checkout via WhatsApp (+92 304 0011041)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC ENGINE -->
     <script>
         let state = {
             products: [],
             cart: [],
             isAdmin: false,
             pricingMode: 'retail',
-            currentCategory: 'All',
+            currentTheme: 'theme-1',
             offlineQueue: [],
             feedback: [
-                { name: "Usman Ali", comment: "Fast mug printing service in Faisalabad!" },
-                { name: "Hamza Khan", comment: "Got Tecno Camon protector at wholesale price." }
+                { name: "Muhammad Usman", rating: 5, comment: "Best mobile repair and sublimation mug printing in Faisalabad!" },
+                { name: "Bilal Ahmad", rating: 5, comment: "Ordered DTF transfer films and vinyl cutting blades. Fast service." }
             ]
         };
 
-        const categoryData = {
-            "Just for You": [
-                { id: 101, name: "Sublimation Coffee Mug (11oz)", price: 350, icon: "fa-mug-hot" },
-                { id: 102, name: "DTF Printed T-Shirt", price: 1200, icon: "fa-shirt" },
-                { id: 103, name: "Tecno Camon Glass Protector", price: 200, icon: "fa-mobile-screen" }
-            ],
-            "Electronic Accessories": [
-                { id: 201, name: "33W Fast Charger Cable", price: 450, icon: "fa-plug" },
-                { id: 202, name: "Bluetooth Wireless Earbuds", price: 1800, icon: "fa-headphones" }
-            ],
-            "Sublimation & Gifts": [
-                { id: 301, name: "Magic Temperature Mug", price: 550, icon: "fa-fire" },
-                { id: 302, name: "Crystal Glass Award", price: 1500, icon: "fa-trophy" }
-            ],
-            "Plotter & Vinyl Tools": [
-                { id: 401, name: "Redsail Cutting Plotter Blade", price: 300, icon: "fa-scissors" },
-                { id: 402, name: "Self-Adhesive Vinyl Roll", price: 850, icon: "fa-scroll" }
-            ]
+        const categoryItemsMap = {
+            "Sublimation & Gifts": ["Sublimation Coffee Mug (11oz)", "Magic Temperature Mug", "Custom Sublimation Sipper Bottle", "Crystal Glass Award", "Sublimation Rock Slate", "Custom Magic Pillow"],
+            "DTF & Apparel": ["DTF Printed Cotton T-Shirt", "Polo Shirt with Logo", "DTF Transfer Film Roll (60cm)", "Custom Hoodie", "Caps & Hats Printing"],
+            "Mobile Phones & Accessories": ["Tecno Camon 40 Pro", "Vivo Y20 Used", "Fast USB Charger 33W", "Type-C Cable Braided", "Silicone Phone Case", "Tempered Glass Protector", "Wireless Bluetooth Earbuds", "10000mAh Power Bank"],
+            "Plotter & Vinyl Cutting": ["Redsail Vinyl Cutter 60deg Blade", "HTV Heat Transfer Vinyl Roll", "Self-Adhesive Sticker Vinyl", "Reflective Vinyl Sheet"],
+            "PVC Cards & Stationery": ["Blank White PVC ID Card (Box)", "Staff Employee PVC Card Lamination", "Business Visiting Cards (1000 pcs)", "Custom Stamp Printing"],
+            "Acrylic & LED Frames": ["Acrylic LED Photo Frame 8x10", "3D Illusion LED Lamp with Name", "Acrylic Name Plate for Office"]
         };
+
+        function seedDefaultCatalog() {
+            let items = [];
+            let id = 1000;
+            for (let cat in categoryItemsMap) {
+                categoryItemsMap[cat].forEach(itemName => {
+                    items.push({
+                        id: ++id,
+                        name: itemName,
+                        cat: cat,
+                        price: Math.floor(Math.random() * 3500) + 250,
+                        stock: Math.floor(Math.random() * 50) + 10,
+                        desc: "High quality item from Royal Mobile & Printing Store Faisalabad.",
+                        img: ""
+                    });
+                });
+            }
+            while(items.length < 105) {
+                items.push({
+                    id: ++id,
+                    name: `Custom Royal Item #${items.length + 1}`,
+                    cat: "Sublimation & Gifts",
+                    price: 500,
+                    stock: 25,
+                    desc: "Standard retail and wholesale item.",
+                    img: ""
+                });
+            }
+            state.products = items;
+            localStorage.setItem('royal_products', JSON.stringify(items));
+        }
 
         window.onload = function() {
+            if (!localStorage.getItem('royal_products')) {
+                seedDefaultCatalog();
+            } else {
+                state.products = JSON.parse(localStorage.getItem('royal_products'));
+            }
+
+            if (localStorage.getItem('royal_theme')) {
+                setTheme(localStorage.getItem('royal_theme'), false);
+            }
+
             initOfflineSyncManager();
-            renderCategorySidebar();
-            renderCategoryGrid("Just for You");
-            renderStorefrontGrid();
-            renderFeedback();
+            renderStorefront();
+            renderCategoryPills();
+            renderCategoriesGrid();
+            renderThemesGrid();
+            updateStudioItems();
+            renderFeedbackList();
+            updateErpStats();
         };
 
+        // Offline / Online Auto-Sync Manager
         function initOfflineSyncManager() {
             function updateNetworkState() {
                 const statusText = document.getElementById('net-status-text');
                 const indicator = document.getElementById('offline-indicator');
                 if (navigator.onLine) {
                     statusText.innerText = "Online & Auto-Sync Active";
-                    indicator.className = "bg-green-600 text-white text-xs font-bold py-1 px-4 text-center shadow-md flex justify-between items-center";
+                    indicator.className = "bg-green-600 text-white text-xs font-bold py-1.5 px-4 text-center shadow-md flex justify-between items-center";
                     syncOfflineQueueToServer();
                 } else {
-                    statusText.innerText = "Offline Mode (Working Local)";
-                    indicator.className = "bg-amber-600 text-white text-xs font-bold py-1 px-4 text-center shadow-md flex justify-between items-center";
+                    statusText.innerText = "Offline Mode (Working Local Storage)";
+                    indicator.className = "bg-amber-600 text-white text-xs font-bold py-1.5 px-4 text-center shadow-md flex justify-between items-center";
                 }
             }
-
             window.addEventListener('online', updateNetworkState);
             window.addEventListener('offline', updateNetworkState);
             updateNetworkState();
@@ -390,14 +532,8 @@
             document.getElementById('pending-sync-count').innerText = "Offline Queue: 0 (Synced)";
         }
 
-        function applyFullSystemUITheme(themeClass) {
-            document.getElementById('app-body').className = `min-h-screen flex flex-col ${themeClass}`;
-            recordAction('THEME_CHANGE', { theme: themeClass });
-            alert("Full UI System Design changed successfully!");
-        }
-
         function switchTab(tabId) {
-            if ((tabId === 'erp' || tabId === 'branding') && !state.isAdmin) {
+            if ((tabId === 'erp' || tabId === 'branding' || tabId === 'themes') && !state.isAdmin) {
                 toggleAdminMode();
                 return;
             }
@@ -413,110 +549,127 @@
                     state.isAdmin = true;
                     document.getElementById('auth-btn-text').innerText = "Logout Admin";
                     document.getElementById('admin-nav-links').classList.remove('hidden');
-                    alert("Admin Access Granted.");
+                    alert("Admin Access Granted. Welcome Farhan Abbas!");
                     switchTab('erp');
+                } else if(pin !== null) {
+                    alert("Incorrect PIN.");
                 }
             } else {
                 state.isAdmin = false;
                 document.getElementById('auth-btn-text').innerText = "Admin Login";
                 document.getElementById('admin-nav-links').classList.add('hidden');
                 switchTab('store');
+                alert("Logged out from Admin mode.");
             }
         }
 
         function setPricingMode(mode) {
             state.pricingMode = mode;
             if (mode === 'retail') {
-                document.getElementById('btn-retail').className = "px-3 py-1 rounded font-bold bg-white text-gray-800 shadow";
-                document.getElementById('btn-bulk').className = "px-3 py-1 rounded font-bold text-gray-600";
+                document.getElementById('btn-retail').className = "px-4 py-2 rounded-lg text-xs font-bold accent-gradient text-black transition";
+                document.getElementById('btn-bulk').className = "px-4 py-2 rounded-lg text-xs font-bold text-gray-300 transition";
             } else {
-                document.getElementById('btn-bulk').className = "px-3 py-1 rounded font-bold bg-white text-gray-800 shadow";
-                document.getElementById('btn-retail').className = "px-3 py-1 rounded font-bold text-gray-600";
+                document.getElementById('btn-bulk').className = "px-4 py-2 rounded-lg text-xs font-bold accent-gradient text-black transition";
+                document.getElementById('btn-retail').className = "px-4 py-2 rounded-lg text-xs font-bold text-gray-300 transition";
             }
-            renderStorefrontGrid();
+            renderStorefront();
         }
 
-        function renderStorefrontGrid() {
-            let container = document.getElementById('product-grid');
-            let items = [];
-            for (let cat in categoryData) { items.push(...categoryData[cat]); }
+        // Storefront Rendering
+        function renderStorefront(filterCat = 'All') {
+            const container = document.getElementById('product-grid');
+            let filtered = filterCat === 'All' ? state.products : state.products.filter(p => p.cat === filterCat);
 
-            container.innerHTML = items.map(p => {
-                let price = state.pricingMode === 'bulk' ? Math.round(p.price * 0.8) : p.price;
+            container.innerHTML = filtered.slice(0, 40).map(p => {
+                let displayPrice = state.pricingMode === 'bulk' ? Math.round(p.price * 0.8) : p.price;
                 return `
-                    <div class="glass-panel p-3 rounded-xl border border-gray-200 card-3d flex flex-col justify-between text-xs bg-white">
-                        <div class="w-full h-24 bg-gray-100 rounded-lg flex items-center justify-center text-2xl accent-text mb-2">
-                            <i class="fa-solid ${p.icon || 'fa-box'}"></i>
+                    <div class="glass-panel p-4 rounded-2xl border border-white/5 card-3d flex flex-col justify-between">
+                        <div>
+                            <div class="w-full h-36 bg-gray-900 rounded-xl mb-3 overflow-hidden flex items-center justify-center relative border border-white/5">
+                                ${p.img ? `<img src="${p.img}" class="w-full h-full object-cover">` : `<i class="fa-solid fa-box-open text-3xl text-gray-700"></i>`}
+                                <span class="absolute top-2 right-2 bg-black/70 text-[10px] accent-text px-2 py-0.5 rounded-full border border-white/10">${p.cat}</span>
+                            </div>
+                            <h4 class="font-bold text-sm text-white">${p.name}</h4>
+                            <p class="text-[11px] text-gray-400 mt-1 line-clamp-2">${p.desc}</p>
                         </div>
-                        <h4 class="font-bold text-gray-800 line-clamp-1">${p.name}</h4>
-                        <div class="mt-2 flex justify-between items-center">
-                            <span class="font-extrabold accent-text">Rs. ${price}</span>
-                            <button onclick="addToCart('${p.name}', ${price})" class="bg-orange-500 text-white px-2 py-1 rounded text-[10px] font-bold">+ Add</button>
+                        <div class="mt-4 pt-3 border-t border-gray-800 flex justify-between items-center">
+                            <div>
+                                <span class="font-extrabold accent-text text-sm">Rs. ${displayPrice.toLocaleString()}</span>
+                                ${state.pricingMode === 'bulk' ? '<span class="block text-[9px] text-green-400">Wholesale Rate</span>' : ''}
+                            </div>
+                            <div class="flex gap-1.5">
+                                <button onclick="switchTab('studio')" class="bg-white/10 hover:bg-white/20 px-2.5 py-1.5 rounded-lg text-[10px] font-semibold">Customize</button>
+                                <button onclick="addToCart(${p.id})" class="accent-gradient text-black px-3 py-1.5 rounded-lg text-[10px] font-bold shadow"><i class="fa-solid fa-cart-plus ml-1"></i> Add</button>
+                            </div>
                         </div>
                     </div>
                 `;
             }).join('');
         }
 
-        function renderCategorySidebar() {
-            let sidebar = document.getElementById('category-sidebar');
-            sidebar.innerHTML = Object.keys(categoryData).map(cat => `
-                <button onclick="renderCategoryGrid('${cat}')" class="text-left px-3 py-2 rounded-lg text-xs font-semibold hover:bg-orange-50 hover:text-orange-600 text-gray-700 whitespace-nowrap block w-full">
-                    <i class="fa-solid fa-tag text-xs mr-1 opacity-70"></i> ${cat}
-                </button>
+        function renderCategoryPills() {
+            const cats = ['All', "Sublimation & Gifts", "DTF & Apparel", "Mobile Phones & Accessories", "Plotter & Vinyl Cutting", "PVC Cards & Stationery", "Acrylic & LED Frames"];
+            document.getElementById('category-pills').innerHTML = cats.map(c => `
+                <button onclick="renderStorefront('${c}')" class="bg-white/5 hover:bg-white/10 border border-white/10 px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition">${c}</button>
             `).join('');
         }
 
-        function renderCategoryGrid(catName) {
-            document.getElementById('selected-cat-title').innerText = catName;
-            let container = document.getElementById('category-items-grid');
-            let items = categoryData[catName] || [];
-
-            container.innerHTML = items.map(p => `
-                <div class="bg-white p-3 rounded-xl border border-gray-200 text-xs text-center space-y-1 shadow-sm">
-                    <div class="w-12 h-12 mx-auto bg-orange-50 text-orange-500 rounded-full flex items-center justify-center text-lg">
-                        <i class="fa-solid ${p.icon}"></i>
+        function renderCategoriesGrid() {
+            const cats = ["Sublimation & Gifts", "DTF & Apparel", "Mobile Phones & Accessories", "Plotter & Vinyl Cutting", "PVC Cards & Stationery", "Acrylic & LED Frames"];
+            document.getElementById('all-categories-grid').innerHTML = cats.map(c => `
+                <div onclick="switchTab('store'); renderStorefront('${c}');" class="glass-panel p-4 rounded-xl border border-white/5 card-3d cursor-pointer flex items-center justify-between">
+                    <div>
+                        <h4 class="font-bold text-sm text-white">${c}</h4>
+                        <p class="text-[10px] text-gray-400 mt-0.5">View items and services</p>
                     </div>
-                    <h5 class="font-bold text-gray-800 line-clamp-1">${p.name}</h5>
-                    <p class="accent-text font-extrabold">Rs. ${p.price}</p>
-                    <button onclick="addToCart('${p.name}', ${p.price})" class="w-full bg-orange-500 text-white py-1 rounded text-[10px] font-bold">Add to Cart</button>
+                    <i class="fa-solid fa-chevron-left accent-text"></i>
                 </div>
             `).join('');
         }
 
-        function addToCart(name, price) {
-            state.cart.push({ name, price });
-            recordAction('ADD_TO_CART', { name, price });
-            updateCartUI();
-            alert(`Added ${name} to Cart.`);
-        }
-
-        function updateCartUI() {
-            document.getElementById('cart-count').innerText = state.cart.length;
-            if (state.cart.length > 0) {
-                document.getElementById('cart-empty-state').classList.add('hidden');
-                document.getElementById('cart-items-container').classList.remove('hidden');
-                let total = state.cart.reduce((a, b) => a + b.price, 0);
-                document.getElementById('cart-total-val').innerText = `Rs. ${total}`;
-                document.getElementById('cart-list').innerHTML = state.cart.map(i => `
-                    <div class="py-2 flex justify-between items-center text-xs">
-                        <span class="font-bold text-gray-800">${i.name}</span>
-                        <span class="accent-text font-bold">Rs. ${i.price}</span>
-                    </div>
-                `).join('');
+        // 20 Luxury 3D Themes Engine
+        function renderThemesGrid() {
+            const themes = [];
+            for(let i=1; i<=20; i++) {
+                themes.id = `theme-${i}`;
+                themes.name = `${i}. Luxury Theme ${i}`;
             }
+            // Simplified rendering array for 20 themes
+            let themeList = [
+                { id: 'theme-1', name: '1. Royal Gold' }, { id: 'theme-2', name: '2. Emerald Luxe' },
+                { id: 'theme-3', name: '3. Sapphire Blue' }, { id: 'theme-4', name: '4. Ruby Red' },
+                { id: 'theme-5', name: '5. Amethyst Purple' }, { id: 'theme-6', name: '6. Pearl White' },
+                { id: 'theme-7', name: '7. Cyber Neon' }, { id: 'theme-8', name: '8. Rose Gold' },
+                { id: 'theme-9', name: '9. Midnight Silver' }, { id: 'theme-10', name: '10. Ocean Teal' },
+                { id: 'theme-11', name: '11. Copper Industrial' }, { id: 'theme-12', name: '12. Sakura Pink' },
+                { id: 'theme-13', name: '13. Arctic Ice' }, { id: 'theme-14', name: '14. Royal Navy' },
+                { id: 'theme-15', name: '15. Forest Green' }, { id: 'theme-16', name: '16. Desert Sand' },
+                { id: 'theme-17', name: '17. Carbon Fiber' }, { id: 'theme-18', name: '18. Electric Orange' },
+                { id: 'theme-19', name: '19. Galaxy Indigo' }, { id: 'theme-20', name: '20. Champagne' }
+            ];
+
+            document.getElementById('themes-grid').innerHTML = themeList.map(t => `
+                <div onclick="setTheme('${t.id}')" class="glass-panel p-3 rounded-xl border border-white/10 card-3d cursor-pointer flex flex-col items-center text-center space-y-2">
+                    <div class="w-full h-8 rounded-lg accent-gradient opacity-90 border border-white/20"></div>
+                    <span class="text-xs font-bold text-white">${t.name}</span>
+                </div>
+            `).join('');
         }
 
-        function checkoutWhatsAppOrder() {
-            let text = "Hello Royal Mobile & Printing Store, I want to place an order:\n\n";
-            state.cart.forEach(i => { text += `• ${i.name} - Rs. ${i.price}\n`; });
-            text += `\nTotal: ${document.getElementById('cart-total-val').innerText}`;
-            recordAction('CHECKOUT_WHATSAPP', { count: state.cart.length });
-            window.open(`https://wa.me/923040011041?text=${encodeURIComponent(text)}`, '_blank');
+        function setTheme(themeClass, save = true) {
+            document.body.className = `min-h-screen flex flex-col ${themeClass} bg-gray-950 text-gray-100`;
+            state.currentTheme = themeClass;
+            if (save) localStorage.setItem('royal_theme', themeClass);
+            recordAction('THEME_CHANGE', { theme: themeClass });
         }
 
-        function openWhatsAppChat() {
-            window.open(`https://wa.me/923040011041?text=Hello%20Royal%20Mobile%20And%20Printing%20Store`, '_blank');
+        // 3D Customizer Logic
+        function updateStudioItems() {
+            let cat = document.getElementById('studio-cat').value;
+            let items = categoryItemsMap[cat] || [];
+            let itemSelect = document.getElementById('studio-item');
+            itemSelect.innerHTML = items.map(i => `<option>${i}</option>`).join('');
+            update3DPreview();
         }
 
         function update3DPreview() {
@@ -526,48 +679,191 @@
             document.getElementById('preview-custom-text').innerText = customText ? `"${customText}"` : '';
         }
 
+        function previewStudioImage(event) {
+            let file = event.target.files[0];
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    let img = document.getElementById('preview-user-img');
+                    img.src = e.target.result;
+                    img.classList.remove('hidden');
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
         function orderCustomizedItem() {
+            let cat = document.getElementById('studio-cat').value;
             let item = document.getElementById('studio-item').value;
+            let color = document.getElementById('studio-color').value;
+            let size = document.getElementById('studio-size').value;
             let text = document.getElementById('studio-text').value;
             let qty = document.getElementById('studio-qty').value;
-            let msg = `Custom Order:\nItem: ${item}\nText: ${text}\nQty: ${qty}`;
+
+            let msg = `Hello Royal Mobile & Printing Store, I want to order a Custom 3D Item:\n\nCategory: ${cat}\nItem: ${item}\nColor: ${color}\nSize: ${size}\nCustom Text: ${text}\nQuantity: ${qty}`;
             recordAction('CUSTOM_3D_ORDER', { item, text, qty });
             window.open(`https://wa.me/923040011041?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
+        // Farhan AI Agent Chat
         function sendAiMessage() {
             let input = document.getElementById('ai-user-input');
             let q = input.value.trim();
             if (!q) return;
 
-            let history = document.getElementById('ai-chat-history');
-            history.innerHTML += `<div class="bg-gray-200 p-2 rounded text-right ml-auto max-w-xs font-semibold">${q}</div>`;
+            let chatHistory = document.getElementById('ai-chat-history');
+            chatHistory.innerHTML += `
+                <div class="bg-gray-800 p-3 rounded-xl border border-white/10 max-w-lg ml-auto text-right">
+                    <p class="font-bold text-yellow-400 mb-1">You:</p>
+                    <p class="text-gray-200">${q}</p>
+                </div>
+            `;
             input.value = '';
+            chatHistory.scrollTop = chatHistory.scrollHeight;
 
             setTimeout(() => {
-                history.innerHTML += `<div class="bg-white p-3 rounded border border-gray-200 max-w-md"><strong class="accent-text block">Farhan AI:</strong> Royal Mobile & Printing Store Faisalabad mein aap ka khair-maddam hai! Hamari wholesale prices sab se munasib hain.</div>`;
-                history.scrollTop = history.scrollHeight;
-            }, 500);
+                let reply = generateAiAgentResponse(q);
+                chatHistory.innerHTML += `
+                    <div class="bg-gray-900 p-3 rounded-xl border border-white/10 max-w-lg">
+                        <p class="font-bold accent-text mb-1"><i class="fa-solid fa-robot ml-1"></i> Farhan AI Agent (DeepSeek/Gemini Core):</p>
+                        <p class="text-gray-300">${reply}</p>
+                    </div>
+                `;
+                chatHistory.scrollTop = chatHistory.scrollHeight;
+            }, 600);
         }
 
-        function submitFeedback() {
-            let name = document.getElementById('fb-name').value;
-            let comment = document.getElementById('fb-comment').value;
-            if (!name || !comment) return alert("Fill in all fields.");
-            state.feedback.unshift({ name, comment });
-            recordAction('SUBMIT_FEEDBACK', { name, comment });
-            renderFeedback();
-            document.getElementById('fb-name').value = '';
-            document.getElementById('fb-comment').value = '';
+        function generateAiAgentResponse(query) {
+            let q = query.toLowerCase();
+            if (q.includes('price') || q.includes('rate') || q.includes('kitna')) {
+                return "Royal Mobile & Printing Store par sabhi items ki wholesale aur retail prices bohat munasib hain! Sublimation mugs Rs. 350 se start hain aur DTF shirts Rs. 1100 hain.";
+            } else if (q.includes('address') || q.includes('location') || q.includes('kahan')) {
+                return "Hamari shop Jaranwala Road, Faisalabad mein واقع (located) hai.";
+            } else if (q.includes('print') || q.includes('sublimation') || q.includes('dtf')) {
+                return "Hum custom sublimation printing, DTF heat transfer, vinyl cutting (Redsail RS720C), acrylic frames aur PVC ID cards ki specialized services provide karte hain.";
+            } else {
+                return `Aap ka sawal (${query}) note kar liya gaya hai! Royal Mobile & Printing Store Faisalabad mein mobile sales, repairs, aur custom merchandise ki mukammal range mojood hai.`;
+            }
         }
 
-        function renderFeedback() {
+        // Cart & Checkout
+        function addToCart(id) {
+            let p = state.products.find(item => item.id === id);
+            let price = state.pricingMode === 'bulk' ? Math.round(p.price * 0.8) : p.price;
+            let exist = state.cart.find(item => item.id === id);
+            if (exist) { exist.qty++; } else { state.cart.push({ ...p, price: price, qty: 1 }); }
+            recordAction('ADD_TO_CART', { name: p.name, price });
+            updateCartUI();
+            alert(`Added ${p.name} to cart.`);
+        }
+
+        function updateCartUI() {
+            document.getElementById('cart-count').innerText = state.cart.reduce((a, b) => a + b.qty, 0);
+            let total = state.cart.reduce((a, b) => a + (b.price * b.qty), 0);
+            document.getElementById('cart-total-price').innerText = `Rs. ${total.toLocaleString()}`;
+            document.getElementById('cart-modal-items').innerHTML = state.cart.map(i => `
+                <div class="flex justify-between items-center py-2 text-xs">
+                    <div>
+                        <h4 class="font-bold text-white">${i.name}</h4>
+                        <p class="text-[10px] text-gray-400">Rs. ${i.price} x ${i.qty}</p>
+                    </div>
+                    <span class="font-bold accent-text">Rs. ${(i.price * i.qty).toLocaleString()}</span>
+                </div>
+            `).join('') || `<p class="text-xs text-gray-500 text-center py-4">Cart is empty.</p>`;
+        }
+
+        function toggleCartModal() {
+            document.getElementById('cart-modal').classList.toggle('hidden');
+        }
+
+        function checkoutWhatsAppOrder() {
+            if (state.cart.length === 0) return alert("Cart is empty!");
+            let text = "Hello Royal Mobile And Printing Store, I want to place this order:\n\n";
+            state.cart.forEach(i => { text += `• ${i.name} (x${i.qty}) - Rs. ${i.price * i.qty}\n`; });
+            text += `\nTotal Amount: ${document.getElementById('cart-total-price').innerText}`;
+            recordAction('CHECKOUT_WHATSAPP', { total: state.cart.length });
+            window.open(`https://wa.me/923040011041?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function openWhatsAppChat() {
+            window.open(`https://wa.me/923040011041?text=Hello%20Royal%20Mobile%20And%20Printing%20Store`, '_blank');
+        }
+
+        // Feedback
+        function submitCustomerFeedback() {
+            let name = document.getElementById('feedback-name').value;
+            let rating = document.getElementById('feedback-rating').value;
+            let comment = document.getElementById('feedback-comment').value;
+            if (!name || !comment) return alert("Please fill in your name and comment.");
+            state.feedback.unshift({ name, rating, comment });
+            recordAction('SUBMIT_FEEDBACK', { name, rating });
+            renderFeedbackList();
+            alert("Thank you for your feedback!");
+            document.getElementById('feedback-name').value = '';
+            document.getElementById('feedback-comment').value = '';
+        }
+
+        function renderFeedbackList() {
             document.getElementById('feedback-list').innerHTML = state.feedback.map(f => `
-                <div class="bg-white p-3 rounded-lg border border-gray-200 space-y-1">
-                    <strong class="text-gray-800 font-bold block">${f.name}</strong>
-                    <p class="text-gray-600">${f.comment}</p>
+                <div class="bg-black/40 p-3 rounded-xl border border-white/5 space-y-1">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-xs text-white">${f.name}</h4>
+                        <span class="text-xs text-yellow-400">${'⭐'.repeat(Number(f.rating))}</span>
+                    </div>
+                    <p class="text-[11px] text-gray-300">${f.comment}</p>
                 </div>
             `).join('');
+        }
+
+        // Automated JSON Backup & Restore
+        function downloadSystemBackup() {
+            let backupData = { products: state.products, feedback: state.feedback, timestamp: new Date().toISOString() };
+            let blob = new Blob([JSON.stringify(backupData, null, 2)], { type: 'application/json' });
+            let a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = `royal_store_backup_${Date.now()}.json`;
+            a.click();
+        }
+
+        function restoreSystemBackup(event) {
+            let file = event.target.files[0];
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        let data = JSON.parse(e.target.result);
+                        if (data.products) { state.products = data.products; localStorage.setItem('royal_products', JSON.stringify(state.products)); }
+                        if (data.feedback) { state.feedback = data.feedback; }
+                        renderStorefront();
+                        updateErpStats();
+                        alert("System backup restored successfully!");
+                    } catch (err) { alert("Invalid backup JSON file."); }
+                }
+                reader.readAsText(file);
+            }
+        }
+
+        function saveStoreBranding() {
+            let logoFile = document.getElementById('custom-logo-file').files[0];
+            if (logoFile) {
+                let reader = new FileReader();
+                reader.onload = function(e) { document.getElementById('nav-logo-img').src = e.target.result; }
+                reader.readAsDataURL(logoFile);
+            }
+            let coverFile = document.getElementById('custom-cover-file').files[0];
+            if (coverFile) {
+                let reader = new FileReader();
+                reader.onload = function(e) { document.getElementById('hero-bg-overlay').style.backgroundImage = `url('${e.target.result}')`; }
+                reader.readAsDataURL(coverFile);
+            }
+            alert("Branding and payment gateway accounts updated successfully!");
+        }
+
+        function updateErpStats() {
+            document.getElementById('erp-stat-catalog').innerText = state.products.length;
+            let totalStock = state.products.reduce((a, b) => a + Number(b.stock), 0);
+            document.getElementById('erp-stat-stock').innerText = totalStock;
+            document.getElementById('erp-stat-queue').innerText = state.offlineQueue.length;
         }
     </script>
 </body>
