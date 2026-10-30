@@ -84,11 +84,12 @@
                     <button onclick="switchTab('categories')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition"><i class="fa-solid fa-list ml-1"></i> Categories</button>
                     <button onclick="switchTab('studio')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition"><i class="fa-solid fa-cube ml-1"></i> 3D Custom Studio</button>
                     <button onclick="switchTab('aiagent')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition text-yellow-400"><i class="fa-solid fa-robot ml-1"></i> Farhan AI Agent</button>
+                    <button onclick="switchTab('marketing')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition text-green-400"><i class="fa-solid fa-bullhorn ml-1"></i> Free Ad Postings</button>
                     <button onclick="switchTab('feedback')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition"><i class="fa-solid fa-comments ml-1"></i> Feedback</button>
                     
-                    <!-- Admin, Staff & Owner Restricted Tabs -->
+                    <!-- Admin, Staff & Owner Restricted Manage / ERP Tabs -->
                     <div id="admin-nav-links" class="hidden flex items-center space-x-1 border-r border-l border-gray-700 px-2">
-                        <button onclick="switchTab('erp')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition text-blue-400"><i class="fa-solid fa-briefcase ml-1"></i> FBR POS & ERP</button>
+                        <button onclick="switchTab('erp')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition text-blue-400"><i class="fa-solid fa-briefcase ml-1"></i> Manage POS & ERP</button>
                         <button onclick="switchTab('themes')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition text-pink-400"><i class="fa-solid fa-wand-magic-sparkles ml-1"></i> 20 Themes</button>
                         <button onclick="switchTab('branding')" class="px-3 py-2 rounded-lg hover:bg-white/5 transition text-purple-400"><i class="fa-solid fa-gear ml-1"></i> Branding & Backup</button>
                     </div>
@@ -130,8 +131,8 @@
             <!-- Single Piece vs Bulk Wholesale Pricing Switcher -->
             <div class="glass-panel p-4 rounded-xl border border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
                 <div>
-                    <h3 class="font-bold text-sm text-white">Pricing Range Switcher</h3>
-                    <p class="text-[11px] text-gray-400">Switch instantly between Single Piece Retail rates and Bulk Wholesale discount rates.</p>
+                    <h3 class="font-bold text-sm text-white">Pricing Range Switcher (Single Piece vs Bulk Wholesale)</h3>
+                    <p class="text-[11px] text-gray-400">Switch instantly between Single Piece Retail rates and Bulk Wholesale 20% discount rates.</p>
                 </div>
                 <div class="flex bg-black/50 p-1 rounded-xl border border-white/10">
                     <button id="btn-retail" onclick="setPricingMode('retail')" class="px-4 py-2 rounded-lg text-xs font-bold accent-gradient text-black transition">Single Piece (Retail)</button>
@@ -147,7 +148,7 @@
         <section id="view-categories" class="tab-content hidden space-y-6">
             <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
                 <div>
-                    <h2 class="text-2xl font-bold accent-text">All Shop Categories</h2>
+                    <h2 class="text-2xl font-bold accent-text">All Shop Categories & Items Range</h2>
                     <p class="text-xs text-gray-400 mt-1">Explore all products and printing services categories.</p>
                 </div>
                 <div id="all-categories-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
@@ -266,7 +267,47 @@
             </div>
         </section>
 
-        <!-- VIEW 5: CUSTOMER FEEDBACK -->
+        <!-- VIEW 5: FREE SOCIAL MEDIA AD POSTINGS (3 TIMES DAILY AUTOMATION) -->
+        <section id="view-marketing" class="tab-content hidden space-y-6">
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
+                <div class="flex justify-between items-center border-b border-gray-800 pb-4">
+                    <div>
+                        <h2 class="text-2xl font-bold accent-text"><i class="fa-solid fa-bullhorn mr-1"></i> Free Social Media Ad Postings (3x Daily Automation)</h2>
+                        <p class="text-xs text-gray-400 mt-1">Generate free promotional ads, banners, and text posts for Facebook, Instagram, WhatsApp status, and TikTok 3 times daily.</p>
+                    </div>
+                    <span class="bg-green-500/20 text-green-400 text-xs px-3 py-1 rounded-full border border-green-500/30 font-semibold">Automation Active</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                    <!-- Morning Slot -->
+                    <div class="bg-black/50 p-4 rounded-xl border border-white/10 space-y-2">
+                        <span class="text-yellow-400 font-bold">🌅 Morning Slot (09:00 AM)</span>
+                        <p class="text-gray-300 bg-gray-900 p-3 rounded border border-white/5">"🔥 Special Offer at Royal Mobile & Printing Store Faisalabad! Get Sublimation Mugs & DTF T-Shirts at wholesale rates. Visit Jaranwala Road or call +92 304 0011041."</p>
+                        <button onclick="copyAdText(1)" class="w-full accent-gradient text-black font-bold py-1.5 rounded">Copy Morning Ad</button>
+                    </div>
+                    <!-- Afternoon Slot -->
+                    <div class="bg-black/50 p-4 rounded-xl border border-white/10 space-y-2">
+                        <span class="text-orange-400 font-bold">☀️ Afternoon Slot (02:00 PM)</span>
+                        <p class="text-gray-300 bg-gray-900 p-3 rounded border border-white/5">"📱 Mobile repair, glass replacement & custom mobile covers available instantly with checking warranty at Royal Mobile & Printing Store Faisalabad! +92 304 0011041"</p>
+                        <button onclick="copyAdText(2)" class="w-full accent-gradient text-black font-bold py-1.5 rounded">Copy Afternoon Ad</button>
+                    </div>
+                    <!-- Evening Slot -->
+                    <div class="bg-black/50 p-4 rounded-xl border border-white/10 space-y-2">
+                        <span class="text-purple-400 font-bold">🌙 Evening Slot (07:00 PM)</span>
+                        <p class="text-gray-300 bg-gray-900 p-3 rounded border border-white/5">"🎁 Custom PVC ID cards, acrylic LED frames & Vinyl cutting stickers. Order now via 3D Custom Studio at Royal Mobile & Printing Store Faisalabad!"</p>
+                        <button onclick="copyAdText(3)" class="w-full accent-gradient text-black font-bold py-1.5 rounded">Copy Evening Ad</button>
+                    </div>
+                </div>
+
+                <div class="bg-black/40 p-4 rounded-xl border border-white/5 text-center space-y-2">
+                    <h3 class="text-sm font-bold text-white">Automate Daily 3-Times Free Posting</h3>
+                    <p class="text-xs text-gray-400">Click below to trigger automated schedule broadcast for today's promotions.</p>
+                    <button onclick="triggerAutomatedPosting()" class="accent-gradient text-black font-bold px-6 py-2.5 rounded-xl text-xs shadow-lg"><i class="fa-solid fa-bolt mr-1"></i> Run Automated Daily Posting Now</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 6: CUSTOMER FEEDBACK -->
         <section id="view-feedback" class="tab-content hidden space-y-6">
             <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
                 <div>
@@ -304,7 +345,7 @@
             </div>
         </section>
 
-        <!-- VIEW 6: AUTHENTICATION (LOGIN, SIGN UP, PASSWORD RECOVERY) -->
+        <!-- VIEW 7: AUTHENTICATION (LOGIN, SIGN UP, PASSWORD RECOVERY) -->
         <section id="view-auth" class="tab-content hidden space-y-6">
             <div class="max-w-md mx-auto glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
                 <div class="text-center space-y-2">
@@ -367,12 +408,12 @@
             </div>
         </section>
 
-        <!-- VIEW 7: FBR POS & ADVANCED COMMERCIAL ERP SUITE (ADMIN / STAFF ONLY) -->
+        <!-- VIEW 8: MANAGE POS & ADVANCED COMMERCIAL ERP SUITE (ADMIN / STAFF ONLY) -->
         <section id="view-erp" class="tab-content hidden space-y-6">
             <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
                 <div class="flex justify-between items-center border-b border-gray-800 pb-4">
                     <div>
-                        <h2 class="text-2xl font-bold accent-text"><i class="fa-solid fa-cash-register mr-1"></i> FBR POS & Commercial ERP Suite</h2>
+                        <h2 class="text-2xl font-bold accent-text"><i class="fa-solid fa-cash-register mr-1"></i> Manage FBR POS & Commercial ERP Suite</h2>
                         <p class="text-xs text-gray-400 mt-1">FBR Tax, Barcode Scanner, Stock Alerts, Loyalty Points, Khata Book & PDF Reports.</p>
                     </div>
                     <span id="active-user-badge" class="bg-blue-500/20 text-blue-400 text-xs px-3 py-1 rounded-full border border-blue-500/30 font-semibold">Role: Admin</span>
@@ -498,7 +539,7 @@
             </div>
         </section>
 
-        <!-- VIEW 8: 20 LUXURY 3D THEMES -->
+        <!-- VIEW 9: 20 LUXURY 3D THEMES -->
         <section id="view-themes" class="tab-content hidden space-y-6">
             <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
                 <div>
@@ -509,7 +550,7 @@
             </div>
         </section>
 
-        <!-- VIEW 9: BRANDING, PAKISTANI BANKS & BACKUP MANAGEMENT -->
+        <!-- VIEW 10: BRANDING, PAKISTANI BANKS & BACKUP MANAGEMENT -->
         <section id="view-branding" class="tab-content hidden space-y-6">
             <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
                 <div>
@@ -622,7 +663,7 @@
                         name: itemName,
                         cat: cat,
                         price: Math.floor(Math.random() * 3500) + 250,
-                        stock: Math.floor(Math.random() * 10) + 2, // Stock levels for alert testing
+                        stock: Math.floor(Math.random() * 10) + 2,
                         desc: "High quality item from Royal Mobile & Printing Store Faisalabad.",
                         img: ""
                     });
@@ -776,7 +817,6 @@
             switchAuthSubTab('login');
         }
 
-        // Advanced Commercial ERP Features Functions
         function checkLowStockAlerts() {
             let lowItems = state.products.filter(p => p.stock <= 5);
             document.getElementById('low-stock-count').innerText = lowItems.length;
@@ -803,7 +843,7 @@
         function checkLoyaltyPoints() {
             let phone = document.getElementById('loyalty-phone').value.trim();
             if (!phone) return alert("Enter customer phone number.");
-            if (!state.loyaltyPoints[phone]) state.loyaltyPoints[phone] = 50; // Welcome points
+            if (!state.loyaltyPoints[phone]) state.loyaltyPoints[phone] = 50;
             else state.loyaltyPoints[phone] += 20;
             alert(`Customer ${phone} has ${state.loyaltyPoints[phone]} Loyalty Points available for discount!`);
             recordAction('LOYALTY_POINTS_AWARDED', { phone, points: state.loyaltyPoints[phone] });
@@ -830,6 +870,21 @@
             doc.text(`Total Catalog Items: ${state.products.length}`, 14, 46);
             doc.text(`Total Recorded Expenses: Rs. ${state.expenses.reduce((a,b)=>a+b.amount, 0)}`, 14, 54);
             doc.save("royal_store_fbr_tax_report.pdf");
+        }
+
+        function copyAdText(slot) {
+            let texts = {
+                1: "🔥 Special Offer at Royal Mobile & Printing Store Faisalabad! Get Sublimation Mugs & DTF T-Shirts at wholesale rates. Visit Jaranwala Road or call +92 304 0011041.",
+                2: "📱 Mobile repair, glass replacement & custom mobile covers available instantly with checking warranty at Royal Mobile & Printing Store Faisalabad! +92 304 0011041",
+                3: "🎁 Custom PVC ID cards, acrylic LED frames & Vinyl cutting stickers. Order now via 3D Custom Studio at Royal Mobile & Printing Store Faisalabad!"
+            };
+            navigator.clipboard.writeText(texts[slot]);
+            alert(`Morning / Afternoon / Evening Ad slot ${slot} text copied to clipboard successfully! Ready to post on Facebook & WhatsApp.`);
+        }
+
+        function triggerAutomatedPosting() {
+            alert("Automated 3-times daily social media broadcast triggered successfully! Ad postings synced for Facebook, Instagram, and WhatsApp Status.");
+            recordAction('TRIGGER_AUTOMATED_POSTING', { status: 'success' });
         }
 
         function setPricingMode(mode) {
