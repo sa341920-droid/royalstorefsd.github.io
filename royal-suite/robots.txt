@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sa341920-droid.github.io/royal-suite/sitemap.xml
